@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="theme-color" content="#05070d" />
+<meta name="mobile-web-app-capable" content="yes" />
+<title>SLOP APE — паркур двумя руками</title>
+<link rel="stylesheet" href="./game.css" />
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<header class="hud">
+  <a class="back" href="./index.html" aria-label="Назад">←</a>
+  <div class="stats">
+    <span class="chip">высота <b id="statHeight">0.0м</b></span>
+    <span class="chip">время <b id="statTime">0.0с</b></span>
+  </div>
+  <div class="grips">
+    <span class="grip" data-grip="L">L</span>
+    <span class="grip" data-grip="R">R</span>
+  </div>
+</header>
+
+<div class="hint" id="hint">держи палец на стике — рука цепляется за поверхность и подтягивает тело</div>
+
+<div class="pads">
+  <div class="pad" id="padL" data-hand="L">
+    <div class="ring"></div>
+    <div class="thumb"><span>L</span></div>
+  </div>
+  <div class="pad" id="padR" data-hand="R">
+    <div class="ring"></div>
+    <div class="thumb"><span>R</span></div>
+  </div>
+</div>
+
+<div class="win" id="win" hidden>
+  <div class="win-card">
+    <h1>КАМЕНЬ ТВОЙ</h1>
+    <p>Дистанция пройдена за <b id="winTime">—</b></p>
+    <button id="btnRestart">Ещё раз</button>
+  </div>
+</div>
+
+<div id="loading" class="loading">загружаю сцену…</div>
+
+<script src="./game.bundle.js"></script>
+</body>
+</html>

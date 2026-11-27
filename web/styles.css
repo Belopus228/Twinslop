@@ -96,6 +96,7 @@ body::before {
   display: grid; place-items: center;
 }
 .ghost:active { background: rgba(255, 255, 255, 0.1); }
+a.ghost { text-decoration: none; }
 
 /* ---------------- сцена с руками ---------------- */
 .stage {
