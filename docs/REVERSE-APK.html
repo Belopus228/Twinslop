@@ -146,7 +146,21 @@ footer {
 шаг фиксировать (хэш, версия инструмента, вывод).</p>
 <hr>
 <h2 id="1">Шаг 1. Окружение</h2>
-<p>Минимум (статический анализ):</p>
+<p><strong>Быстрый путь — один скрипт</strong> (ставит всё, пропускает уже установленное):</p>
+<pre><code class="language-bash">chmod +x scripts/install-re-tools.sh
+./scripts/install-re-tools.sh --check     # что уже стоит
+./scripts/install-re-tools.sh             # базовый набор
+./scripts/install-re-tools.sh --full      # + Ghidra, mitmproxy, MobSF
+./scripts/install-re-tools.sh --dry-run   # показать план без установки
+./scripts/install-re-tools.sh --with-device  # ещё и frida-server на телефон
+</code></pre>
+<p>Что ставит: <code>jadx</code>, <code>jadx-gui</code>, <code>apktool</code>, <code>aapt2</code>/<code>apksigner</code>/<code>zipalign</code>/<code>adb</code>
+(Android SDK), <code>androguard</code>, <code>apkid</code>, <code>pyaxmlparser</code>, <code>dex2jar</code>, <code>.NET runtime</code> +
+<code>Il2CppDumper</code>, <code>frida-tools</code> + <code>objection</code> (в отдельный venv), <code>radare2</code>;
+в <code>--full</code> — Ghidra, mitmproxy и подсказку по MobSF.</p>
+<p>Куда: <code>~/re-tools</code>, симлинки в <code>~/.local/bin</code> (добавляется в <code>PATH</code>). Всё
+идемпотентно — можно запускать повторно.</p>
+<p>Если ставишь руками (или нужна только часть):</p>
 <pre><code class="language-bash"># Linux / WSL
 sudo apt install -y unzip openjdk-17-jdk python3-pip binutils file xxd
 pip install --user androguard

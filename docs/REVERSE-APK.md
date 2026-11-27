@@ -26,7 +26,26 @@
 
 ## Шаг 1. Окружение
 
-Минимум (статический анализ):
+**Быстрый путь — один скрипт** (ставит всё, пропускает уже установленное):
+
+```bash
+chmod +x scripts/install-re-tools.sh
+./scripts/install-re-tools.sh --check     # что уже стоит
+./scripts/install-re-tools.sh             # базовый набор
+./scripts/install-re-tools.sh --full      # + Ghidra, mitmproxy, MobSF
+./scripts/install-re-tools.sh --dry-run   # показать план без установки
+./scripts/install-re-tools.sh --with-device  # ещё и frida-server на телефон
+```
+
+Что ставит: `jadx`, `jadx-gui`, `apktool`, `aapt2`/`apksigner`/`zipalign`/`adb`
+(Android SDK), `androguard`, `apkid`, `pyaxmlparser`, `dex2jar`, `.NET runtime` +
+`Il2CppDumper`, `frida-tools` + `objection` (в отдельный venv), `radare2`;
+в `--full` — Ghidra, mitmproxy и подсказку по MobSF.
+
+Куда: `~/re-tools`, симлинки в `~/.local/bin` (добавляется в `PATH`). Всё
+идемпотентно — можно запускать повторно.
+
+Если ставишь руками (или нужна только часть):
 
 ```bash
 # Linux / WSL
