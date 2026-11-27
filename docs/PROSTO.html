@@ -240,7 +240,14 @@ scripts\install-re-tools.bat --full      :: + Ghidra
 <hr>
 <h2 id="2">Шаг 2. Первый взгляд: что вообще внутри</h2>
 <p><img alt="Что внутри APK" src="img/3-apktool.svg"></p>
-<p>Самое быстрое — посмотреть список файлов. APK это ZIP, поэтому:</p>
+<p>Самое быстрое — посмотреть список файлов. APK это ZIP, поэтому.</p>
+<p><strong>Windows</strong> — ничего доустанавливать не надо:</p>
+<pre><code class="language-bat">apk-triage.bat app.apk
+</code></pre>
+<p>Или просто список файлов (в Windows 10/11 уже есть <code>tar</code>, <code>unzip</code> не нужен):</p>
+<pre><code class="language-bat">tar -tf app.apk
+</code></pre>
+<p><strong>Linux / macOS:</strong></p>
 <pre><code class="language-bash">unzip -l app.apk | head -n 40
 </code></pre>
 <p>Ты увидишь примерно это (справа — простыми словами):</p>
@@ -418,6 +425,10 @@ root, и напоминание: <strong>только для своих прил
 <tr>
 <td><code>jadx не является внутренней командой</code> (Windows)</td>
 <td>то же самое: закрой и открой <code>cmd</code> заново</td>
+</tr>
+<tr>
+<td><code>'unzip' is not recognized</code> / <code>'head' is not recognized</code></td>
+<td>это команды Linux, их в Windows нет. Замени: <code>unzip -l</code> → <code>tar -tf</code>, <code>head</code>/<code>grep</code> → <code>apk-triage.bat app.apk</code>, <code>sha256sum</code> → <code>certutil -hashfile app.apk SHA256</code></td>
 </tr>
 <tr>
 <td>Windows ругается «открыть этот файл»</td>

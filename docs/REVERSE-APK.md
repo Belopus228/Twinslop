@@ -99,6 +99,24 @@ jadx --version && java -jar apktool.jar --version && aapt2 version
 
 ## Шаг 2. Триаж файла (5 минут)
 
+Этот шаг написан для терминала Linux/macOS. В Windows команд из блоков ниже
+нет (`unzip`, `head`, `grep`, `awk` — это Linux), поэтому либо запусти
+`scripts\apk-triage.bat app.apk` — он делает всё то же самое, либо переводи
+команды один-в-один:
+
+| Linux / macOS | Windows (что написать в `cmd`) |
+|---|---|
+| `unzip -l app.apk` | `tar -tf app.apk` |
+| `unzip -p app.apk файл` | `tar -xOf app.apk файл` |
+| `unzip -t app.apk` | `tar -tf app.apk` (ошибка = битый архив) |
+| `head -n 40`, `tail` | `more` (или `apk-triage.bat`) |
+| `grep шаблон файл` | `findstr шаблон файл` |
+| `sha256sum app.apk` | `certutil -hashfile app.apk SHA256` |
+| `cat файл` | `type файл` |
+| `readelf`, `strings`, `file` | нужен WSL или `--full` набор из установщика |
+
+`tar` входит в Windows 10 (сборка 1803) и Windows 11 — ставить ничего не нужно.
+
 ```bash
 APK=sample.apk
 sha256sum "$APK" > sample.sha256     # фиксируем, с чем работаем

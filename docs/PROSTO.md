@@ -82,7 +82,21 @@ scripts\install-re-tools.bat --full      :: + Ghidra
 
 ![Что внутри APK](img/3-apktool.svg)
 
-Самое быстрое — посмотреть список файлов. APK это ZIP, поэтому:
+Самое быстрое — посмотреть список файлов. APK это ZIP, поэтому.
+
+**Windows** — ничего доустанавливать не надо:
+
+```bat
+apk-triage.bat app.apk
+```
+
+Или просто список файлов (в Windows 10/11 уже есть `tar`, `unzip` не нужен):
+
+```bat
+tar -tf app.apk
+```
+
+**Linux / macOS:**
 
 ```bash
 unzip -l app.apk | head -n 40
@@ -254,6 +268,7 @@ root, и напоминание: **только для своих приложе
 |---|---|
 | `command not found: jadx` | не открыл новый терминал после установки (PATH). Открой заново |
 | `jadx не является внутренней командой` (Windows) | то же самое: закрой и открой `cmd` заново |
+| `'unzip' is not recognized` / `'head' is not recognized` | это команды Linux, их в Windows нет. Замени: `unzip -l` → `tar -tf`, `head`/`grep` → `apk-triage.bat app.apk`, `sha256sum` → `certutil -hashfile app.apk SHA256` |
 | Windows ругается «открыть этот файл» | правый клик по `.bat` → «Запуск от имени администратора» не нужен, просто двойной клик |
 | «Зависло» на `== системные зависимости ==` | это `winget` качает и ставит Java/Python/.NET — 1–3 минуты, экран стоит на одной строке. Ничего не нажимай. Новая версия `.bat` показывает прогресс и предупреждает про окно UAC |
 | `'ll" ( set "MODE' is not recognized`, `'енты' is not recognized` | файл скачался побитым (другие переводы строк). Скачай `install-re-tools.bat` заново **кнопкой Raw / Download**, а не копированием текста. Файл хранится в кодировке Windows-1251 — не пересохраняй его в UTF-8 |

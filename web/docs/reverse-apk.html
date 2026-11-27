@@ -230,6 +230,53 @@ sdkmanager &quot;build-tools;34.0.0&quot;
 </code></pre>
 <hr>
 <h2 id="2-5">Шаг 2. Триаж файла (5 минут)</h2>
+<p>Этот шаг написан для терминала Linux/macOS. В Windows команд из блоков ниже
+нет (<code>unzip</code>, <code>head</code>, <code>grep</code>, <code>awk</code> — это Linux), поэтому либо запусти
+<code>scripts\apk-triage.bat app.apk</code> — он делает всё то же самое, либо переводи
+команды один-в-один:</p>
+<table>
+<thead>
+<tr>
+<th>Linux / macOS</th>
+<th>Windows (что написать в <code>cmd</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unzip -l app.apk</code></td>
+<td><code>tar -tf app.apk</code></td>
+</tr>
+<tr>
+<td><code>unzip -p app.apk файл</code></td>
+<td><code>tar -xOf app.apk файл</code></td>
+</tr>
+<tr>
+<td><code>unzip -t app.apk</code></td>
+<td><code>tar -tf app.apk</code> (ошибка = битый архив)</td>
+</tr>
+<tr>
+<td><code>head -n 40</code>, <code>tail</code></td>
+<td><code>more</code> (или <code>apk-triage.bat</code>)</td>
+</tr>
+<tr>
+<td><code>grep шаблон файл</code></td>
+<td><code>findstr шаблон файл</code></td>
+</tr>
+<tr>
+<td><code>sha256sum app.apk</code></td>
+<td><code>certutil -hashfile app.apk SHA256</code></td>
+</tr>
+<tr>
+<td><code>cat файл</code></td>
+<td><code>type файл</code></td>
+</tr>
+<tr>
+<td><code>readelf</code>, <code>strings</code>, <code>file</code></td>
+<td>нужен WSL или <code>--full</code> набор из установщика</td>
+</tr>
+</tbody>
+</table>
+<p><code>tar</code> входит в Windows 10 (сборка 1803) и Windows 11 — ставить ничего не нужно.</p>
 <pre><code class="language-bash">APK=sample.apk
 sha256sum &quot;$APK&quot; &gt; sample.sha256     # фиксируем, с чем работаем
 ls -lh &quot;$APK&quot;

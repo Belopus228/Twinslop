@@ -148,14 +148,24 @@ jobs:
           python3 - <<'PY'
           import pathlib, zipfile
           bat = pathlib.Path('scripts/install-re-tools.bat').read_bytes()
+          tri_bat = pathlib.Path('scripts/apk-triage.bat').read_bytes()
+          tri_ps1 = pathlib.Path('scripts/apk-triage.ps1').read_bytes()
           assert b'\r\n' in bat, 'в .bat нет CRLF'
+          assert tri_ps1[:3] == b'\xef\xbb\xbf', 'apk-triage.ps1 без BOM'
           readme = ("Как запустить\r\n"
                     "1. Распакуй архив целиком (правый клик -> Извлечь все).\r\n"
                     "2. Двойной клик по install-re-tools.bat\r\n"
                     "3. Проверка: install-re-tools.bat --check\r\n"
+                    "\r\n"
+                    "Разбор APK без Linux-команд:\r\n"
+                    "    apk-triage.bat app.apk\r\n"
+                    "Список файлов внутри APK:  tar -tf app.apk\r\n"
+                    "\r\n"
                     "Не открывай .bat прямо из архива и не пересохраняй в блокноте.\r\n").encode('cp1251')
           with zipfile.ZipFile('/tmp/re-tools-windows.zip', 'w', zipfile.ZIP_DEFLATED) as z:
               z.writestr('install-re-tools.bat', bat)
+              z.writestr('apk-triage.bat', tri_bat)
+              z.writestr('apk-triage.ps1', tri_ps1)
               z.writestr('readme.txt', readme)
           print('zip готов')
           PY
