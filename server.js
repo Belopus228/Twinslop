@@ -116,9 +116,17 @@ function serveStatic(req, res, pathname) {
   });
 }
 
-const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const { pathname } = url;
+async function handle(req, res) {
+  let url;
+  try {
+    url = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
+  } catch (_) {
+    // кривой/относительный URL (например, "//") — не повод падать
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+    return res.end('Bad request');
+  }
+  // схлопываем двойные слэши: "//foo" и "/foo" — одно и то же
+  const pathname = url.pathname.replace(/\/{2,}/g, '/');
 
   if (pathname === '/api/state' && req.method === 'POST') {
     let body;
@@ -184,7 +192,18 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method !== 'GET' && req.method !== 'HEAD') return json(res, 405, { error: 'method not allowed' });
   return serveStatic(req, res, pathname);
+}
+
+const server = http.createServer((req, res) => {
+  handle(req, res).catch((err) => {
+    console.error('handler error:', err);
+    if (!res.headersSent) sendJson(res, 500, { error: 'internal error' });
+    else res.end();
+  });
 });
+
+// последний рубеж: сервер не должен умирать из-за одного запроса
+process.on('uncaughtException', (err) => console.error('uncaught:', err));
 
 function clamp(v) {
   if (!Number.isFinite(v)) return 0;
