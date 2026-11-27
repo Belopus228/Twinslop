@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif">
+  <rect width="900" height="470" fill="#ffffff"/>
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#1f2833">apktool: разобрать APK на папки</text>
+
+  <!-- терминал -->
+  <rect x="24" y="52" width="430" height="150" rx="10" fill="#1b2430"/>
+  <text x="44" y="84" font-size="12" fill="#9fb0c4">Терминал</text>
+  <text x="44" y="112" font-size="13" fill="#7ee787" font-family="ui-monospace, Menlo, Consolas, monospace">$ apktool d app.apk -o out</text>
+  <text x="44" y="136" font-size="12.5" fill="#c9d6e4" font-family="ui-monospace, Menlo, Consolas, monospace">I: Using Apktool 3.0.3</text>
+  <text x="44" y="158" font-size="12.5" fill="#c9d6e4" font-family="ui-monospace, Menlo, Consolas, monospace">I: Decoding AndroidManifest.xml…</text>
+  <text x="44" y="180" font-size="12.5" fill="#8ce99a" font-family="ui-monospace, Menlo, Consolas, monospace">I: Copying assets and libs…</text>
+
+  <circle cx="470" cy="112" r="13" fill="#0f7b4f"/><text x="470" y="117" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+
+  <!-- папки -->
+  <rect x="486" y="52" width="390" height="330" rx="10" fill="#f7f9fc" stroke="#c9d4e0"/>
+  <text x="504" y="78" font-size="12" font-weight="700" fill="#7b8898">ПОЛУЧИЛОСЬ</text>
+  <text x="504" y="106" font-size="13.5" fill="#2b3644">▸ out/</text>
+  <text x="524" y="130" font-size="13" fill="#2b3644">▸ AndroidManifest.xml</text>
+  <text x="544" y="150" font-size="11.5" fill="#8fa0b3">читаемый текст — что за разрешения</text>
+  <text x="524" y="176" font-size="13" fill="#2b3644">▸ res/</text>
+  <text x="544" y="196" font-size="11.5" fill="#8fa0b3">картинки, тексты, layout</text>
+  <text x="524" y="222" font-size="13" fill="#2b3644">▸ smali/</text>
+  <text x="544" y="242" font-size="11.5" fill="#8fa0b3">код «по-машинному», соберётся обратно</text>
+  <text x="524" y="268" font-size="13" fill="#2b3644">▸ lib/</text>
+  <text x="544" y="288" font-size="11.5" fill="#8fa0b3">нативные библиотеки .so</text>
+  <text x="524" y="314" font-size="13" fill="#2b3644">▸ assets/</text>
+  <text x="544" y="334" font-size="11.5" fill="#8fa0b3">файлы игры/приложения</text>
+  <circle cx="470" cy="208" r="13" fill="#0f7b4f"/><text x="470" y="213" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+
+  <!-- обратная сборка -->
+  <rect x="24" y="232" width="430" height="150" rx="10" fill="#1b2430"/>
+  <text x="44" y="262" font-size="12" fill="#9fb0c4">Собрать обратно (после правок)</text>
+  <text x="44" y="292" font-size="13" fill="#7ee787" font-family="ui-monospace, Menlo, Consolas, monospace">$ apktool b out -o new.apk</text>
+  <text x="44" y="316" font-size="13" fill="#7ee787" font-family="ui-monospace, Menlo, Consolas, monospace">$ apksigner sign --ks my.keystore new.apk</text>
+  <text x="44" y="346" font-size="12" fill="#9fb0c4">Без подписи телефон откажется ставить APK.</text>
+  <text x="44" y="366" font-size="12" fill="#9fb0c4">И это уже модификация — только для своего APK.</text>
+
+  <rect x="24" y="402" width="852" height="48" rx="10" fill="#fff8e6" stroke="#f0d999"/>
+  <text x="42" y="432" font-size="13.5" fill="#6b5a20">Команда запускается в папке, где лежит APK. «-o out» — просто имя папки для результата.</text>
+</svg>

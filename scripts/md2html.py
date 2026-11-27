@@ -122,6 +122,15 @@ blockquote {
   color: var(--muted);
 }
 hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 6px 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
 footer {
   max-width: 860px; margin: 0 auto; padding: 0 20px 40px;
   color: var(--muted); font-size: 12px;
@@ -131,7 +140,7 @@ footer {
   body { background: #fff; color: #000; }
   main { max-width: none; padding: 0; }
   h2 { page-break-after: avoid; }
-  pre, table, blockquote { page-break-inside: avoid; }
+  pre, table, blockquote, img { page-break-inside: avoid; }
   a { color: #000; text-decoration: underline; }
 }
 @media (max-width: 520px) {

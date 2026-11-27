@@ -124,7 +124,7 @@ jobs:
           APK=$(find android -name "*.apk" | head -n 1)
           echo "== содержимое =="
           unzip -l "$APK" | grep -E "assets/www/(index|game|apk)\.(html|js)" || true
-          for f in index.html game.html apk.html apps.html ape.html ape.bundle.js settings.html settings.bundle.js apps.bundle.js apk.bundle.js game.bundle.js docs/reverse-apk.html; do
+          for f in index.html game.html apk.html apps.html ape.html ape.bundle.js settings.html settings.bundle.js apps.bundle.js apk.bundle.js game.bundle.js docs/reverse-apk.html docs/prosto.html docs/img/1-ustanovka.svg; do
             unzip -l "$APK" | grep -q "assets/www/$f" || { echo "::error::в APK нет assets/www/$f"; exit 1; }
           done
           echo "APK: $APK"

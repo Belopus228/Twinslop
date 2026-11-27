@@ -21,6 +21,7 @@ const SHELL = [
   './settings.css',
   './settings.bundle.js',
   './docs/reverse-apk.html',
+  './docs/prosto.html',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',

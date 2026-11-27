@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif">
+  <rect width="900" height="560" fill="#ffffff"/>
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#1f2833">jadx-gui: смотрим код приложения</text>
+
+  <!-- окно -->
+  <rect x="24" y="50" width="852" height="400" rx="10" fill="#f7f9fc" stroke="#c9d4e0"/>
+
+  <!-- меню -->
+  <rect x="24" y="50" width="852" height="34" rx="10" fill="#e9eef5"/>
+  <rect x="24" y="74" width="852" height="10" fill="#e9eef5"/>
+  <text x="44" y="72" font-size="13" fill="#3c4a5a">File   Edit   View   Tools   Help</text>
+
+  <!-- кнопка Open file -->
+  <rect x="44" y="96" width="120" height="30" rx="7" fill="#0f7b4f"/>
+  <text x="104" y="116" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Open file</text>
+  <circle cx="30" cy="111" r="13" fill="#0f7b4f"/><text x="30" y="116" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+
+  <!-- поиск -->
+  <rect x="640" y="96" width="216" height="30" rx="15" fill="#ffffff" stroke="#c9d4e0"/>
+  <text x="662" y="116" font-size="13" fill="#8fa0b3">Поиск по классам и строкам</text>
+  <circle cx="626" cy="111" r="13" fill="#0f7b4f"/><text x="626" y="116" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+
+  <!-- дерево -->
+  <rect x="44" y="142" width="250" height="290" rx="8" fill="#ffffff" stroke="#dbe3ec"/>
+  <text x="58" y="164" font-size="12" font-weight="700" fill="#7b8898">КЛАССЫ</text>
+  <text x="58" y="190" font-size="13" fill="#2b3644">▾ com.example.app</text>
+  <text x="76" y="212" font-size="13" fill="#2b3644">▾ network</text>
+  <text x="94" y="234" font-size="13" fill="#0f7b4f">ApiClient</text>
+  <text x="94" y="256" font-size="13" fill="#2b3644">Config</text>
+  <text x="76" y="278" font-size="13" fill="#2b3644">▾ ui</text>
+  <text x="94" y="300" font-size="13" fill="#2b3644">MainActivity</text>
+  <circle cx="30" cy="200" r="13" fill="#0f7b4f"/><text x="30" y="205" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+  <!-- вкладки -->
+  <rect x="308" y="142" width="548" height="34" rx="8" fill="#ffffff" stroke="#dbe3ec"/>
+  <rect x="312" y="146" width="70" height="28" rx="6" fill="#e9f7ef"/>
+  <text x="347" y="165" font-size="13" font-weight="700" fill="#0f7b4f" text-anchor="middle">Java</text>
+  <text x="414" y="165" font-size="13" fill="#7b8898">Smali</text>
+  <circle cx="390" cy="159" r="12" fill="#0f7b4f"/><text x="390" y="164" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+
+  <!-- код -->
+  <rect x="308" y="186" width="548" height="246" rx="8" fill="#ffffff" stroke="#dbe3ec"/>
+  <text x="326" y="212" font-size="12.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#6a56c9">public class ApiClient {</text>
+  <text x="342" y="234" font-size="12.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">String base = "https://…";</text>
+  <text x="342" y="256" font-size="12.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#0f7b4f">void login(String user) { … }</text>
+  <text x="326" y="278" font-size="12.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#6a56c9">}</text>
+  <text x="326" y="312" font-size="12.5" fill="#8fa0b3">← здесь код разобран на почти-Java, читать можно</text>
+
+  <!-- выноска 2 -->
+  <g>
+    <circle cx="196" cy="111" r="13" fill="#0f7b4f"/><text x="196" y="116" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+    <line x1="209" y1="111" x2="252" y2="111" stroke="#0f7b4f" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="258" y="116" font-size="13" fill="#0f7b4f">← выбери свой .apk в диалоге</text>
+  </g>
+
+  <!-- легенда -->
+  <rect x="24" y="466" width="852" height="76" rx="10" fill="#f2f6fa" stroke="#dbe3ec"/>
+  <text x="40" y="492" font-size="13.5" fill="#2b3644"><tspan font-weight="700" fill="#0f7b4f">1</tspan> — кнопка «Open file»: открыть APK</text>
+  <text x="40" y="514" font-size="13.5" fill="#2b3644"><tspan font-weight="700" fill="#0f7b4f">2</tspan> — в диалоге выбери файл .apk · <tspan font-weight="700" fill="#0f7b4f">3</tspan> — дерево классов слева</text>
+  <text x="40" y="534" font-size="13.5" fill="#2b3644"><tspan font-weight="700" fill="#0f7b4f">4</tspan> — поиск по классам и строкам · <tspan font-weight="700" fill="#0f7b4f">5</tspan> — вкладка Java (читаемая)</text>
+</svg>

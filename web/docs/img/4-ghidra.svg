@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif">
+  <rect width="900" height="560" fill="#ffffff"/>
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#1f2833">Ghidra: когда код спрятан в .so (нативная библиотека)</text>
+
+  <rect x="24" y="50" width="852" height="392" rx="10" fill="#f7f9fc" stroke="#c9d4e0"/>
+
+  <!-- меню -->
+  <rect x="24" y="50" width="852" height="30" rx="10" fill="#e9eef5"/>
+  <rect x="24" y="72" width="852" height="8" fill="#e9eef5"/>
+  <text x="40" y="70" font-size="12.5" fill="#3c4a5a">File   Edit   Analysis   Search   Window   Help</text>
+
+  <!-- тулбар -->
+  <rect x="44" y="92" width="112" height="28" rx="6" fill="#ffffff" stroke="#c9d4e0"/>
+  <text x="100" y="111" font-size="12" fill="#3c4a5a" text-anchor="middle">Import File</text>
+  <rect x="166" y="92" width="128" height="28" rx="6" fill="#0f7b4f"/>
+  <text x="230" y="111" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Auto Analyze</text>
+  <circle cx="314" cy="106" r="13" fill="#0f7b4f"/>
+  <text x="314" y="111" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+
+  <!-- дерево -->
+  <rect x="44" y="134" width="220" height="288" rx="8" fill="#ffffff" stroke="#dbe3ec"/>
+  <text x="58" y="156" font-size="11.5" font-weight="700" fill="#7b8898">SYMBOL TREE</text>
+  <circle cx="242" cy="152" r="12" fill="#0f7b4f"/>
+  <text x="242" y="157" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="58" y="182" font-size="12.5" fill="#2b3644">▾ Functions</text>
+  <text x="76" y="204" font-size="12.5" fill="#0f7b4f">JNI_OnLoad</text>
+  <text x="76" y="226" font-size="12.5" fill="#2b3644">FUN_00102a40</text>
+  <text x="76" y="248" font-size="12.5" fill="#2b3644">FUN_00104c18</text>
+  <text x="58" y="276" font-size="12.5" fill="#2b3644">▾ Exports</text>
+  <text x="58" y="302" font-size="12.5" fill="#2b3644">▾ Imports</text>
+  <text x="76" y="324" font-size="12.5" fill="#2b3644">dlopen</text>
+  <text x="76" y="346" font-size="12.5" fill="#2b3644">mprotect</text>
+
+  <!-- листинг -->
+  <rect x="278" y="134" width="300" height="288" rx="8" fill="#ffffff" stroke="#dbe3ec"/>
+  <text x="292" y="156" font-size="11.5" font-weight="700" fill="#7b8898">LISTING (АССЕМБЛЕР)</text>
+  <text x="292" y="184" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#8fa0b3">00102a40  stp x29, x30, [sp,#-0x30]</text>
+  <text x="292" y="204" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">00102a44  mov x29, sp</text>
+  <text x="292" y="224" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">00102a48  bl 0x0010d100</text>
+  <text x="292" y="244" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">00102a4c  cbz w0, 0x00102a70</text>
+  <text x="292" y="278" font-size="11.5" fill="#8fa0b3">↓ кликнул функцию слева —</text>
+  <text x="292" y="296" font-size="11.5" fill="#8fa0b3">справа появился её код</text>
+
+  <!-- декомпилятор -->
+  <rect x="592" y="134" width="264" height="288" rx="8" fill="#ffffff" stroke="#dbe3ec"/>
+  <text x="606" y="156" font-size="11.5" font-weight="700" fill="#7b8898">DECOMPILER (ПОЧТИ C)</text>
+  <circle cx="838" cy="152" r="12" fill="#0f7b4f"/>
+  <text x="838" y="157" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="606" y="184" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#6a56c9">undefined8</text>
+  <text x="606" y="202" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">FUN_00102a40(void)</text>
+  <text x="606" y="220" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">{</text>
+  <text x="618" y="238" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">iVar1 = check();</text>
+  <text x="618" y="256" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#0f7b4f">if (iVar1 == 0) {</text>
+  <text x="630" y="274" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">init_game();</text>
+  <text x="618" y="292" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#0f7b4f">}</text>
+  <text x="606" y="310" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#2b3644">}</text>
+
+  <rect x="24" y="458" width="852" height="86" rx="10" fill="#f2f6fa" stroke="#dbe3ec"/>
+  <text x="40" y="484" font-size="13.5" fill="#2b3644"><tspan font-weight="700" fill="#0f7b4f">1</tspan> — File → Import File → выбери .so → кнопка Auto Analyze → подождать → откроется CodeBrowser</text>
+  <text x="40" y="508" font-size="13.5" fill="#2b3644"><tspan font-weight="700" fill="#0f7b4f">2</tspan> — слева список функций: ищи JNI_OnLoad (это «вход» из Java)</text>
+  <text x="40" y="532" font-size="13.5" fill="#2b3644"><tspan font-weight="700" fill="#0f7b4f">3</tspan> — справа декомпилятор: тот же код, но похож на C — читать заметно легче</text>
+</svg>

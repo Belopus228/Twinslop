@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" font-family="ui-sans-serif, system-ui, Segoe UI, Roboto, sans-serif">
+  <rect width="900" height="430" fill="#ffffff"/>
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#1f2833">Что делать дальше: простая развилка</text>
+
+  <!-- старт -->
+  <rect x="24" y="60" width="200" height="56" rx="12" fill="#0f7b4f"/>
+  <text x="124" y="84" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Есть APK</text>
+  <text x="124" y="103" font-size="12" fill="#cdebd9" text-anchor="middle">файл .apk на руках</text>
+
+  <!-- ветка 1 -->
+  <line x1="224" y1="88" x2="288" y2="88" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="292" y="56" width="230" height="64" rx="12" fill="#f7f9fc" stroke="#c9d4e0"/>
+  <text x="308" y="80" font-size="13.5" font-weight="700" fill="#1f2833">Хочу просто посмотреть</text>
+  <text x="308" y="100" font-size="12" fill="#5f6f83">что за приложение и разрешения</text>
+
+  <line x1="522" y1="88" x2="580" y2="88" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="584" y="60" width="292" height="56" rx="10" fill="#e9f7ef" stroke="#b7e3c9"/>
+  <text x="600" y="84" font-size="13" fill="#0f7b4f">aapt2 dump badging app.apk</text>
+  <text x="600" y="103" font-size="12" fill="#4b7f63">или наш разбор APK в приложении</text>
+
+  <!-- ветка 2 -->
+  <line x1="124" y1="116" x2="124" y2="176" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="24" y="180" width="200" height="64" rx="12" fill="#f7f9fc" stroke="#c9d4e0"/>
+  <text x="40" y="204" font-size="13.5" font-weight="700" fill="#1f2833">Хочу прочитать код</text>
+  <text x="40" y="224" font-size="12" fill="#5f6f83">Java / Kotlin</text>
+
+  <line x1="224" y1="212" x2="288" y2="212" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="292" y="184" width="230" height="56" rx="10" fill="#e9f7ef" stroke="#b7e3c9"/>
+  <text x="308" y="208" font-size="13" fill="#0f7b4f">jadx-gui → Open file</text>
+  <text x="308" y="227" font-size="12" fill="#4b7f63">дерево классов + вкладка Java</text>
+
+  <!-- ветка 3 -->
+  <line x1="124" y1="244" x2="124" y2="300" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="24" y="304" width="200" height="64" rx="12" fill="#f7f9fc" stroke="#c9d4e0"/>
+  <text x="40" y="328" font-size="13.5" font-weight="700" fill="#1f2833">Кода в jadx почти нет</text>
+  <text x="40" y="348" font-size="12" fill="#5f6f83">значит он в нативной .so</text>
+
+  <line x1="224" y1="336" x2="288" y2="336" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="292" y="308" width="230" height="56" rx="10" fill="#e9f7ef" stroke="#b7e3c9"/>
+  <text x="308" y="332" font-size="13" fill="#0f7b4f">Ghidra → Import File</text>
+  <text x="308" y="351" font-size="12" fill="#4b7f63">libil2cpp.so / libXXX.so</text>
+
+  <!-- ветка 4 -->
+  <line x1="522" y1="212" x2="580" y2="212" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="584" y="184" width="292" height="56" rx="10" fill="#fff8e6" stroke="#f0d999"/>
+  <text x="600" y="208" font-size="13" fill="#6b5a20">В jadx пусто и в .so пусто?</text>
+  <text x="600" y="227" font-size="12" fill="#8a7530">файл упакован — см. раздел «защита»</text>
+
+  <line x1="522" y1="336" x2="580" y2="336" stroke="#c9d4e0" stroke-width="2"/>
+  <rect x="584" y="300" width="292" height="72" rx="10" fill="#fdecec" stroke="#f3bcbc"/>
+  <text x="600" y="324" font-size="13" fill="#8a2b2b">Это чужая игра с защитой?</text>
+  <text x="600" y="344" font-size="12" fill="#a45555">остановись: обход защиты —</text>
+  <text x="600" y="362" font-size="12" fill="#a45555">не наша история</text>
+</svg>
