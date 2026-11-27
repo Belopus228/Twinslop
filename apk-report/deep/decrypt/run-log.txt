@@ -1,0 +1,31 @@
+metadata: 15299420 байт, header=259cc7c9d788a5256db3bf6fc38af064554ff25d1293ec508e4510fdad4b0b70
+магия: 0xc9c79c25 (ожидается 0xfab11baf), версия-поле: 631605463
+энтропия: [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 6.29, 5.34, 5.59, 4.4, 5.59, 3.0]
+маркеры: {'mscorlib': 13564852, 'UnityEngine': 8441277, 'Assembly-CSharp': 13742171, 'System.String': -1, 'global-metadata': -1, 'Photon': 8186719, 'PlayFab': 8188048, 'Gilla': 8184372}
+граница открытого текста: 8441856
+XOR-поиск: None
+тело метаданных в открытом виде — пробуем починить заголовок
+версия 31: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+версия 30: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+версия 29: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+версия 28: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+версия 27: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+версия 24: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+версия 21: code=-6 ePal.ReadKey(Boolean intercept)
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 110
+
+модкит: 983584 байт, энтропия 6.77, секций 22
+frida/gadget файлы: []
+скан загрузчиков: {'libUnityOpenXR.so': ['tea', 'dlopen', 'frida'], 'lib_burst_generated.so': ['tea', 'inline'], 'libgame.so': ['dlopen', 'tea'], 'liblck_core.so': ['aes', 'encrypt', 'tea', 'metadata', 'decrypt', 'chacha'], 'liblck_rs.so': ['metadata', 'dlopen', 'chacha', 'decrypt', 'mmap', 'encrypt'], 'liblck_streaming_rs.so': ['metadata', 'dlopen', 'chacha', 'mmap', 'encrypt', 'decrypt'], 'libmain.so': ['dlopen', 'il2cpp'], 'libminirtmp.so': ['metadata'], 'libnative_microphone.so': ['mmap', 'chacha', 'hook'], 'libngfx_rs.so': ['hook', 'dlopen', 'mmap', 'inline', 'tea', 'metadata'], 'libopenxr_loader.so': ['tea', 'dlopen', 'frida'], 'libopus_egpv.so': ['anti'], 'libovrplatformloader.so': ['tea', 'metadata'], 'libwebrtc-audio.so': ['metadata', 'tea', 'anti', 'hook', 'inline', 'frida'], 'libmodkit_gilla.so': ['tea', 'dlopen', 'mmap', 'mprotect']}

@@ -67,6 +67,55 @@
     "PlayFab": 8188048,
     "Gilla": 8184372
   },
+  "plaintext_boundary": 8441856,
+  "compression_hits": {
+    "zlib": [],
+    "gzip": [
+      252,
+      218677,
+      350139
+    ],
+    "lz4": [],
+    "zstd": []
+  },
+  "xor_best": null,
+  "dumper_tries": [
+    {
+      "version": 31,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    },
+    {
+      "version": 30,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    },
+    {
+      "version": 29,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    },
+    {
+      "version": 28,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    },
+    {
+      "version": 27,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    },
+    {
+      "version": 24,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    },
+    {
+      "version": 21,
+      "code": -6,
+      "tail": "tionException: Cannot read keys when either application does not have a console or when console input has been redirected. Try Console.Read.\n   at System.ConsolePal.ReadKey(Boolean intercept)\n   at Il2CppDumper.Program.Main(String[] args) in C:\\projects\\il2cppdumper\\Il2CppDumper\\Program.cs:line 110\n"
+    }
+  ],
   "modkit": {
     "name": "lib/arm64-v8a/libmodkit_gilla.so",
     "size": 983584,
@@ -237,5 +286,143 @@
     "assets/bin/Data/RuntimeInitializeOnLoads.json",
     "assets/bin/Data/ScriptingAssemblies.json",
     "assets/bin/Data/UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json"
-  ]
+  ],
+  "loader_scan": {
+    "libUnityOpenXR.so": {
+      "size": 1446608,
+      "hits": {
+        "tea": 15,
+        "dlopen": 2,
+        "frida": 1
+      }
+    },
+    "lib_burst_generated.so": {
+      "size": 373688,
+      "hits": {
+        "tea": 3,
+        "inline": 3
+      }
+    },
+    "libgame.so": {
+      "size": 152544,
+      "hits": {
+        "dlopen": 1,
+        "tea": 1
+      }
+    },
+    "liblck_core.so": {
+      "size": 4424048,
+      "hits": {
+        "aes": 20,
+        "encrypt": 17,
+        "tea": 12,
+        "metadata": 8,
+        "decrypt": 5,
+        "chacha": 5,
+        "inline": 4,
+        "mmap": 3,
+        "anti": 3,
+        "poly1305": 3,
+        "naga": 2,
+        "hook": 1
+      }
+    },
+    "liblck_rs.so": {
+      "size": 839408,
+      "hits": {
+        "metadata": 5,
+        "dlopen": 2,
+        "chacha": 2,
+        "decrypt": 2,
+        "mmap": 1,
+        "encrypt": 1,
+        "poly1305": 1
+      }
+    },
+    "liblck_streaming_rs.so": {
+      "size": 552856,
+      "hits": {
+        "metadata": 4,
+        "dlopen": 2,
+        "chacha": 2,
+        "mmap": 1,
+        "encrypt": 1,
+        "decrypt": 1,
+        "poly1305": 1
+      }
+    },
+    "libmain.so": {
+      "size": 6696,
+      "hits": {
+        "dlopen": 1,
+        "il2cpp": 1
+      }
+    },
+    "libminirtmp.so": {
+      "size": 67840,
+      "hits": {
+        "metadata": 3
+      }
+    },
+    "libnative_microphone.so": {
+      "size": 617256,
+      "hits": {
+        "mmap": 1,
+        "chacha": 1,
+        "hook": 1
+      }
+    },
+    "libngfx_rs.so": {
+      "size": 846040,
+      "hits": {
+        "hook": 4,
+        "dlopen": 2,
+        "mmap": 1,
+        "inline": 1,
+        "tea": 1,
+        "metadata": 1
+      }
+    },
+    "libopenxr_loader.so": {
+      "size": 1656736,
+      "hits": {
+        "tea": 17,
+        "dlopen": 1,
+        "frida": 1
+      }
+    },
+    "libopus_egpv.so": {
+      "size": 374696,
+      "hits": {
+        "anti": 2
+      }
+    },
+    "libovrplatformloader.so": {
+      "size": 437008,
+      "hits": {
+        "tea": 23,
+        "metadata": 8
+      }
+    },
+    "libwebrtc-audio.so": {
+      "size": 1984984,
+      "hits": {
+        "metadata": 19,
+        "tea": 19,
+        "anti": 5,
+        "hook": 2,
+        "inline": 1,
+        "frida": 1
+      }
+    },
+    "libmodkit_gilla.so": {
+      "size": 983584,
+      "hits": {
+        "tea": 3,
+        "dlopen": 1,
+        "mmap": 1,
+        "mprotect": 1
+      }
+    }
+  }
 }
