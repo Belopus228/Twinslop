@@ -304,6 +304,10 @@ dotnet Il2CppDumper.dll libil2cpp.so gm.dat out/
 
 ## Шаг 8. Детект защиты (и что с этим делать)
 
+`apk-triage.bat` уже проверяет это автоматически: битый AXML, магию
+`global-metadata.dat`, энтропию библиотек и имена известных упаковщиков
+(360 jiagu, Bangcle, Tencent Legu, Nagain, Baidu, DexProtector).
+
 Признаки, что файл защищён:
 
 | Признак | Как проверить |

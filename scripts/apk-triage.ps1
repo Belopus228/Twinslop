@@ -175,6 +175,34 @@ if ($sos.Count -gt 0) {
     }
 }
 
+# известные упаковщики — узнаются по именам нативных библиотек
+$packers = [ordered]@{
+    'libjiagu'         = '360 jiagu'
+    'libsecexe'        = 'Bangcle'
+    'libsecmain'       = 'Bangcle'
+    'libshella'        = 'Bangcle / Tencent Legu'
+    'libshellx'        = 'Bangcle / Tencent Legu'
+    'libDexHelper'     = 'DexHelper'
+    'libchaosvmp'      = 'Nagain'
+    'libddog'          = 'Nagain'
+    'libmobisec'       = 'Alibaba'
+    'libexecmain'      = 'Tencent Legu'
+    'libtosprotection' = 'Tencent'
+    'libDexProtector'  = 'DexProtector'
+    'libbaiduprotect'  = 'Baidu'
+    'libprotectClass'  = 'Baidu'
+}
+$hits = @()
+foreach ($mark in $packers.Keys) {
+    if ($sos -match $mark) { $hits += ($mark + ' -> ' + $packers[$mark]); $protect = 1 }
+}
+if ($hits.Count -gt 0) {
+    Say 'упаковщик по именам библиотек:'
+    foreach ($hit in $hits) { Say ('  ' + $hit) }
+} else {
+    Say 'известных упаковщиков (360/Bangcle/Legu/Nagain/Baidu) не видно'
+}
+
 H 'вердикт'
 if ($protect -eq 1) {
     Say 'Файл защищён: часть данных зашифрована. Статический разбор остановится на'

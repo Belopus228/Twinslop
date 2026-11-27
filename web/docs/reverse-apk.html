@@ -471,6 +471,9 @@ python3 -c &quot;import sys;d=open('gm.dat','rb').read(4);print(hex(int.from_byt
 <p>Если магии нет и дампер падает — метаданные зашифрованы, см. Шаг 8.</p>
 <hr>
 <h2 id="8">Шаг 8. Детект защиты (и что с этим делать)</h2>
+<p><code>apk-triage.bat</code> уже проверяет это автоматически: битый AXML, магию
+<code>global-metadata.dat</code>, энтропию библиотек и имена известных упаковщиков
+(360 jiagu, Bangcle, Tencent Legu, Nagain, Baidu, DexProtector).</p>
 <p>Признаки, что файл защищён:</p>
 <table>
 <thead>
