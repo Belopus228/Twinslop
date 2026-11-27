@@ -1,0 +1,511 @@
+{
+  "apk_path": "/tmp/apk/app.apk",
+  "size_bytes": 576570681,
+  "size_human": "549.9 MB",
+  "entries_count": 1934,
+  "total_uncompressed": 1071199376,
+  "largest_files": [
+    {
+      "name": "lib/arm64-v8a/libil2cpp.so",
+      "size": 110359904,
+      "compressed": 110359904
+    },
+    {
+      "name": "lib/arm64-v8a/libunity.so",
+      "size": 24154432,
+      "compressed": 24154432
+    },
+    {
+      "name": "assets/bin/Data/Managed/Metadata/global-metadata.dat",
+      "size": 15299420,
+      "compressed": 10880901
+    },
+    {
+      "name": "assets/bin/Data/7cf3f3f50cc81094c96bcbe2bebf8754",
+      "size": 9961804,
+      "compressed": 8893356
+    },
+    {
+      "name": "assets/bin/Data/e1b247319871c2f43898db0d4c744374",
+      "size": 9961804,
+      "compressed": 5456859
+    },
+    {
+      "name": "assets/bin/Data/f80a4a87a20ea664cac33f3ac42a4c24",
+      "size": 9961804,
+      "compressed": 5476502
+    },
+    {
+      "name": "classes.dex",
+      "size": 6494900,
+      "compressed": 2461783
+    },
+    {
+      "name": "assets/bin/Data/40fc05deaf9b1214fbf17941f6419ffd",
+      "size": 5592680,
+      "compressed": 1377822
+    },
+    {
+      "name": "assets/bin/Data/933532a4fcc9baf4fa0491de14d08ed7",
+      "size": 5497712,
+      "compressed": 4614509
+    },
+    {
+      "name": "assets/bin/Data/317a0ef16458cfb49a95ffe202bb8ab9",
+      "size": 4669748,
+      "compressed": 1729122
+    },
+    {
+      "name": "assets/bin/Data/38628fc0c205c4247bbaf9179b2d8bb8",
+      "size": 4563428,
+      "compressed": 2888769
+    },
+    {
+      "name": "lib/arm64-v8a/liblck_core.so",
+      "size": 4424048,
+      "compressed": 4424048
+    },
+    {
+      "name": "assets/bin/Data/752b2f695cc909444b759842d2c51c1d",
+      "size": 4396256,
+      "compressed": 2700498
+    },
+    {
+      "name": "assets/bin/Data/2f4dd74c8abfe604a81c9ef964a6a17f",
+      "size": 4393856,
+      "compressed": 1226001
+    },
+    {
+      "name": "assets/bin/Data/sharedassets1.resource",
+      "size": 4006784,
+      "compressed": 4006784
+    },
+    {
+      "name": "assets/bin/Data/Resources/unity default resources",
+      "size": 3750432,
+      "compressed": 783223
+    },
+    {
+      "name": "assets/bin/Data/7c50d5d470a73c94182c31c91c0c18cf",
+      "size": 3400764,
+      "compressed": 2014459
+    },
+    {
+      "name": "assets/bin/Data/333d4bd558929af4a84e0482fc673c82",
+      "size": 2922952,
+      "compressed": 1705967
+    },
+    {
+      "name": "assets/bin/Data/1db80026cd72999478b4986d66024658",
+      "size": 2877176,
+      "compressed": 1680016
+    },
+    {
+      "name": "assets/bin/Data/28f498fabfea12a4a8ce2e605bfa491a",
+      "size": 2849848,
+      "compressed": 1779344
+    },
+    {
+      "name": "assets/bin/Data/12060763d318f0c4583b3e6bc9c97e49",
+      "size": 2787888,
+      "compressed": 1751390
+    },
+    {
+      "name": "assets/bin/Data/45b0c5a930f8dc04bb1dc6772b8e27ce",
+      "size": 2612016,
+      "compressed": 1676634
+    },
+    {
+      "name": "assets/bin/Data/0aa80025845df1348816f1e63ec63cf8",
+      "size": 2497984,
+      "compressed": 910921
+    },
+    {
+      "name": "assets/bin/Data/12d061387b7aa444caf225766b2370b4",
+      "size": 2497984,
+      "compressed": 2074443
+    },
+    {
+      "name": "assets/bin/Data/5765ea75d06e4c5409e9e4f3c70464b0",
+      "size": 2497984,
+      "compressed": 829090
+    },
+    {
+      "name": "assets/bin/Data/5ba60013eae6867448ebc797cb04c799",
+      "size": 2497984,
+      "compressed": 1118736
+    },
+    {
+      "name": "assets/bin/Data/60075d4c4877b754ea8d99465918e7c1",
+      "size": 2497984,
+      "compressed": 1070787
+    },
+    {
+      "name": "assets/bin/Data/68a53e5b724d92b4bac3d997a37c1d71",
+      "size": 2497984,
+      "compressed": 1729457
+    },
+    {
+      "name": "assets/bin/Data/6b87647271285e6488ecf7ab9e90cddb",
+      "size": 2497984,
+      "compressed": 958860
+    },
+    {
+      "name": "assets/bin/Data/830356454cd81b14697ffc6e298d70e8",
+      "size": 2497984,
+      "compressed": 2329609
+    },
+    {
+      "name": "assets/bin/Data/c04300bfe6db3794aa95e58d19876359",
+      "size": 2497984,
+      "compressed": 1085072
+    },
+    {
+      "name": "assets/bin/Data/9262f1a3efd97154bb211ca04d8c9292",
+      "size": 2497980,
+      "compressed": 2186779
+    },
+    {
+      "name": "assets/bin/Data/869772c8d7d940d4884174ff33a80b70",
+      "size": 2478416,
+      "compressed": 1379811
+    },
+    {
+      "name": "assets/bin/Data/5b4297e777045414c92e575bf5e25fb2",
+      "size": 2335372,
+      "compressed": 1198860
+    },
+    {
+      "name": "assets/bin/Data/87b30fbbc7b2c374a90baf699150555f",
+      "size": 2251984,
+      "compressed": 953363
+    },
+    {
+      "name": "assets/bin/Data/cf036334ff51db144be353ca43775329",
+      "size": 2162552,
+      "compressed": 1189723
+    },
+    {
+      "name": "assets/bin/Data/eaf11ff902eba1145b3ae22943f2a38b",
+      "size": 2097420,
+      "compressed": 1494997
+    },
+    {
+      "name": "assets/bin/Data/e25ecb0d640c90544b4d7db314869584",
+      "size": 2097208,
+      "compressed": 1654740
+    },
+    {
+      "name": "assets/bin/Data/d179fa72adafef14fa7466b3b986216e",
+      "size": 2076732,
+      "compressed": 1093290
+    },
+    {
+      "name": "lib/arm64-v8a/libwebrtc-audio.so",
+      "size": 1984984,
+      "compressed": 1984984
+    }
+  ],
+  "top_level": [
+    {
+      "path": "assets",
+      "bytes": 913003840
+    },
+    {
+      "path": "lib",
+      "bytes": 150581592
+    },
+    {
+      "path": "classes.dex",
+      "bytes": 6494900
+    },
+    {
+      "path": "META-INF",
+      "bytes": 423666
+    },
+    {
+      "path": "res",
+      "bytes": 408862
+    },
+    {
+      "path": "resources.arsc",
+      "bytes": 247744
+    },
+    {
+      "path": "kotlin",
+      "bytes": 24645
+    },
+    {
+      "path": "AndroidManifest.xml",
+      "bytes": 12408
+    },
+    {
+      "path": "DebugProbesKt.bin",
+      "bytes": 1719
+    }
+  ],
+  "engines": [
+    "Unity"
+  ],
+  "native_libs": [
+    "libUnityOpenXR.so",
+    "lib_burst_generated.so",
+    "libc++_shared.so",
+    "libgame.so",
+    "libil2cpp.so",
+    "liblck_core.so",
+    "liblck_rs.so",
+    "liblck_streaming_rs.so",
+    "libmain.so",
+    "libminirtmp.so",
+    "libmodkit_gilla.so",
+    "libnanosockets.so",
+    "libnative_microphone.so",
+    "libngfx_rs.so",
+    "libopenxr_loader.so",
+    "libopus_egpv.so",
+    "libovrplatformloader.so",
+    "libunity.so",
+    "libwebrtc-audio.so"
+  ],
+  "assets_sample": [
+    "assets/dexopt/baseline.prof",
+    "assets/dexopt/baseline.profm",
+    "assets/bin/Data/0000000000000000f000000000000000",
+    "assets/bin/Data/0093aff6187ab3a43bc5d66e61465e5c",
+    "assets/bin/Data/0093aff6187ab3a43bc5d66e61465e5c.resource",
+    "assets/bin/Data/0143c5b21b48c1643bc5417c60bbf848",
+    "assets/bin/Data/01c711549f2a3864ea4b79a1c54f5d81",
+    "assets/bin/Data/01c711549f2a3864ea4b79a1c54f5d81.resource",
+    "assets/bin/Data/024a238e3b0cb8d4f876d465cdbf20fc",
+    "assets/bin/Data/027d06f8873f86b4290572066bd8c6c5",
+    "assets/bin/Data/0377b98b1eb8bb34f930a524e74c3907",
+    "assets/bin/Data/03e10c987502e1045ab1e5a5a51af82a",
+    "assets/bin/Data/03e10c987502e1045ab1e5a5a51af82a.resource",
+    "assets/bin/Data/0406db5a14f94604a8c57ccfbc9f3b46",
+    "assets/bin/Data/041bfa3036e47a24bb81c00fa9900c30",
+    "assets/bin/Data/0483a8d7ba794164fa78a8393974c852",
+    "assets/bin/Data/0485d219d2213324a80586ee5505a0cc",
+    "assets/bin/Data/048ab6ede225cf7428a5125416d119bb",
+    "assets/bin/Data/04d87bbb0314c9e41a78b67608d121d3",
+    "assets/bin/Data/04f5a9cbc17094d4e8a854b58580440d",
+    "assets/bin/Data/052c7fd7ec4ebaf4bba914bc919269a4",
+    "assets/bin/Data/07cfb95c2865ef14097cdf05655c4d1f",
+    "assets/bin/Data/07d35d76ee422ae40a21c0544821bbff",
+    "assets/bin/Data/07ecb833dc7d1a943ae8f0d4b8e70552",
+    "assets/bin/Data/083f720066d18b14c9fbd2228cfa1de3",
+    "assets/bin/Data/08da26bac1ebdb34c858471f30f60991",
+    "assets/bin/Data/0933648fdacd7284c906425bf4828941",
+    "assets/bin/Data/0aa80025845df1348816f1e63ec63cf8",
+    "assets/bin/Data/0b32798d875f94344ad4ef5c2c82e798",
+    "assets/bin/Data/0b32798d875f94344ad4ef5c2c82e798.resource",
+    "assets/bin/Data/0b3b37c7b632ddd41937435a88212d4b",
+    "assets/bin/Data/0b3b37c7b632ddd41937435a88212d4b.resource",
+    "assets/bin/Data/0b8b84930004efb4ca923783c692c437",
+    "assets/bin/Data/0b8b84930004efb4ca923783c692c437.resource",
+    "assets/bin/Data/0d0d04c02f5da624287182caa6ee7483",
+    "assets/bin/Data/0d68c6df8e74a3647836d60baf8dadf0",
+    "assets/bin/Data/0d881b6ad1743b646bc8eea7e1cf2e82",
+    "assets/bin/Data/0d9881fae5fa1884ca52a74fcd2a668a",
+    "assets/bin/Data/0d9881fae5fa1884ca52a74fcd2a668a.resource",
+    "assets/bin/Data/0d9e5c3e09a1bc54a9b405e6aac27e31",
+    "assets/bin/Data/0d9e5c3e09a1bc54a9b405e6aac27e31.resource",
+    "assets/bin/Data/0e3ef391c068a69439e84a1d13899b3f",
+    "assets/bin/Data/0e9e71a9eac3a734a907388f353bcec1",
+    "assets/bin/Data/0e9e71a9eac3a734a907388f353bcec1.resource",
+    "assets/bin/Data/0f6e728f276f8874783ee4a2cf2b164b",
+    "assets/bin/Data/0f74de607f3b34a4e9419523f1c19063",
+    "assets/bin/Data/10f64588ae015f54c9dd6d637ea48927",
+    "assets/bin/Data/113774a0087d0964982894459002075b",
+    "assets/bin/Data/11afcefb10ae2c9419d6b4caa55d40e1",
+    "assets/bin/Data/12060763d318f0c4583b3e6bc9c97e49",
+    "assets/bin/Data/1263b9598b22d6a4083986d18609b816",
+    "assets/bin/Data/127843ed1e183004a8f0f7537df9eff8",
+    "assets/bin/Data/1294474d714c418449d38e833e829d6f",
+    "assets/bin/Data/12992dd8f45967d4b9d5e49405d2fbaf",
+    "assets/bin/Data/12d061387b7aa444caf225766b2370b4",
+    "assets/bin/Data/139c0f74865caae45a4a6b4b0ee634e7",
+    "assets/bin/Data/14232d3238fbec645aa45ff2cb3df8a9",
+    "assets/bin/Data/151463ea7fc836046ae3c3ee9f8139cf",
+    "assets/bin/Data/152310b366d615f41b195fde5ced0e5c",
+    "assets/bin/Data/152310b366d615f41b195fde5ced0e5c.resource",
+    "assets/bin/Data/15a66a4bdcae75c448a3ce6f3d5fcfcd",
+    "assets/bin/Data/161653224bc7463c88c93b9bd15cdecb",
+    "assets/bin/Data/162bd5f1fc5f11d4a9451234302006cf",
+    "assets/bin/Data/162bd5f1fc5f11d4a9451234302006cf.resource",
+    "assets/bin/Data/173a1e054038216479400f20482ed56a",
+    "assets/bin/Data/17ecdf0d277c7e54fb9a10b09e195e5f",
+    "assets/bin/Data/1852065763f675645ac0dcd78be0953d",
+    "assets/bin/Data/1870c2ae4c8bb294397aaf6fdc6cdb11",
+    "assets/bin/Data/18e965d9266088f4ba24c89566a766ff",
+    "assets/bin/Data/194609a7784a65d4c95adf90e3699d1d",
+    "assets/bin/Data/1a3c00b7ca5af0449b1412bfd1b4885c",
+    "assets/bin/Data/1a4f505738dc099418db75d9d9b86c95",
+    "assets/bin/Data/1b25ed6880a9c514e9a2c0a35a2a062e",
+    "assets/bin/Data/1b25ed6880a9c514e9a2c0a35a2a062e.resource",
+    "assets/bin/Data/1b6a23e5e8cc42e408ce737c78372032",
+    "assets/bin/Data/1b6a23e5e8cc42e408ce737c78372032.resource",
+    "assets/bin/Data/1c626bf2766a0cb40b1ed89e392e2115",
+    "assets/bin/Data/1c626bf2766a0cb40b1ed89e392e2115.resource",
+    "assets/bin/Data/1d3dfa13304018643a547be125ff375f",
+    "assets/bin/Data/1db80026cd72999478b4986d66024658",
+    "assets/bin/Data/1dc1abe6a5e061b44b00f0c239fe5ad0",
+    "assets/bin/Data/1e26f29c092b74b4d9170e416abfa404",
+    "assets/bin/Data/1ec126759b5c26e4580c120d6b286bd1",
+    "assets/bin/Data/1f51e9c9c2ac419468bbbf293e5bce19",
+    "assets/bin/Data/1f51e9c9c2ac419468bbbf293e5bce19.resource",
+    "assets/bin/Data/1faa7cc31fd4f7446b40a4efd133b893",
+    "assets/bin/Data/1ff8423aaa1426944b6ca924324fac7c",
+    "assets/bin/Data/1ff8423aaa1426944b6ca924324fac7c.resource",
+    "assets/bin/Data/200dc3b40e8a70648aa277dfb939b0f9",
+    "assets/bin/Data/202565fa1739d5b418de5095349b83c5",
+    "assets/bin/Data/203cd6e8d7bd9b04180fe20aada16c75",
+    "assets/bin/Data/203cd6e8d7bd9b04180fe20aada16c75.resource",
+    "assets/bin/Data/2071f26a4d4fca54b872420071666015",
+    "assets/bin/Data/20ad9f1ac5604c8428dc7b68bd77b61f",
+    "assets/bin/Data/20ad9f1ac5604c8428dc7b68bd77b61f.resource",
+    "assets/bin/Data/20dd44474ad6d0e458fe8d1f1e00901c",
+    "assets/bin/Data/212902b43eb757a4dae74f1ce649ebf3",
+    "assets/bin/Data/217259d2ff2217a4ab9a3ec534625eb1",
+    "assets/bin/Data/217259d2ff2217a4ab9a3ec534625eb1.resource",
+    "assets/bin/Data/2198cc230ab8c594db27fa6d005c4c76",
+    "assets/bin/Data/21d637c6dc2acb54e89ad9cca596345c",
+    "assets/bin/Data/21de6d12aa51efc45981c546acda9c71",
+    "assets/bin/Data/22267f5b72c89f740aa723a641bde259",
+    "assets/bin/Data/228d7ccc366aedd418255f226468a713",
+    "assets/bin/Data/22979a3676c39a648a0826407bea69a1",
+    "assets/bin/Data/22a1cc9db6d96e6408677c0c54777568",
+    "assets/bin/Data/22a1cc9db6d96e6408677c0c54777568.resource",
+    "assets/bin/Data/22a401561780fcd41afd5aa259e7f57d",
+    "assets/bin/Data/22aa6c7407bf1e347aa6d44220b6afec",
+    "assets/bin/Data/22d37e7d1bf9e894cb2b670eeb0cfac4",
+    "assets/bin/Data/22f4050db2c2d9845b653f77e69cfbbc",
+    "assets/bin/Data/23e12d7cc63577b4dbb9dddd53fcd2e1",
+    "assets/bin/Data/24076ac78b8193e4a8a70afc2dd35552",
+    "assets/bin/Data/24076ac78b8193e4a8a70afc2dd35552.resource",
+    "assets/bin/Data/243c6d80c3e1d6b4eab91079eace15f8",
+    "assets/bin/Data/248b578e7ad92e14fa7bd54bb531ff8a",
+    "assets/bin/Data/248b578e7ad92e14fa7bd54bb531ff8a.resource",
+    "assets/bin/Data/24946f6dac8cfe542abdbb9643e97b7f",
+    "assets/bin/Data/24946f6dac8cfe542abdbb9643e97b7f.resource",
+    "assets/bin/Data/24c70fd5a564f734c84e1ef16cee3c1e"
+  ],
+  "dex_files": [
+    "classes.dex"
+  ],
+  "has_signature": true,
+  "package": "com.playgilla.gilla",
+  "version_name": "0.1.0",
+  "permissions": [
+    "android.permission.INTERNET",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.RECORD_AUDIO",
+    "android.permission.MODIFY_AUDIO_SETTINGS",
+    "org.khronos.openxr.permission.OPENXR",
+    "org.khronos.openxr.permission.OPENXR_SYSTEM",
+    "com.playgilla.gilla.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "features": [
+    "android.hardware.vr.headtracking",
+    "android.hardware.screen.landscape"
+  ],
+  "launchable_activity": [
+    "com.unity3d.player.UnityPlayerGameActivity"
+  ],
+  "sdk": [
+    "29"
+  ],
+  "label": [
+    "Gilla"
+  ],
+  "badging_source": "aapt",
+  "urls": [
+    "http://failed",
+    "https:////file://:/.assertion",
+    "https://AllocErrAssignedBugineseduployanKatakanaoverflow0.999999",
+    "https://android.googlesource.com/toolchain/clang",
+    "https://android.googlesource.com/toolchain/llvm",
+    "https://android.googlesource.com/toolchain/llvm-project",
+    "https://curl.se/docs/alt-svc.html",
+    "https://curl.se/docs/http-cookies.html",
+    "https://docs.rs/getrandom#nodejs-es-module-support/dev/urandom",
+    "https://docs.rs/getrandom#nodejs-es-module-supportgetrandom:",
+    "https://docs.rs/getrandom#nodejs-es-module-supportinternal_codedescriptionunknown_codeUnknown",
+    "https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eofreceived",
+    "https://git.internal.tfbnw.net/repos/git/rw/osmeta/external/llvm-project",
+    "https://hending.liv.tv/ingest/v1/Error",
+    "https://ingest.twitch.tv/ingestsevent",
+    "https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#devsandqueues-lost-device"
+  ],
+  "ws_urls": [],
+  "domains": [
+    "0www.entrust.net",
+    "android.googlesource.com",
+    "example.com",
+    "gg.obi.app",
+    "git.internal.tfbnw.net",
+    "index.crates.io",
+    "openssl.org",
+    "public.app",
+    "registry.khronos.org",
+    "unity.app",
+    "unity3d.com",
+    "www.entrust.net"
+  ],
+  "ip_literals": [
+    "0.0.0.0",
+    "02.13.03.13",
+    "1.2.0.4",
+    "127.0.0.1",
+    "15.26.06.16",
+    "207.0.0.183",
+    "24.04.15.05",
+    "26.37.08.09",
+    "4.0.0.0"
+  ],
+  "top_packages": [
+    [
+      "com.unity.editor",
+      26
+    ],
+    [
+      "com.unity3d.player",
+      2
+    ],
+    [
+      "com.oculus.platform",
+      1
+    ],
+    [
+      "com.oculus.horizon",
+      1
+    ],
+    [
+      "com.oculus.platformsdkruntime",
+      1
+    ],
+    [
+      "com.google.android",
+      1
+    ],
+    [
+      "com.unity.tiny",
+      1
+    ]
+  ],
+  "keywords": {
+    "webrtc": 2424,
+    "s3": 1332,
+    "proxy": 802,
+    "rtmp": 49,
+    "gpt": 40,
+    "vpn": 30,
+    "tts": 19,
+    "hls": 17,
+    "unityads": 14,
+    "twitch": 14,
+    "websocket": 5,
+    "youtube": 5,
+    "xray": 1
+  }
+}
