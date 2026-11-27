@@ -5,6 +5,10 @@
   const clamp = (v, a = -1, b = 1) => (v < a ? a : v > b ? b : v);
   const $ = (sel) => document.querySelector(sel);
 
+  // Офлайн-режим: в APK приложение открывается с file:// и вообще не имеет
+  // разрешения INTERNET. Никаких сетевых проверок в этом случае не делаем.
+  const OFFLINE = location.protocol === 'file:' || window.TWINSLOP_OFFLINE === true;
+
   // ---------------------------------------------------------------- состояние
   const S = {
     L: { x: 0, y: 0, trigger: 0, grip: 0 },
@@ -165,6 +169,15 @@
   function dirty() { pending = true; }
 
   async function push() {
+    if (OFFLINE) {
+      // локальный режим: руки считаются на месте, сеть не трогаем вообще
+      online = true;
+      const led = $('#led');
+      if (led) { led.classList.add('on'); led.classList.remove('err'); }
+      const note = $('#netNote');
+      if (note) note.textContent = 'локальный режим: сеть не используется';
+      return;
+    }
     if (!pending && Date.now() - lastSent < 400) return;
     pending = false;
     lastSent = Date.now();
