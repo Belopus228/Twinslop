@@ -54,6 +54,35 @@ jobs:
             echo "анализ упал частично"
           ls -la apk-report || true
 
+      - name: Скачать Il2CppDumper
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/icd/bin
+          url=$(curl -s https://api.github.com/repos/Perfare/Il2CppDumper/releases/latest | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+a=[x['browser_download_url'] for x in d.get('assets',[]) if x['name'].endswith('.zip') and ('net' in x['name'])]
+print(a[0] if a else '')
+")
+          echo "Il2CppDumper: $url"
+          test -n "$url"
+          curl -L --fail --retry 3 -o /tmp/icd/icd.zip "$url"
+          unzip -q -o /tmp/icd/icd.zip -d /tmp/icd/bin
+          find /tmp/icd/bin -iname "Il2CppDumper.dll" | head
+
+      - name: UnityPy
+        continue-on-error: true
+        run: python3 -m pip install --quiet UnityPy || echo "UnityPy не встал"
+
+      - name: Глубокий разбор (IL2CPP + ассеты)
+        env:
+          DOTNET_ROLL_FORWARD: LatestMajor
+          DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+        run: |
+          python3 scripts/deep_inspect.py /tmp/apk/app.apk apk-report/deep || \
+            echo "глубокий разбор упал частично"
+          du -sh apk-report apk-report/deep 2>/dev/null || true
+
       - name: Закоммитить отчёт
         run: |
           git config user.name "github-actions[bot]"
