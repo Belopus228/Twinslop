@@ -143,6 +143,9 @@ node test/smoke.mjs       # headless-тесты физики (без брауз�
 - **`docs/REVERSE-APK.md`** — пошаговый разбор APK: окружение, триаж, манифест,
   dex → Java, ELF, определение движка, Unity/IL2CPP, детект защиты, Ghidra,
   динамика на своём стенде, шаблон отчёта и таблица типичных ошибок.
+- **`scripts/install-re-tools.bat`** — то же для **Windows** (winget + прямые
+  загрузки, без WSL): Java, Python, .NET, jadx, apktool, Android SDK, frida,
+  Il2CppDumper, в `--full` — Ghidra. Флаги `--check`, `--dry-run`, `--dir`.
 - **`scripts/install-re-tools.sh`** — ставит весь набор: jadx, apktool, Android
   SDK, androguard/apkid, dex2jar, .NET + Il2CppDumper, frida-tools, radare2
   (в `--full` — Ghidra, mitmproxy, MobSF). Есть `--check`, `--dry-run`,

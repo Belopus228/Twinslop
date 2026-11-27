@@ -214,7 +214,14 @@ footer {
 <hr>
 <h2 id="1">Шаг 1. Установка — одна команда</h2>
 <p><img alt="Установка инструментов" src="img/1-ustanovka.svg"></p>
-<p>Открой терминал в папке с нашим репозиторием и вставь:</p>
+<p><strong>Windows:</strong> двойной клик по файлу <code>scripts\install-re-tools.bat</code> (или запуск из
+<code>cmd</code>). Он сам поставит Java, Python, .NET, jadx, apktool, Android SDK и frida —
+через <code>winget</code> и прямые загрузки. WSL не нужен.</p>
+<pre><code class="language-bat">scripts\install-re-tools.bat --check     :: что уже стоит
+scripts\install-re-tools.bat             :: базовый набор
+scripts\install-re-tools.bat --full      :: + Ghidra
+</code></pre>
+<p><strong>Linux / macOS:</strong> открой терминал в папке с репозиторием и вставь:</p>
 <pre><code class="language-bash">./scripts/install-re-tools.sh
 </code></pre>
 <p>Что произойдёт: скрипт сам скачает и поставит <code>jadx</code>, <code>apktool</code>, Android SDK
@@ -404,6 +411,14 @@ root, и напоминание: <strong>только для своих прил
 <tr>
 <td><code>command not found: jadx</code></td>
 <td>не открыл новый терминал после установки (PATH). Открой заново</td>
+</tr>
+<tr>
+<td><code>jadx не является внутренней командой</code> (Windows)</td>
+<td>то же самое: закрой и открой <code>cmd</code> заново</td>
+</tr>
+<tr>
+<td>Windows ругается «открыть этот файл»</td>
+<td>правый клик по <code>.bat</code> → «Запуск от имени администратора» не нужен, просто двойной клик</td>
 </tr>
 <tr>
 <td><code>jadx</code>: классы есть, код пустой</td>

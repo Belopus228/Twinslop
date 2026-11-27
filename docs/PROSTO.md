@@ -42,7 +42,17 @@
 
 ![Установка инструментов](img/1-ustanovka.svg)
 
-Открой терминал в папке с нашим репозиторием и вставь:
+**Windows:** двойной клик по файлу `scripts\install-re-tools.bat` (или запуск из
+`cmd`). Он сам поставит Java, Python, .NET, jadx, apktool, Android SDK и frida —
+через `winget` и прямые загрузки. WSL не нужен.
+
+```bat
+scripts\install-re-tools.bat --check     :: что уже стоит
+scripts\install-re-tools.bat             :: базовый набор
+scripts\install-re-tools.bat --full      :: + Ghidra
+```
+
+**Linux / macOS:** открой терминал в папке с репозиторием и вставь:
 
 ```bash
 ./scripts/install-re-tools.sh
@@ -239,6 +249,8 @@ root, и напоминание: **только для своих приложе
 | Что видишь | Что это значит |
 |---|---|
 | `command not found: jadx` | не открыл новый терминал после установки (PATH). Открой заново |
+| `jadx не является внутренней командой` (Windows) | то же самое: закрой и открой `cmd` заново |
+| Windows ругается «открыть этот файл» | правый клик по `.bat` → «Запуск от имени администратора» не нужен, просто двойной клик |
 | `jadx`: классы есть, код пустой | код в `.so` → Шаг 6 |
 | `apktool`: ошибка `brut.androlib` | APK битый: проверь `unzip -t app.apk` |
 | `Il2CppDumper`: `code=-6` | метаданные зашифрованы, версию менять бесполезно |

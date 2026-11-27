@@ -28,6 +28,16 @@
 
 **Быстрый путь — один скрипт** (ставит всё, пропускает уже установленное):
 
+**Windows** (`cmd`, без WSL):
+
+```bat
+scripts\install-re-tools.bat --check     :: что уже стоит
+scripts\install-re-tools.bat             :: базовый набор
+scripts\install-re-tools.bat --full      :: + Ghidra
+```
+
+**Linux / macOS:**
+
 ```bash
 chmod +x scripts/install-re-tools.sh
 ./scripts/install-re-tools.sh --check     # что уже стоит
