@@ -100,6 +100,7 @@ body::before {
 /* ---------------- сцена с руками ---------------- */
 .stage {
   position: relative;
+  min-height: 0;
   border-radius: 20px;
   border: 1px solid var(--stroke);
   background:
@@ -126,11 +127,12 @@ body::before {
 .side { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .side-r { align-items: flex-end; }
 
-.abtns { display: flex; gap: 6px; }
+.abtns { display: flex; gap: 6px; flex-wrap: wrap; }
 .side-r .abtns { flex-direction: row-reverse; }
 
 .abtn {
-  min-width: 62px; height: 40px;
+  flex: 1 1 58px;
+  min-width: 54px; height: 40px;
   border-radius: 12px;
   border: 1px solid var(--stroke);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
