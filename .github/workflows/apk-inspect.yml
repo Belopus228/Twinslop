@@ -14,7 +14,7 @@ on:
   push:
     paths:
       - '.github/workflows/apk-inspect.yml'
-      - 'scripts/inspect_apk.py'
+      - 'scripts/*.py'
 
 permissions:
   contents: write
@@ -79,6 +79,8 @@ jobs:
             echo "глубокий разбор упал частично"
           python3 scripts/strings_deep.py /tmp/apk/app.apk apk-report/deep || \
             echo "строковый разбор упал частично"
+          python3 scripts/decrypt_probe.py /tmp/apk/app.apk apk-report/deep/decrypt || \
+            echo "крипто-проба упала частично"
           du -sh apk-report apk-report/deep 2>/dev/null || true
 
       - name: Закоммитить отчёт
