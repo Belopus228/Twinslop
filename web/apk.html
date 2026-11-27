@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#05070d" />
+<title>Разбор APK — Twinslop</title>
+<link rel="stylesheet" href="./apk.css" />
+</head>
+<body>
+
+<header class="top">
+  <a class="back" href="./index.html" aria-label="Назад">←</a>
+  <div class="title">РАЗБОР APK</div>
+  <button class="ghost" id="openRelease">Релиз</button>
+</header>
+
+<main class="wrap">
+  <section class="drop" id="dropZone">
+    <div class="drop-icon">📦</div>
+    <h1>Выбери APK-файл</h1>
+    <p>Приложение прочитает его у себя на телефоне: пакет, разрешения, движок, OpenXR/Meta — и честно скажет, запустится ли он здесь и почему нет.</p>
+
+    <button class="primary" id="pickBtn">Выбрать файл</button>
+    <input type="file" id="apkFile" accept=".apk,application/vnd.android.package-archive" hidden />
+
+    <p class="status" id="apkStatus"></p>
+    <p class="legal">Файл никуда не отправляется: разбор идёт локально, сети у приложения нет.</p>
+  </section>
+
+  <section id="apkResult" hidden></section>
+</main>
+
+<script src="./apk.bundle.js"></script>
+</body>
+</html>

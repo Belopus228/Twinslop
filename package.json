@@ -5,8 +5,11 @@
   "description": "Телефонный контроллер: два стика = две руки (VR-совместимый вывод через HTTP/SSE)",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build:game": "esbuild src/game/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/game.bundle.js"
+    "build:game": "esbuild src/game/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/game.bundle.js",
+    "build:apk": "esbuild src/apk/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/apk.bundle.js",
+    "build": "npm run build:game && npm run build:apk",
+    "test": "node test/smoke.mjs && node test/apk.mjs",
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=18"

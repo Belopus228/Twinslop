@@ -64,11 +64,12 @@ jobs:
           ls "$ANDROID_HOME/platforms" || true
           ls "$ANDROID_HOME/build-tools" || true
 
-      - name: Проверить игру (headless-тесты)
+      - name: Тесты (игра + разбор APK)
         run: |
           npm ci --no-audit --no-fund
-          npx esbuild src/game/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/game.bundle.js
+          npm run build
           node test/smoke.mjs
+          node test/apk.mjs
 
       - name: Уложить веб-часть в assets
         run: |
@@ -123,8 +124,10 @@ jobs:
         run: |
           APK=$(find android -name "*.apk" | head -n 1)
           echo "== содержимое =="
-          unzip -l "$APK" | grep -E "assets/www/(index.html|app.js|styles.css|manifest)" || true
-          unzip -l "$APK" | grep -q "assets/www/index.html" || { echo "::error::assets/www не попали в APK"; exit 1; }
+          unzip -l "$APK" | grep -E "assets/www/(index|game|apk)\.(html|js)" || true
+          for f in index.html game.html apk.html apk.bundle.js game.bundle.js; do
+            unzip -l "$APK" | grep -q "assets/www/$f" || { echo "::error::в APK нет assets/www/$f"; exit 1; }
+          done
           echo "APK: $APK"
           AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt2 | sort | tail -n 1)
           "$AAPT" dump badging "$APK" | grep -E "package:|uses-permission" || true
