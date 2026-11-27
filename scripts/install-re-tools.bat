@@ -135,47 +135,50 @@ if not exist "%TOOLS_DIR%" mkdir "%TOOLS_DIR%"
 if not exist "%BIN_DIR%" mkdir "%BIN_DIR%"
 exit /b 0
 
-rem gh_latest_url <repo> <needle1> <needle2> <outVar>
+rem gh_latest_url <owner/repo> <needle1> <needle2> <outVar> [exclude]
 :gh_latest_url
 call :step "ищу последний релиз %~1"
-set "JSON=%TEMP%\twinslop-rel.json"
+set "%~4="
 if "%DRY_RUN%"=="1" (
-    echo   [dry] curl https://api.github.com/repos/%~1/releases/latest
+    echo   [dry] GitHub API: %~1
     exit /b 0
 )
-del /q "%JSON%" >nul 2>&1
-curl -fsSL -H "User-Agent: twinslop-installer" "https://api.github.com/repos/%~1/releases/latest" -o "%JSON%" >nul 2>&1
-if errorlevel 1 (
-    call :warn "GitHub API недоступен дл€ %~1"
-    set "%~4="
-    exit /b 0
-)
+set "EXC=%~5"
+if not defined EXC set "EXC=~none~"
+set "TMPURL=%TEMP%\twinslop-url.txt"
+del /q "%TMPURL%" >nul 2>&1
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; $h=@{'User-Agent'='Twinslop'}; $a=@(); try { $a=@((Invoke-RestMethod -Headers $h -Uri 'https://api.github.com/repos/%~1/releases/latest').assets.browser_download_url) } catch { }; $m=@($a).Where({ $_ -like '*%~2*' -and $_ -like '*%~3*' -and $_ -notlike '*%EXC%*' }); if ($m.Count -gt 0) { [IO.File]::WriteAllText('%TMPURL%', [string]$m[0]) }" >nul 2>&1
 set "URL="
-for /f "usebackq delims=" %%L in (`findstr /c:"browser_download_url" "%JSON%"`) do (
-    if not defined URL (
-        set "LINE=%%L"
-        set "LINE=!LINE:*https=https!"
-        set "LINE=!LINE:~0,-2!"
-        if not "!LINE:%~2=!"=="!LINE!" if not "!LINE:%~3=!"=="!LINE!" (
-            set "SKIP="
-            if not "%~5"=="" if not "!LINE:%~5=!"=="!LINE!" set "SKIP=1"
-            if not defined SKIP set "URL=!LINE!"
-        )
-    )
+if exist "%TMPURL%" set /p URL=<"%TMPURL%"
+del /q "%TMPURL%" >nul 2>&1
+if defined URL (
+    echo         нашЄл: !URL!
+    set "%~4=!URL!"
+) else (
+    call :warn "GitHub не дал файл дл€ %~1 Ч беру проверенную версию"
 )
-set "%~4=%URL%"
 exit /b 0
 
 rem download <url> <dest>
 :download
+set "SRC=%~1"
+set "DST=%~2"
+if /i "%DST:~0,4%"=="http" (
+    set "SRC=%~2"
+    set "DST=%~1"
+)
+if /i not "%SRC:~0,4%"=="http" (
+    call :err "бита€ ссылка на файл: %SRC%"
+    exit /b 1
+)
 if "%DRY_RUN%"=="1" (
-    echo   [dry] скачать %~1
+    echo   [dry] скачать %SRC%
     exit /b 0
 )
-echo         качаю %~nx2 ...
-curl -fL --retry 2 --progress-bar -o "%~2" "%~1"
+echo         качаю: %DST%
+curl -fL --retry 2 --progress-bar -o "%DST%" "%SRC%"
 if errorlevel 1 (
-    call :err "скачать не удалось: %~1"
+    call :err "скачать не удалось: %SRC%"
     exit /b 1
 )
 exit /b 0
@@ -258,6 +261,7 @@ if not errorlevel 1 (
     exit /b 0
 )
 call :gh_latest_url skylot/jadx "jadx-" ".zip" JADX_URL "gui"
+if not defined JADX_URL set "JADX_URL=https://github.com/skylot/jadx/releases/download/v1.5.7/jadx-1.5.7.zip"
 if not defined JADX_URL (
     call :warn "не нашЄл релиз jadx"
     exit /b 0
@@ -282,6 +286,7 @@ if not errorlevel 1 (
     exit /b 0
 )
 call :gh_latest_url iBotPeaches/Apktool "apktool_" ".jar" APKTOOL_URL
+if not defined APKTOOL_URL set "APKTOOL_URL=https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
 if not defined APKTOOL_URL (
     call :warn "не нашЄл релиз apktool"
     exit /b 0
@@ -393,6 +398,7 @@ if not errorlevel 1 (
     exit /b 0
 )
 call :gh_latest_url pxb1988/dex2jar "dex-tools" ".zip" D2J_URL
+if not defined D2J_URL set "D2J_URL=https://github.com/pxb1988/dex2jar/releases/download/v2.4/dex-tools-v2.4.zip"
 if not defined D2J_URL (
     call :warn "не нашЄл релиз dex2jar"
     exit /b 0
@@ -416,6 +422,7 @@ if exist "%TOOLS_DIR%\Il2CppDumper\Il2CppDumper.exe" (
     exit /b 0
 )
 call :gh_latest_url Perfare/Il2CppDumper "Il2CppDumper-win" ".zip" I2C_URL
+if not defined I2C_URL set "I2C_URL=https://github.com/Perfare/Il2CppDumper/releases/download/v6.7.46/Il2CppDumper-win-v6.7.46.zip"
 if not defined I2C_URL call :gh_latest_url Perfare/Il2CppDumper "Il2CppDumper" ".zip" I2C_URL
 if not defined I2C_URL (
     call :warn "не нашЄл релиз Il2CppDumper"
@@ -440,6 +447,7 @@ if exist "%TOOLS_DIR%\ghidra\ghidraRun.bat" (
     exit /b 0
 )
 call :gh_latest_url NationalSecurityAgency/ghidra "_PUBLIC_" ".zip" GHIDRA_URL
+if not defined GHIDRA_URL set "GHIDRA_URL=https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.2_build/ghidra_12.2_PUBLIC_20261016.zip"
 if not defined GHIDRA_URL (
     call :warn "не нашЄл релиз Ghidra"
     exit /b 0
