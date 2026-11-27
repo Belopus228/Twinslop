@@ -15,9 +15,9 @@ const CFG = {
   handRadius: 0.16,
   bodyRadius: 0.42,
   gripRadius: 0.55,     // насколько близко рука цепляется за поверхность
-  pullStrength: 95,
-  maxSpeed: 16,
-  damping: 5.2,
+  pullStrength: 34,
+  maxSpeed: 8.5,
+  damping: 6.5,
   handFollow: 22,       // скорость, с которой рука догоняет цель
 };
 
@@ -557,11 +557,8 @@ window.addEventListener('orientationchange', () => setTimeout(resize, 250));
 let last = performance.now();
 let elapsed = 0;
 
-function loop(now) {
-  const dt = Math.min((now - last) / 1000, 0.05);
-  last = now;
+function tick(dt) {
   elapsed += dt;
-
   keyboardInput();
   updatePlatforms(dt, elapsed);
 
@@ -574,8 +571,17 @@ function loop(now) {
   updateVisuals(dt);
   updateHud();
   renderer.render(scene, camera);
+}
+
+function loop(now) {
+  const dt = Math.min((now - last) / 1000, 0.05);
+  last = now;
+  tick(dt);
   requestAnimationFrame(loop);
 }
+
+// отладочный доступ: удобно и в консоли телефона, и в автотестах
+window.__SLOPAPE__ = { player, input, platforms, CFG, tick, respawn, scene, camera };
 
 resize();
 requestAnimationFrame(loop);

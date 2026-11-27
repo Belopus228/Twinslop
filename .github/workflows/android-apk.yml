@@ -60,6 +60,12 @@ jobs:
           ls "$ANDROID_HOME/platforms" || true
           ls "$ANDROID_HOME/build-tools" || true
 
+      - name: Проверить игру (headless-тесты)
+        run: |
+          npm ci --no-audit --no-fund
+          npx esbuild src/game/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/game.bundle.js
+          node test/smoke.mjs
+
       - name: Уложить веб-часть в assets
         run: |
           rm -rf android/app/src/main/assets/www
