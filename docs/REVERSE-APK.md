@@ -40,6 +40,8 @@ scripts\install-re-tools.bat --full      :: + Ghidra
 (или `Download`), не копируй текст через буфер — иначе переводы строк и
 кодировка поедут, и `cmd` начнёт выполнять обрывки строк.
 
+Готовый архив с `.bat`: <https://github.com/Belopus228/Twinslop/releases/download/hands/re-tools-windows.zip>
+
 **Linux / macOS:**
 
 ```bash

@@ -12,6 +12,7 @@ on:
       - 'web/**'
       - 'src/**'
       - 'test/**'
+      - 'scripts/install-re-tools.bat'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/android-apk.yml'
@@ -142,6 +143,24 @@ jobs:
           cp "$APK" /tmp/TwinslopHands.apk
           ls -lh /tmp/TwinslopHands.apk
 
+      - name: Упаковать установщик для Windows в zip
+        run: |
+          python3 - <<'PY'
+          import pathlib, zipfile
+          bat = pathlib.Path('scripts/install-re-tools.bat').read_bytes()
+          assert b'\r\n' in bat, 'в .bat нет CRLF'
+          readme = ("Как запустить\r\n"
+                    "1. Распакуй архив целиком (правый клик -> Извлечь все).\r\n"
+                    "2. Двойной клик по install-re-tools.bat\r\n"
+                    "3. Проверка: install-re-tools.bat --check\r\n"
+                    "Не открывай .bat прямо из архива и не пересохраняй в блокноте.\r\n").encode('cp1251')
+          with zipfile.ZipFile('/tmp/re-tools-windows.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              z.writestr('install-re-tools.bat', bat)
+              z.writestr('readme.txt', readme)
+          print('zip готов')
+          PY
+          unzip -l /tmp/re-tools-windows.zip
+
       - uses: actions/upload-artifact@v4
         with:
           name: TwinslopHands-apk
@@ -154,9 +173,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if gh release view hands > /dev/null 2>&1; then
-            gh release upload hands /tmp/TwinslopHands.apk --clobber
+            gh release upload hands /tmp/TwinslopHands.apk /tmp/re-tools-windows.zip --clobber
           else
-            gh release create hands /tmp/TwinslopHands.apk \
+            gh release create hands /tmp/TwinslopHands.apk /tmp/re-tools-windows.zip \
               --title "Twinslop Hands APK" \
               --notes "Телефонный контроллер: два стика = две руки. Работает полностью офлайн, разрешения INTERNET в манифесте нет." \
               --latest=false
