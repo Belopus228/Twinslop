@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Реверс APK: пошаговая инструкция</title>
+<style>
+:root {
+  --bg: #fbfcfe;
+  --fg: #1b2432;
+  --muted: #5f6f83;
+  --line: #e2e8f0;
+  --accent: #0f7b4f;
+  --code-bg: #f3f6fa;
+  --note: #fff8e6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1219;
+    --fg: #e6eef8;
+    --muted: #93a5ba;
+    --line: #22303f;
+    --accent: #4ade80;
+    --code-bg: #141c26;
+    --note: #2a2413;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.62 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.topbar {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+.topbar a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.topbar .name { color: var(--muted); margin-left: auto; font-size: 12px; }
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+h2 {
+  font-size: 21px; margin: 40px 0 12px; padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+h3 { font-size: 17px; margin: 26px 0 8px; }
+p { margin: 0 0 12px; }
+a { color: var(--accent); }
+strong { font-weight: 700; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin: 4px 0; }
+li > ul, li > ol { margin: 6px 0 0; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 5px;
+  word-break: break-word;
+}
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+pre code { background: none; border: 0; padding: 0; font-size: 13px; line-height: 1.55; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+th, td {
+  text-align: left;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+}
+th { background: var(--code-bg); font-weight: 700; }
+tbody tr:nth-child(even) { background: color-mix(in srgb, var(--code-bg) 55%, transparent); }
+blockquote {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--note);
+  border-radius: 0 8px 8px 0;
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+footer {
+  max-width: 860px; margin: 0 auto; padding: 0 20px 40px;
+  color: var(--muted); font-size: 12px;
+}
+@media print {
+  .topbar { display: none; }
+  body { background: #fff; color: #000; }
+  main { max-width: none; padding: 0; }
+  h2 { page-break-after: avoid; }
+  pre, table, blockquote { page-break-inside: avoid; }
+  a { color: #000; text-decoration: underline; }
+}
+@media (max-width: 520px) {
+  main { padding: 20px 14px 60px; }
+  h1 { font-size: 23px; }
+  h2 { font-size: 19px; }
+  table { font-size: 13px; }
+  th, td { padding: 6px 8px; }
+}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="name">REVERSE-APK.md</span></div>
+<main>
+<h1 id="apk">Реверс APK: пошаговая инструкция</h1>
+<p>Практическое руководство: от «есть файл <code>.apk</code>» до «понимаю, что внутри и как
+устроено». Порядок шагов важен — каждый следующий опирается на предыдущий.</p>
+<hr>
+<h2 id="0">Шаг 0. Границы, без которых не начинают</h2>
+<p>Реверс разрешён, когда это:</p>
+<ul>
+<li><strong>свой APK</strong> (проверка собственной сборки, отладка релиза);</li>
+<li>приложение с <strong>разрешением правообладателя</strong>;</li>
+<li><strong>исследование безопасности</strong> в рамках договора / bug bounty;</li>
+<li><strong>анализ вредоносного ПО</strong> (тут реверс — защита, а не атака).</li>
+</ul>
+<p>Реверс чужого платного приложения ради копирования ассетов, обхода лицензии или
+читов — это нарушение закона (ст. 1299 ГК РФ, DMCA §1201 в США) и правил
+магазина. Дальше в тексте всё, что касается <em>обхода</em> защиты, помечено 🔒 — это
+раздел для собственных сборок и лабораторных образцов.</p>
+<p>Главное правило гигиены: <strong>всё делать на копии</strong>, оригинал не трогать, каждый
+шаг фиксировать (хэш, версия инструмента, вывод).</p>
+<hr>
+<h2 id="1">Шаг 1. Окружение</h2>
+<p>Минимум (статический анализ):</p>
+<pre><code class="language-bash"># Linux / WSL
+sudo apt install -y unzip openjdk-17-jdk python3-pip binutils file xxd
+pip install --user androguard
+
+# jadx (dex → Java)
+curl -L -o jadx.zip https://github.com/skylot/jadx/releases/latest/download/jadx-1.5.1.zip
+unzip -q jadx.zip -d ~/tools/jadx
+
+# apktool (ресурсы + smali)
+curl -L -o apktool.jar https://github.com/iBotPeaches/Apktool/releases/latest/download/apktool_2.9.3.jar
+
+# aapt2 — из Android SDK build-tools
+sdkmanager &quot;build-tools;34.0.0&quot;
+</code></pre>
+<p>Дополнительно:</p>
+<table>
+<thead>
+<tr>
+<th>Задача</th>
+<th>Инструмент</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Нативный код → псевдо-C</td>
+<td><strong>Ghidra</strong> (бесплатно) или IDA Free/Pro</td>
+</tr>
+<tr>
+<td>Unity IL2CPP → <code>dump.cs</code></td>
+<td><strong>Il2CppDumper</strong>, <strong>Cpp2IL</strong>, Il2CppInspector</td>
+</tr>
+<tr>
+<td>Починить дамп <code>.so</code></td>
+<td><strong>SoFixer</strong></td>
+</tr>
+<tr>
+<td>Динамика на устройстве</td>
+<td><strong>Frida</strong>, <code>gdb</code>/<code>lldb</code>, <code>logcat</code></td>
+</tr>
+<tr>
+<td>Дамп памяти процесса 🔒</td>
+<td><strong>Zygisk-Il2CppDumper</strong> (нужен root)</td>
+</tr>
+</tbody>
+</table>
+<p>Проверка, что всё встало:</p>
+<pre><code class="language-bash">jadx --version &amp;&amp; java -jar apktool.jar --version &amp;&amp; aapt2 version
+</code></pre>
+<hr>
+<h2 id="2-5">Шаг 2. Триаж файла (5 минут)</h2>
+<pre><code class="language-bash">APK=sample.apk
+sha256sum &quot;$APK&quot; &gt; sample.sha256     # фиксируем, с чем работаем
+ls -lh &quot;$APK&quot;
+unzip -l &quot;$APK&quot; | head -n 50         # что внутри
+unzip -l &quot;$APK&quot; | awk '{print $4}' | grep -E '^(lib|assets|res|classes)' | cut -d/ -f1-2 | sort | uniq -c | sort -rn
+</code></pre>
+<p>Что смотреть сразу:</p>
+<ul>
+<li><strong><code>classes*.dex</code></strong> — сколько их (мультидекс = крупное приложение);</li>
+<li><strong><code>lib/&lt;abi&gt;/</code></strong> — какие архитектуры (<code>arm64-v8a</code>, <code>armeabi-v7a</code>, <code>x86_64</code>), какие <code>.so</code>;</li>
+<li><strong><code>assets/</code></strong> — Unity (<code>bin/Data</code>), Cordova (<code>www/</code>), Flutter, RN-бандл;</li>
+<li><strong><code>META-INF/</code></strong> — подписи и что-то постороннее;</li>
+<li><strong>размер <code>lib/</code></strong> — если он непропорционально большой, там движок или протектор.</li>
+</ul>
+<p>Автоматизировать шаг 2–7 можно нашим скриптом:</p>
+<pre><code class="language-bash">./scripts/apk-triage.sh sample.apk out/
+</code></pre>
+<hr>
+<h2 id="3">Шаг 3. Манифест и компоненты</h2>
+<pre><code class="language-bash"># человекочитаемый дамп
+aapt2 dump badging &quot;$APK&quot;
+aapt2 dump permissions &quot;$APK&quot;
+aapt2 dump xmltree --file AndroidManifest.xml &quot;$APK&quot; | head -n 120
+
+# или без SDK
+python3 -m androguard axml &quot;$APK&quot; 2&gt;/dev/null | head -n 80
+</code></pre>
+<p>Что выписать:</p>
+<ul>
+<li><code>package</code>, <code>versionName</code>, <code>versionCode</code>, <code>minSdk</code>, <code>targetSdk</code>;</li>
+<li><strong>разрешения</strong> (особенно <code>INTERNET</code>, <code>SYSTEM_ALERT_WINDOW</code>, <code>QUERY_ALL_PACKAGES</code>,
+  <code>REQUEST_INSTALL_PACKAGES</code>, <code>BIND_ACCESSIBILITY_SERVICE</code>);</li>
+<li><strong>экспортированные</strong> <code>activity</code>/<code>service</code>/<code>receiver</code> с <code>intent-filter</code>;</li>
+<li><code>android:debuggable</code> (если <code>true</code> — сильно проще жить);</li>
+<li><code>android:extractNativeLibs</code>, <code>usesCleartextTraffic</code>;</li>
+<li>кастомный <code>Application</code> класс — часто там инициализация защиты.</li>
+</ul>
+<hr>
+<h2 id="4-dex-java">Шаг 4. DEX → Java</h2>
+<pre><code class="language-bash"># быстрый и обычно достаточный
+jadx -d out/jadx --show-bad-code &quot;$APK&quot;
+
+# если нужен smali (правится и собирается обратно)
+java -jar apktool.jar d -f -o out/apktool &quot;$APK&quot;
+
+# список классов без декомпиляции
+python3 - &lt;&lt;'PY'
+from androguard.core.dex import DEX
+data = open('out/classes.dex','rb').read()
+d = DEX(data)
+for c in d.get_classes()[:20]:
+    print(c.get_name())
+PY
+</code></pre>
+<p>Порядок чтения (не распыляться):</p>
+<ol>
+<li><code>AndroidManifest.xml</code> → точка входа;</li>
+<li>класс <code>Application</code> и <code>MainActivity</code> → инициализация;</li>
+<li>сеть: <code>okhttp</code>, <code>Retrofit</code>, <code>HttpURLConnection</code> — найти базовый URL;</li>
+<li><code>strings.xml</code> и <code>res/values</code> — ключи, тексты, эндпоинты;</li>
+<li>нативные вызовы: ищи <code>native</code> методы и <code>System.loadLibrary</code>.</li>
+</ol>
+<p>Красный флаг: в dex почти нет кода, а <code>lib/</code> весит десятки мегабайт →
+приложение упаковано, dex расшифровывается в рантайме. Тогда Шаг 8.</p>
+<hr>
+<h2 id="5">Шаг 5. Нативные библиотеки</h2>
+<pre><code class="language-bash">for so in $(unzip -Z1 &quot;$APK&quot; | grep '^lib/.*\.so$'); do
+  echo &quot;=== $so&quot;
+  unzip -p &quot;$APK&quot; &quot;$so&quot; &gt; /tmp/lib.so
+  readelf -h /tmp/lib.so | grep -E 'Type|Machine'
+  readelf -S /tmp/lib.so | awk '$2 ~ /^\./ {printf &quot;%s %s\n&quot;, $2, $6}'
+  readelf -d /tmp/lib.so | grep NEEDED
+done
+</code></pre>
+<p>Ищи:</p>
+<ul>
+<li><code>DT_NEEDED</code> → от чего зависит (например, <code>libil2cpp.so</code>, <code>libflutter.so</code>);</li>
+<li>секции с огромным размером и высокой энтропией → упакованный код;</li>
+<li><code>JNI_OnLoad</code> в экспортах → точка входа нативной части:</li>
+</ul>
+<pre><code class="language-bash">readelf -Ws /tmp/lib.so | grep -E 'JNI_OnLoad|Java_'
+</code></pre>
+<hr>
+<h2 id="6">Шаг 6. Определить движок</h2>
+<table>
+<thead>
+<tr>
+<th>Маркер в APK</th>
+<th>Что это</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lib/*/libil2cpp.so</code> + <code>assets/bin/Data/Managed/Metadata/global-metadata.dat</code></td>
+<td><strong>Unity, IL2CPP</strong></td>
+</tr>
+<tr>
+<td><code>assets/bin/Data/Managed/*.dll</code></td>
+<td>Unity, Mono (IL читается напрямую)</td>
+</tr>
+<tr>
+<td><code>lib/*/libUE4.so</code> / <code>libUnreal.so</code></td>
+<td>Unreal Engine</td>
+</tr>
+<tr>
+<td><code>lib/*/libgodot_android.so</code></td>
+<td>Godot</td>
+</tr>
+<tr>
+<td><code>lib/*/libflutter.so</code> + <code>assets/flutter_assets/</code></td>
+<td>Flutter (Dart: <code>libapp.so</code>)</td>
+</tr>
+<tr>
+<td><code>lib/*/libreactnativejni.so</code> + <code>assets/index.android.bundle</code></td>
+<td>React Native</td>
+</tr>
+<tr>
+<td><code>assets/www/index.html</code></td>
+<td>Cordova / WebView</td>
+</tr>
+<tr>
+<td><code>lib/*/libmono*.so</code></td>
+<td>Unity Mono / Xamarin</td>
+</tr>
+</tbody>
+</table>
+<p>Дальше идём по ветке своего движка — остальные шаги общие, кроме Шага 7.</p>
+<hr>
+<h2 id="7-unity-il2cpp">Шаг 7. Unity IL2CPP</h2>
+<p>Смысл: C# скомпилирован в C++, имена/типы — в <code>global-metadata.dat</code>.</p>
+<pre><code class="language-bash">unzip -p &quot;$APK&quot; assets/bin/Data/Managed/Metadata/global-metadata.dat &gt; gm.dat
+unzip -p &quot;$APK&quot; lib/arm64-v8a/libil2cpp.so &gt; libil2cpp.so
+
+# магия должна быть 0xFAB11BAF
+xxd -l 8 gm.dat
+python3 -c &quot;import sys;d=open('gm.dat','rb').read(4);print(hex(int.from_bytes(d,'little')))&quot;
+</code></pre>
+<p>Нормальный файл:</p>
+<pre><code>0xaf 0x1b 0xb1 0xfa   → 0xFAB11BAF, дальше читается дампером
+</code></pre>
+<p>Дальше:</p>
+<pre><code class="language-bash">dotnet Il2CppDumper.dll libil2cpp.so gm.dat out/
+# на выходе: dump.cs (классы и методы с RVA), script.json, il2cpp.h
+</code></pre>
+<p><code>dump.cs</code> — это <strong>объявления</strong>, не тела. Тела методов — нативный код по RVA,
+идём в Ghidra (Шаг 9).</p>
+<p>Если магии нет и дампер падает — метаданные зашифрованы, см. Шаг 8.</p>
+<hr>
+<h2 id="8">Шаг 8. Детект защиты (и что с этим делать)</h2>
+<p>Признаки, что файл защищён:</p>
+<table>
+<thead>
+<tr>
+<th>Признак</th>
+<th>Как проверить</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Магия метаданных не <code>0xFAB11BAF</code></td>
+<td><code>xxd -l 4 gm.dat</code></td>
+</tr>
+<tr>
+<td>Энтропия регионов 7.9–8.0</td>
+<td>скрипт ниже</td>
+</tr>
+<tr>
+<td><code>.so</code> с секцией в сотни КБ и энтропией &gt; 6.5</td>
+<td><code>readelf -S</code> + подсчёт</td>
+</tr>
+<tr>
+<td>Нет читаемых строк кроме libc++</td>
+<td><code>strings lib.so \| head</code></td>
+</tr>
+<tr>
+<td>Символы вида <code>I7Cxl2i5n</code>, <code>ThV8</code></td>
+<td><code>readelf -Ws</code></td>
+</tr>
+<tr>
+<td><code>mprotect</code> + <code>dlopen</code> в импортах</td>
+<td><code>readelf -d</code>, <code>nm -D</code></td>
+</tr>
+<tr>
+<td><code>JNI_OnLoad</code> грузит второй <code>.so</code> из <code>assets</code></td>
+<td>Ghidra</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">python3 - &lt;&lt;'PY'
+import math, sys
+p = sys.argv[1] if len(sys.argv) &gt; 1 else 'gm.dat'
+d = open(p, 'rb').read()
+STEP = 1 &lt;&lt; 20
+for off in range(0, len(d), STEP):
+    chunk = d[off:off+STEP]
+    if not chunk: break
+    freq = [0]*256
+    for b in chunk: freq[b] += 1
+    n = len(chunk)
+    h = -sum((c/n)*math.log2(c/n) for c in freq if c)
+    print(f'{off:&gt;10}  {h:.2f}')
+PY
+</code></pre>
+<p>Расшифровка (🔒 — только свои сборки):</p>
+<ol>
+<li><strong>Внутри APK делать нечего.</strong> Ключ в нативном загрузчике, применяется в памяти.</li>
+<li>Статически проверяют простые схемы: XOR однобайтовым/8-байтовым ключом,
+   zlib/gzip/LZ4/zstd-заголовки. Если не подошло — дальше только динамика.</li>
+<li>Динамика на <strong>своём</strong> устройстве с root: <code>Zygisk-Il2CppDumper</code> снимает уже
+   расшифрованные <code>global-metadata.dat</code> и <code>libil2cpp.so</code> из памяти;
+   <code>SoFixer</code> чинит заголовки дампа; потом снова Шаг 7.</li>
+<li>Без root остаётся Frida с патченным APK (<code>frida-gadget</code> в <code>lib/</code>) — но это
+   уже модификация чужого приложения.</li>
+</ol>
+<p>Признаки, что дальше лезть не стоит: коммерческий протектор + античит +
+мультиплеер. Времязатраты растут экспоненциально, а результат упирается в
+серверную логику, которой в APK всё равно нет.</p>
+<hr>
+<h2 id="9-ghidra">Шаг 9. Ghidra: чтение нативного кода</h2>
+<pre><code>File → Import File → libil2cpp.so / libmodkit.so
+  Language: AARCH64 (или ARM:LE:32)
+  Options: Base Address = 0
+Analysis → Auto Analyze (все галочки, ждать)
+</code></pre>
+<p>Что делать по порядку:</p>
+<ol>
+<li><strong>Symbol Tree → Exports</strong> — найти <code>JNI_OnLoad</code>, <code>Java_*</code>;</li>
+<li><code>Search → For Strings</code> — даже 20 строк дают зацепки;</li>
+<li>переименовывать функции по мере понимания (<code>L</code>, затем <code>Ctrl+L</code>);</li>
+<li>смотреть вызовы <code>dlopen</code>, <code>mmap</code>, <code>mprotect</code> — это загрузчик/распаковщик;</li>
+<li>для IL2CPP: адрес метода из <code>script.json</code> (<code>Method$Namespace.Class.Method</code>)
+   → <code>G</code> (Go To) по RVA → декомпилятор справа.</li>
+</ol>
+<p>Реалистичное ожидание: Ghidra даст читаемый псевдо-C для простых функций и кашу
+для шаблонного C++/оптимизированного кода. Это нормально.</p>
+<hr>
+<h2 id="10">Шаг 10. Динамика (только своя сборка/стенд)</h2>
+<pre><code class="language-bash">adb logcat -c &amp;&amp; adb logcat | grep -iE 'exception|fatal|il2cpp|unity'
+adb shell pm path com.example.app
+frida-ps -U                       # процессы на устройстве
+frida -U -f com.example.app -l hook.js --no-pause
+</code></pre>
+<p>Минимальный <code>hook.js</code> для проверки, что инструментация работает:</p>
+<pre><code class="language-js">Java.perform(function () {
+  var Log = Java.use('android.util.Log');
+  Log.d.overload('java.lang.String', 'java.lang.String').implementation = function (t, m) {
+    console.log('[log]', t, m);
+    return this.d(t, m);
+  };
+});
+</code></pre>
+<p>Для нативного уровня — <code>Interceptor.attach(Module.findExportByName(null, 'dlopen'), {...})</code>
+и смотреть, какие библиотеки подгружаются.</p>
+<hr>
+<h2 id="11">Шаг 11. Отчёт</h2>
+<p>Фиксировать по каждому шагу:</p>
+<pre><code class="language-text">файл:            sample.apk
+sha256:          ...
+размер / дата:   ...
+пакет / версии:  com.example 1.2.3 (code 45), minSdk 24, targetSdk 34
+разрешения:      INTERNET, RECORD_AUDIO
+dex:             3 файла, 8 214 классов
+нативные:        arm64-v8a: libil2cpp.so (23 МБ), libmodkit.so (0.9 МБ)
+движок:          Unity 2022.3, IL2CPP
+защита:          метаданные зашифрованы (магия 0xC9C79C25, энтропия 8.0 до 8.4 МБ)
+что удалось:     ...
+что нет и почему:...
+</code></pre>
+<p>Такой отчёт потом читается за минуту — в отличие от папки с дампами.</p>
+<hr>
+<h2 id="-">Чек-лист типичных ошибок</h2>
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Причина / что делать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Il2CppDumper: code=-6</code> на всех версиях</td>
+<td>метаданные зашифрованы (Шаг 8), версия магии не при чём</td>
+</tr>
+<tr>
+<td><code>jadx</code> показывает пустые методы</td>
+<td>код в нативе (IL2CPP) или dex упакован</td>
+</tr>
+<tr>
+<td><code>apktool d</code> падает</td>
+<td>битый ZIP / нестандартное сжатие — сначала <code>unzip -t</code></td>
+</tr>
+<tr>
+<td><code>readelf</code> не видит <code>.so</code></td>
+<td>библиотека снята из памяти без заголовков — нужен SoFixer</td>
+</tr>
+<tr>
+<td>Ghidra не находит функций</td>
+<td>неверная архитектура (<code>Machine</code> из <code>readelf -h</code>)</td>
+</tr>
+<tr>
+<td>Frida «не видит процесс»</td>
+<td><code>frida-server</code> не той архитектуры / нет root / SELinux</td>
+</tr>
+<tr>
+<td>Строк нет вообще</td>
+<td>строки зашифрованы по одной — искать таблицу строк в загрузчике</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_1">Что делает наш скрипт</h2>
+<p><code>scripts/apk-triage.sh</code> автоматизирует шаги 2, 5, 6 и часть 8 и печатает
+сводку: хэш, состав APK, dex, ABI, библиотеки, маркеры движка, карту энтропии
+метаданных и вердикт «защищено / нет». Он <strong>ничего не расшифровывает</strong> — только
+описывает то, что видно в файле.</p>
+</main>
+<footer>Сгенерировано из docs/REVERSE-APK.md · открывается где угодно, печатается в PDF из браузера.</footer>
+</body>
+</html>

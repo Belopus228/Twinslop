@@ -150,6 +150,14 @@ node test/smoke.mjs       # headless-тесты физики (без брауз�
 ./scripts/apk-triage.sh sample.apk out/
 ```
 
+Читать инструкцию:
+
+- **в приложении**: Настройки → Инструменты → «Инструкция по реверсу APK» (офлайн);
+- **в браузере**: `docs/REVERSE-APK.html` — автономный файл, печатается в PDF
+  через «Печать → Сохранить как PDF»;
+- **пересобрать HTML** после правок `.md`:
+  `pip install markdown && python3 scripts/md2html.py docs/REVERSE-APK.md docs/REVERSE-APK.html`
+
 ---
 
 ## APE HEIST — своя игра в жанре «обезьяна на руках»

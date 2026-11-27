@@ -20,6 +20,7 @@ const SHELL = [
   './settings.html',
   './settings.css',
   './settings.bundle.js',
+  './docs/reverse-apk.html',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
