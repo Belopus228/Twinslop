@@ -1,0 +1,24 @@
+{
+  "il2cpp_exists": true,
+  "metadata_exists": true,
+  "il2cpp_mb": 105.2,
+  "metadata_mb": 14.6,
+  "dump_ok": false,
+  "string_literals": 0,
+  "data_files": 1549,
+  "unity_types": {
+    "GameObject": 16664803,
+    "Transform": 16664317,
+    "MeshRenderer": 5611642,
+    "MeshFilter": 5611642,
+    "MeshCollider": 2976648,
+    "MonoBehaviour": 1488763,
+    "Light": 1062523,
+    "BoxCollider": 891193,
+    "Mesh": 773020,
+    "Material": 105882,
+    "SphereCollider": 63120,
+    "AudioSource": 62074
+  },
+  "text_assets": 0
+}

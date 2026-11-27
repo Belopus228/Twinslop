@@ -1,0 +1,7 @@
+распаковано файлов: 1551
+Il2CppDumper code=-6
+ERROR: Metadata file not found or encrypted.
+Press any key to exit...
+
+строковых литералов: 0
+текстовых ассетов сохранено: 0
