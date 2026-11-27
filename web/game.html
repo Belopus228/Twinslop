@@ -17,6 +17,9 @@
     <span class="chip">высота <b id="statHeight">0.0м</b></span>
     <span class="chip">время <b id="statTime">0.0с</b></span>
   </div>
+  <button class="vr-btn" id="vrToggle" aria-label="Включить VR">VR</button>
+  <button class="vr-gear" id="vrSettings" aria-label="Настройки VR">⚙</button>
+
   <div class="grips">
     <span class="grip" data-grip="L">L</span>
     <span class="grip" data-grip="R">R</span>
@@ -33,6 +36,36 @@
   <div class="pad" id="padR" data-hand="R">
     <div class="ring"></div>
     <div class="thumb"><span>R</span></div>
+  </div>
+</div>
+
+<div class="vr-divider" id="vrDivider" hidden></div>
+<div class="vr-vignette"></div>
+
+<div class="vr-sheet" id="vrSheet" hidden>
+  <div class="vr-card">
+    <h2>Эмулятор шлема</h2>
+    <p class="vr-sub">Телефон притворяется VR-устройством: стерео, IPD и трекинг головы — по-настоящему. Чужие APK из магазина сюда не грузятся, это про свой контент.</p>
+
+    <label class="vr-row">Профиль устройства
+      <select id="vrProfile">
+        <option value="quest3s">Quest 3S · 2064×2208 на глаз · 90 Гц</option>
+        <option value="quest3">Quest 3 · 2064×2208 на глаз · 120 Гц</option>
+        <option value="cardboard">Cardboard · 960×1080 · 60 Гц</option>
+      </select>
+    </label>
+
+    <label class="vr-row">Межзрачковое расстояние <b id="vrIpdVal">63 мм</b>
+      <input type="range" id="vrIpd" min="54" max="74" step="1" value="63" />
+    </label>
+
+    <label class="vr-row switch">Стерео-режим <input type="checkbox" id="vrStereo" checked /></label>
+    <label class="vr-row switch">Трекинг головы (гироскоп + свайп) <input type="checkbox" id="vrGyro" checked /></label>
+
+    <div class="vr-fps" id="vrFps">— FPS</div>
+    <div class="vr-note" id="vrProfileNote"></div>
+
+    <button class="vr-done" id="vrClose">Готово</button>
   </div>
 </div>
 

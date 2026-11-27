@@ -29,7 +29,7 @@ globalThis.document = {
   getElementById: (id) => (elements[id] ||= el()),
   querySelector: () => el(),
   querySelectorAll: () => [],
-  body: { style: {} },
+  body: { style: {}, classList: { add() {}, remove() {}, toggle() {}, contains: () => false } },
   addEventListener() {},
 };
 globalThis.window = {
@@ -101,5 +101,26 @@ assert(Math.abs(p.y) < 200, `тело не улетело в космос (y=${p
 player.pos.set(0, -20, 0);
 tick(1 / 60);
 assert(player.pos.y > -5, 'падение вниз возвращает на чекпоинт');
+
+// 7. эмулятор шлема: стерео-рендер и профили
+const { vr } = api;
+assert(vr && typeof vr.render === 'function', 'VR-модуль подключён');
+assert(vr.profiles.quest3s.hz === 90 && vr.profiles.quest3.hz === 120, 'профили устройств на месте');
+
+vr.state.enabled = true;
+vr.state.stereo = true;
+vr.state.ipd = 63;
+let throws = false;
+try {
+  for (let i = 0; i < 5; i++) { tick(1 / 60); }
+} catch (e) {
+  throws = true;
+  console.log('  ошибка рендера:', e.message);
+}
+assert(!throws, 'стерео-рендер проходит без ошибок');
+
+vr.state.enabled = false;
+tick(1 / 60);
+assert(true, 'выключение VR возвращает обычный рендер');
 
 console.log('\nВСЕ ПРОВЕРКИ ПРОЙДЕНЫ');

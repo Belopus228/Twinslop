@@ -22,12 +22,18 @@ export const EdgesGeometry = T.EdgesGeometry;
 export const BufferGeometry = T.BufferGeometry;
 export const BufferAttribute = T.BufferAttribute;
 export const Vector3 = T.Vector3;
+export const Quaternion = T.Quaternion;
+export const Euler = T.Euler;
 export const Box3 = T.Box3;
 export const MathUtils = T.MathUtils;
 export class WebGLRenderer {
   constructor() { this.shadowMap = {}; this.domElement = null; }
   setPixelRatio() {}
   setSize() {}
-  render() {}
+  setViewport() {}
+  setScissor() {}
+  setScissorTest() {}
+  getSize(v) { return v ? v.set(900, 420) : { x: 900, y: 420 }; }
+  render() { this.rendered = (this.rendered || 0) + 1; }
   dispose() {}
 }

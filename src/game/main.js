@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { createVR } from './vr.js';
 
 /* ==========================================================================
    SLOP APE — оригинальный прототип «паркур двумя руками».
@@ -33,6 +34,9 @@ scene.fog = new THREE.Fog(0x05070d, 22, 62);
 
 const camera = new THREE.PerspectiveCamera(62, 1, 0.1, 200);
 camera.position.set(0, 4, 9);
+
+// эмулятор шлема: стерео, IPD, трекинг головы, профили устройств
+const vr = createVR({ renderer, scene, camera, canvas });
 
 scene.add(new THREE.HemisphereLight(0x9fd8ff, 0x0a1220, 1.15));
 
@@ -570,7 +574,8 @@ function tick(dt) {
 
   updateVisuals(dt);
   updateHud();
-  renderer.render(scene, camera);
+  vr.render();
+  vr.tickFps();
 }
 
 function loop(now) {
@@ -581,7 +586,7 @@ function loop(now) {
 }
 
 // отладочный доступ: удобно и в консоли телефона, и в автотестах
-window.__SLOPAPE__ = { player, input, platforms, CFG, tick, respawn, scene, camera };
+window.__SLOPAPE__ = { player, input, platforms, CFG, tick, respawn, scene, camera, vr };
 
 resize();
 requestAnimationFrame(loop);
