@@ -109,9 +109,12 @@ jobs:
           echo "::error::сборка APK упала, лог в build-logs/android-build.log"
           exit 1
 
-      - name: Проверить, что INTERNET не запрошен
+      - name: Проверить APK
         run: |
           APK=$(find android -name "*.apk" | head -n 1)
+          echo "== содержимое =="
+          unzip -l "$APK" | grep -E "assets/www/(index.html|app.js|styles.css|manifest)" || true
+          unzip -l "$APK" | grep -q "assets/www/index.html" || { echo "::error::assets/www не попали в APK"; exit 1; }
           echo "APK: $APK"
           AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt2 | sort | tail -n 1)
           "$AAPT" dump badging "$APK" | grep -E "package:|uses-permission" || true
