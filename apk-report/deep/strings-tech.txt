@@ -1,0 +1,934 @@
+!Landroidx/annotation/RequiresApi;
+!Landroidx/tracing/TraceApi18Impl;
+!Landroidx/tracing/TraceApi29Impl;
+!Lkotlin/NumbersKt__FloorDivModKt;
+"Landroid/graphics/PorterDuff$Mode;
+"Landroid/graphics/Shader$TileMode;
+"Landroid/view/ActionMode$Callback;
+"Landroidx/lifecycle/ViewModelLazy;
+"Lorg/fmod/FmodAndroidAudioManager;
+#Landroid/graphics/ColorSpace$Model;
+#Landroidx/core/animation/Api19Impl;
+#Landroidx/lifecycle/ViewModelStore;
+#Landroidx/lifecycle/viewmodel/R$id;
+$Landroid/os/StrictMode$ThreadPolicy;
+$Landroidx/appcompat/view/ActionMode;
+$Landroidx/core/app/Person$Api22Impl;
+$Landroidx/core/app/Person$Api28Impl;
+$Landroidx/core/os/BundleApi18ImplKt;
+$Landroidx/core/os/BundleApi21ImplKt;
+$Landroidx/lifecycle/ViewModelLazy$1;
+$Lcom/unity3d/player/GoogleARCoreApi;
+$Lkotlin/io/ByteStreamsKt$iterator$1;
+$Lkotlin/io/path/ExperimentalPathApi;
+$Lorg/fmod/FmodAndroidAudioManager$1;
+%Landroid/graphics/PorterDuffXfermode;
+%Landroidx/lifecycle/AndroidViewModel;
+%Lkotlin/io/TextStreamsKt$readLines$1;
+&Landroidx/core/app/NavUtils$Api16Impl;
+&Landroidx/lifecycle/ViewModelProvider;
+'Landroid/graphics/BlendModeColorFilter;
+'Landroidx/core/graphics/BlendModeUtils;
+'Ljava/nio/channels/FileChannel$MapMode;
+'awaitClose { yourCallbackOrListener.cancel() }' should be used in the end of callbackFlow block.
+Otherwise, a callback/listener may leak in case of external cancellation.
+See callbackFlow API documentation for the details.
+((Ljava/io/PrintStream;Ljava/util/List;)V
+()Landroidx/lifecycle/ViewModel;
+(,C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\fs\mod.rs
+(Landroidx/core/graphics/BlendModeCompat;
+(Landroidx/core/os/TraceCompat$Api18Impl;
+(Landroidx/core/os/TraceCompat$Api29Impl;
+(Landroidx/core/text/ICUCompat$Api21Impl;
+(Landroidx/core/text/ICUCompat$Api24Impl;
+(Landroidx/lifecycle/ViewModelStore;Landroidx/lifecycle/ViewModelProvider$Factory;Landroidx/lifecycle/viewmodel/CreationExtras;)V
+(Landroidx/lifecycle/ViewModelStoreOwner;
+(Landroidx/lifecycle/ViewTreeViewModelKt;
+(Ljava/io/PrintStream;)V
+(Lkotlin/jvm/internal/MagicApiIntrinsics;
+(Lkotlinx/coroutines/channels/TickerMode;
+)Landroidx/core/app/RemoteInput$Api16Impl;
+)Landroidx/core/app/RemoteInput$Api20Impl;
+)Landroidx/core/app/RemoteInput$Api26Impl;
+)Landroidx/core/app/RemoteInput$Api28Impl;
+)Landroidx/core/app/RemoteInput$Api29Impl;
+)Landroidx/core/app/ShareCompat$Api16Impl;
+)Landroidx/core/graphics/BlendModeUtils$1;
+)Landroidx/core/graphics/Insets$Api29Impl;
+)Landroidx/core/net/DatagramSocketWrapper;
+)Landroidx/core/os/ParcelCompat$Api29Impl;
+)Landroidx/core/os/ParcelCompat$Api30Impl;
+)Landroidx/core/text/HtmlCompat$Api24Impl;
+)Landroidx/core/view/MenuCompat$Api28Impl;
+)Landroidx/core/view/ViewCompat$Api15Impl;
+)Landroidx/core/view/ViewCompat$Api16Impl;
+)Landroidx/core/view/ViewCompat$Api17Impl;
+)Landroidx/core/view/ViewCompat$Api18Impl;
+)Landroidx/core/view/ViewCompat$Api19Impl;
+)Landroidx/core/view/ViewCompat$Api20Impl;
+)Landroidx/core/view/ViewCompat$Api21Impl;
+)Landroidx/core/view/ViewCompat$Api23Impl;
+)Landroidx/core/view/ViewCompat$Api24Impl;
+)Landroidx/core/view/ViewCompat$Api26Impl;
+)Landroidx/core/view/ViewCompat$Api28Impl;
+)Landroidx/core/view/ViewCompat$Api29Impl;
+)Landroidx/core/view/ViewCompat$Api30Impl;
+)Landroidx/core/view/ViewCompat$Api31Impl;
+)Landroidx/loader/content/ModernAsyncTask;
+)Landroidx/loader/content/ModernAsyncTask<
+)[Landroidx/core/graphics/BlendModeCompat;
+)[Lkotlinx/coroutines/channels/TickerMode;
+*Landroidx/core/app/BundleCompat$Api18Impl;
+*Landroidx/core/app/DialogCompat$Api28Impl;
+*Landroidx/core/os/HandlerCompat$Api28Impl;
+*Landroidx/core/os/HandlerCompat$Api29Impl;
+*Landroidx/core/os/MessageCompat$Api22Impl;
+*Landroidx/core/os/ProcessCompat$Api16Impl;
+*Landroidx/core/os/ProcessCompat$Api17Impl;
+*Landroidx/core/os/ProcessCompat$Api24Impl;
+*Landroidx/core/util/SizeFCompat$Api21Impl;
+*Lkotlinx/coroutines/DelicateCoroutinesApi;
+*Lkotlinx/coroutines/InternalCoroutinesApi;
+*Lkotlinx/coroutines/ObsoleteCoroutinesApi;
++(Landroidx/lifecycle/ViewModelStoreOwner;)V
++Landroidx/core/app/ServiceCompat$Api24Impl;
++Landroidx/core/view/ViewCompat$Api21Impl$1;
++Landroidx/core/view/WindowCompat$Api16Impl;
++Landroidx/core/view/WindowCompat$Api28Impl;
++Landroidx/core/view/WindowCompat$Api30Impl;
++Landroidx/lifecycle/ViewModelProviderGetKt;
++Landroidx/lifecycle/viewmodel/savedstate/R;
++Landroidx/loader/content/ModernAsyncTask$1;
++Landroidx/loader/content/ModernAsyncTask$2;
++Landroidx/loader/content/ModernAsyncTask$3;
++Landroidx/loader/content/ModernAsyncTask$4;
++Ljava/util/ConcurrentModificationException;
+,Landroidx/core/app/ActivityCompat$Api16Impl;
+,Landroidx/core/app/ActivityCompat$Api21Impl;
+,Landroidx/core/app/ActivityCompat$Api22Impl;
+,Landroidx/core/app/ActivityCompat$Api23Impl;
+,Landroidx/core/app/ActivityCompat$Api28Impl;
+,Landroidx/core/app/ActivityCompat$Api30Impl;
+,Landroidx/core/app/ActivityCompat$Api31Impl;
+,Landroidx/core/graphics/PathUtils$Api26Impl;
+,Landroidx/core/graphics/WeightTypefaceApi14;
+,Landroidx/core/graphics/WeightTypefaceApi21;
+,Landroidx/core/graphics/WeightTypefaceApi26;
+,Landroidx/core/util/ObjectsCompat$Api19Impl;
+,Landroidx/core/view/DisplayCompat$Api17Impl;
+,Landroidx/core/view/DisplayCompat$Api23Impl;
+,Landroidx/core/view/GravityCompat$Api17Impl;
+-0.4.12\src\proto\streams\streams.rs:614event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:758event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:768event C:\Users\sondr\.cargo\
+-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:528event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:553event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:562event C:
+-Landroidx/appcompat/view/ActionMode$Callback;
+-Landroidx/appcompat/widget/Toolbar$Api33Impl;
+-Landroidx/core/graphics/ColorUtils$Api26Impl;
+-Landroidx/core/os/LocaleListCompat$Api21Impl;
+-Landroidx/core/os/LocaleListCompat$Api24Impl;
+-Landroidx/core/os/UserHandleCompat$Api24Impl;
+-Landroidx/core/view/DisplayCompat$ModeCompat;
+-Landroidx/core/view/MenuItemCompat$Api26Impl;
+-Landroidx/lifecycle/viewmodel/CreationExtras;
+.4.12\src\proto\streams\recv.rs:702event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:736event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:754event C:\Users\sondr\.cargo\registry\sr
+.Landroidx/appcompat/view/StandaloneActionMode;
+.Landroidx/core/app/MultiWindowModeChangedInfo;
+.Landroidx/core/app/TaskStackBuilder$Api16Impl;
+.Landroidx/core/content/FileProvider$Api21Impl;
+.Landroidx/core/content/IntentCompat$Api15Impl;
+.Landroidx/core/graphics/PaintCompat$Api23Impl;
+.Landroidx/core/graphics/PaintCompat$Api29Impl;
+.Landroidx/core/os/EnvironmentCompat$Api19Impl;
+.Landroidx/core/os/EnvironmentCompat$Api21Impl;
+.Landroidx/core/os/UserManagerCompat$Api24Impl;
+.Landroidx/core/text/TextUtilsCompat$Api17Impl;
+.Landroidx/core/view/ViewGroupCompat$Api18Impl;
+.Landroidx/core/view/ViewGroupCompat$Api21Impl;
+.Landroidx/lifecycle/ViewModelProvider$Factory;
+.Lkotlinx/coroutines/ExperimentalCoroutinesApi;
+.[Landroidx/core/view/DisplayCompat$ModeCompat;
+.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:1579event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:1627event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\frame\go_away.rs:60h2::f
+.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:479event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:513ReservedLocalReservedRemotelocalremoteHalfClosedLocalAwaitingHeadersStreamingEndStreamScheduledLibraryResetevent C:\Users\sondr
+.rs:237event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:242event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:247event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c
+/Landroidx/activity/ComponentActivity$Api19Impl;
+/Landroidx/activity/ComponentActivity$Api33Impl;
+/Landroidx/constraintlayout/core/parser/CLToken;
+/Landroidx/core/content/ContextCompat$Api16Impl;
+/Landroidx/core/content/ContextCompat$Api19Impl;
+/Landroidx/core/content/ContextCompat$Api21Impl;
+/Landroidx/core/content/ContextCompat$Api23Impl;
+/Landroidx/core/content/ContextCompat$Api24Impl;
+/Landroidx/core/content/ContextCompat$Api26Impl;
+/Landroidx/core/content/ContextCompat$Api28Impl;
+/Landroidx/core/content/ContextCompat$Api30Impl;
+/Landroidx/core/content/ContextCompat$Api33Impl;
+/Landroidx/core/content/LocusIdCompat$Api29Impl;
+/Landroidx/core/graphics/BitmapCompat$Api17Impl;
+/Landroidx/core/graphics/BitmapCompat$Api19Impl;
+/Landroidx/core/graphics/BitmapCompat$Api27Impl;
+/Landroidx/core/graphics/BitmapCompat$Api29Impl;
+/Landroidx/core/graphics/BitmapCompat$Api31Impl;
+/Landroidx/core/os/CancellationSignal$Api16Impl;
+/Landroidx/core/os/PersistableBundleApi21ImplKt;
+/Landroidx/core/os/PersistableBundleApi22ImplKt;
+/Landroidx/core/provider/FontProvider$Api16Impl;
+/Landroidx/core/view/ViewParentCompat$Api19Impl;
+/Landroidx/core/view/ViewParentCompat$Api21Impl;
+/Landroidx/core/widget/ListViewCompat$Api19Impl;
+/Landroidx/core/widget/TextViewCompat$Api16Impl;
+/Landroidx/core/widget/TextViewCompat$Api17Impl;
+/Landroidx/core/widget/TextViewCompat$Api23Impl;
+/Landroidx/core/widget/TextViewCompat$Api24Impl;
+/Landroidx/core/widget/TextViewCompat$Api26Impl;
+/Landroidx/core/widget/TextViewCompat$Api28Impl;
+/Landroidx/lifecycle/SavedStateViewModelFactory;
+/Lkotlin/io/ExposingBufferByteArrayOutputStream;
+/proc/self/mapsmid > len.debug_abbrev.dwo.debug_cu_index.debug_info.dwo.debug_line.dwo.debug_loc.dwo.debug_loclists.dwo.debug_macinfo.dwo.debug_rnglists.dwo.debug_str.dwo.debug_str_offsets.dwo.debug_tu_indexstream did not contain valid UTF-8a formatting trait implementation returned an error when th
+0(Landroidx/lifecycle/viewmodel/CreationExtras;)V
+0.4.12\src\proto\streams\state.rs:163event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:179event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:191event C:\Users\sondr\.cargo\registr
+0Landroidx/appcompat/widget/ActivityChooserModel;
+0Landroidx/appcompat/widget/SearchView$Api29Impl;
+0Landroidx/collection/MapCollections$MapIterator;
+0Landroidx/core/app/AlarmManagerCompat$Api19Impl;
+0Landroidx/core/app/AlarmManagerCompat$Api21Impl;
+0Landroidx/core/app/AlarmManagerCompat$Api23Impl;
+0Landroidx/core/app/BundleCompat$BeforeApi18Impl;
+0Landroidx/core/app/RemoteActionCompat$Api26Impl;
+0Landroidx/core/app/RemoteActionCompat$Api28Impl;
+0Landroidx/core/graphics/TypefaceCompatApi21Impl;
+0Landroidx/core/graphics/TypefaceCompatApi24Impl;
+0Landroidx/core/graphics/TypefaceCompatApi26Impl;
+0Landroidx/core/graphics/TypefaceCompatApi28Impl;
+0Landroidx/core/graphics/TypefaceCompatApi29Impl;
+0Landroidx/core/net/TrafficStatsCompat$Api24Impl;
+0Landroidx/core/os/ConfigurationCompat$Api24Impl;
+0Landroidx/core/view/ContentInfoCompat$Api31Impl;
+0Landroidx/core/view/PointerIconCompat$Api24Impl;
+0Landroidx/core/widget/ImageViewCompat$Api21Impl;
+0Landroidx/core/widget/PopupMenuCompat$Api19Impl;
+0Landroidx/fragment/app/FragmentManagerViewModel;
+0Landroidx/lifecycle/ViewTreeViewModelStoreOwner;
+0Landroidx/loader/content/ModernAsyncTask$Status;
+1(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
+1949cf8c6b5b557f\h2-0.4.12\src\codec\framed_write.rs:291InvalidRepresentationInvalidIntegerPrefixInvalidTableIndexInvalidHuffmanCodeInvalidPseudoheaderInvalidMaxDynamicSizeIntegerOverflowUnexpectedEndOfStreamIntegerUnderflowStringUnderflowhpack::decodeh2::hpack::decoderC:\Users\sondr\.cargo\registry
+1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:201event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:214event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:230event C:\Users\son
+1Landroidx/appcompat/app/ActionBar$NavigationMode;
+1Landroidx/constraintlayout/core/parser/CLToken$1;
+1Landroidx/core/app/AppOpsManagerCompat$Api19Impl;
+1Landroidx/core/app/AppOpsManagerCompat$Api23Impl;
+1Landroidx/core/app/AppOpsManagerCompat$Api29Impl;
+1Landroidx/core/app/LocaleManagerCompat$Api21Impl;
+1Landroidx/core/app/LocaleManagerCompat$Api24Impl;
+1Landroidx/core/app/LocaleManagerCompat$Api33Impl;
+1Landroidx/core/app/NotificationCompat$StreamType;
+1Landroidx/core/content/IntentSanitizer$Api15Impl;
+1Landroidx/core/content/IntentSanitizer$Api16Impl;
+1Landroidx/core/content/IntentSanitizer$Api29Impl;
+1Landroidx/core/content/res/TypedArrayApi26ImplKt;
+1Landroidx/core/graphics/BlendModeUtils$Api29Impl;
+1Landroidx/core/location/LocationCompat$Api17Impl;
+1Landroidx/core/location/LocationCompat$Api18Impl;
+1Landroidx/core/location/LocationCompat$Api26Impl;
+1Landroidx/core/text/util/LinkifyCompat$Api24Impl;
+1Landroidx/core/widget/EdgeEffectCompat$Api21Impl;
+1Landroidx/core/widget/EdgeEffectCompat$Api31Impl;
+1Landroidx/core/widget/NestedScrollView$Api21Impl;
+1Landroidx/lifecycle/SavedStateViewModelFactoryKt;
+1Landroidx/lifecycle/viewmodel/CreationExtras$Key;
+1Landroidx/lifecycle/viewmodel/CreationExtras$Key<
+1[Landroidx/loader/content/ModernAsyncTask$Status;
+2-0.4.12\src\proto\streams\prioritize.rs:474has_unavailableevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:533event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:543try
+2Landroidx/appcompat/view/SupportActionModeWrapper;
+2Landroidx/appcompat/widget/SwitchCompat$Api18Impl;
+2Landroidx/core/view/DisplayCutoutCompat$Api28Impl;
+2Landroidx/core/view/DisplayCutoutCompat$Api29Impl;
+2Landroidx/core/view/DisplayCutoutCompat$Api30Impl;
+2Landroidx/core/widget/PopupWindowCompat$Api19Impl;
+2Landroidx/core/widget/PopupWindowCompat$Api23Impl;
+2Landroidx/fragment/app/FragmentManagerViewModel$1;
+2Landroidx/lifecycle/viewmodel/ViewModelFactoryDsl;
+2This function can only be used for API Level < 29.
+2\src\proto\streams\recv.rs:549event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:596event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:600event C:\Users\sondr\.cargo\registry\src\in
+2mapIndexedNotNull { indeв
+2stream({ Spliterators.spв
+2{
+                modelCв
+3Landroidx/appcompat/app/ResourcesFlusher$Api16Impl;
+3Landroidx/appcompat/widget/DrawableUtils$Api18Impl;
+3Landroidx/appcompat/widget/DrawableUtils$Api29Impl;
+3Landroidx/appcompat/widget/TooltipCompat$Api26Impl;
+3Landroidx/core/app/ActivityOptionsCompat$Api16Impl;
+3Landroidx/core/app/ActivityOptionsCompat$Api21Impl;
+3Landroidx/core/app/ActivityOptionsCompat$Api23Impl;
+3Landroidx/core/app/ActivityOptionsCompat$Api24Impl;
+3Landroidx/core/app/PictureInPictureModeChangedInfo;
+3Landroidx/core/graphics/BlendModeColorFilterCompat;
+3Landroidx/core/telephony/mbms/MbmsHelper$Api28Impl;
+3Landroidx/lifecycle/viewmodel/CreationExtras$Empty;
+3Landroidx/lifecycle/viewmodel/ViewModelInitializer;
+3Landroidx/lifecycle/viewmodel/ViewModelInitializer<
+3core_version{ [LCK Core] Could not convert log message to CStringDropping state objectTracking verification result: tracking_verifiedTracking verification failed, ignoring: Could not generate nonceEncryption failedStored token too shortBase64 decode failedDecryption failedInvalid UTF-8 in token_btN
+49cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs:325OmittedRemainingevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\stream.rs:289h2::proto::streams::streamC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\
+4Landroidx/appcompat/app/AppCompatDelegate$Api24Impl;
+4Landroidx/appcompat/app/AppCompatDelegate$Api33Impl;
+4Landroidx/appcompat/app/AppCompatDelegate$NightMode;
+4Landroidx/appcompat/widget/TintTypedArray$Api21Impl;
+4Landroidx/constraintlayout/core/parser/CLToken$Type;
+4Landroidx/core/app/OnMultiWindowModeChangedProvider;
+4Landroidx/core/location/GnssStatusWrapper$Api26Impl;
+4Landroidx/core/location/GnssStatusWrapper$Api30Impl;
+4Landroidx/core/os/LocaleListCompatWrapper$Api21Impl;
+4Landroidx/core/view/animation/PathInterpolatorApi14;
+4Landroidx/lifecycle/viewmodel/MutableCreationExtras;
+4Landroidx/versionedparcelable/VersionedParcelStream;
+4Lkotlin/coroutines/jvm/internal/ModuleNameRetriever;
+4[Landroidx/lifecycle/viewmodel/ViewModelInitializer;
+5Landroidx/activity/OnBackPressedDispatcher$Api33Impl;
+5Landroidx/appcompat/widget/ListPopupWindow$Api24Impl;
+5Landroidx/appcompat/widget/ListPopupWindow$Api29Impl;
+5Landroidx/appcompat/widget/MenuPopupWindow$Api23Impl;
+5Landroidx/appcompat/widget/MenuPopupWindow$Api29Impl;
+5Landroidx/core/content/res/ResourcesCompat$Api15Impl;
+5Landroidx/core/content/res/ResourcesCompat$Api21Impl;
+5Landroidx/core/content/res/ResourcesCompat$Api23Impl;
+5Landroidx/core/content/res/ResourcesCompat$Api29Impl;
+5Landroidx/core/database/CursorWindowCompat$Api15Impl;
+5Landroidx/core/database/CursorWindowCompat$Api28Impl;
+5Landroidx/core/graphics/TypefaceCompatUtil$Api19Impl;
+5Landroidx/core/widget/CompoundButtonCompat$Api21Impl;
+5Landroidx/core/widget/CompoundButtonCompat$Api23Impl;
+5[Landroidx/constraintlayout/core/parser/CLToken$Type;
+5mod
+6Landroidx/appcompat/resources/Compatibility$Api15Impl;
+6Landroidx/appcompat/resources/Compatibility$Api18Impl;
+6Landroidx/appcompat/resources/Compatibility$Api21Impl;
+6Landroidx/appcompat/widget/AppCompatSpinner$Api16Impl;
+6Landroidx/appcompat/widget/AppCompatSpinner$Api17Impl;
+6Landroidx/appcompat/widget/AppCompatSpinner$Api23Impl;
+6Landroidx/appcompat/widget/DropDownListView$Api21Impl;
+6Landroidx/appcompat/widget/DropDownListView$Api30Impl;
+6Landroidx/appcompat/widget/DropDownListView$Api33Impl;
+6Landroidx/core/content/PackageManagerCompat$Api30Impl;
+6Landroidx/core/content/pm/PackageInfoCompat$Api28Impl;
+6Landroidx/core/graphics/drawable/IconCompat$Api23Impl;
+6Landroidx/core/graphics/drawable/IconCompat$Api26Impl;
+6Landroidx/core/graphics/drawable/IconCompat$Api28Impl;
+6Landroidx/core/graphics/drawable/IconCompat$Api30Impl;
+6Landroidx/core/graphics/drawable/WrappedDrawableApi14;
+6Landroidx/core/graphics/drawable/WrappedDrawableApi21;
+6Landroidx/core/view/ViewConfigurationCompat$Api26Impl;
+6Landroidx/core/view/ViewConfigurationCompat$Api28Impl;
+6Landroidx/core/widget/CheckedTextViewCompat$Api14Impl;
+6Landroidx/core/widget/CheckedTextViewCompat$Api16Impl;
+6Landroidx/core/widget/CheckedTextViewCompat$Api21Impl;
+6Landroidx/core/widget/ListPopupWindowCompat$Api19Impl;
+6Landroidx/versionedparcelable/VersionedParcelStream$1;
+6b5b557f\h2-0.4.12\src\proto\streams\state.rs:278event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:297event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:307event C:\Users\sondr\.c
+7([Landroidx/lifecycle/viewmodel/ViewModelInitializer;)V
+73event src\core\handling.rs:79event src\core\handling.rs:85Checking if user has configured streaming targetFailed to check streaming configuration because user is not logged in, or token is invalidUser has not configured streaming targetFailed to check streaming configuration: handle_has_user_confi
+7Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
+7Landroidx/appcompat/view/ContextThemeWrapper$Api17Impl;
+7Landroidx/core/content/ContentResolverCompat$Api16Impl;
+7Landroidx/core/net/ConnectivityManagerCompat$Api16Impl;
+7Landroidx/core/net/ConnectivityManagerCompat$Api24Impl;
+7Landroidx/core/view/DisplayCompat$ModeCompat$Api23Impl;
+7Landroidx/core/view/MarginLayoutParamsCompat$Api17Impl;
+7Landroidx/lifecycle/AbstractSavedStateViewModelFactory;
+7Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
+7Landroidx/lifecycle/ViewModelProvider$OnRequeryFactory;
+7Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
+7f\h2-0.4.12\src\proto\streams\flow_control.rs:140event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\flow_control.rs:156event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\flow_control.rs:171event C:
+8Landroid/hardware/camera2/params/StreamConfigurationMap;
+8Landroidx/appcompat/app/AppCompatDelegateImpl$Api17Impl;
+8Landroidx/appcompat/app/AppCompatDelegateImpl$Api21Impl;
+8Landroidx/appcompat/app/AppCompatDelegateImpl$Api24Impl;
+8Landroidx/appcompat/app/AppCompatDelegateImpl$Api26Impl;
+8Landroidx/appcompat/app/AppCompatDelegateImpl$Api33Impl;
+8Landroidx/appcompat/view/menu/MenuPopupHelper$Api17Impl;
+8Landroidx/appcompat/widget/ActionBarContainer$Api21Impl;
+8Landroidx/core/location/LocationManagerCompat$Api19Impl;
+8Landroidx/core/location/LocationManagerCompat$Api24Impl;
+8Landroidx/core/location/LocationManagerCompat$Api28Impl;
+8Landroidx/core/location/LocationManagerCompat$Api30Impl;
+8Landroidx/core/location/LocationManagerCompat$Api31Impl;
+8Landroidx/core/location/LocationRequestCompat$Api19Impl;
+8Landroidx/core/location/LocationRequestCompat$Api31Impl;
+8Landroidx/lifecycle/ViewModelProvider$Factory$Companion;
+8Landroidx/loader/content/ModernAsyncTask$WorkerRunnable;
+8Landroidx/loader/content/ModernAsyncTask$WorkerRunnable<
+9Landroidx/appcompat/view/WindowCallbackWrapper$Api23Impl;
+9Landroidx/appcompat/view/WindowCallbackWrapper$Api24Impl;
+9Landroidx/appcompat/view/WindowCallbackWrapper$Api26Impl;
+9Landroidx/appcompat/widget/AppCompatTextHelper$Api17Impl;
+9Landroidx/appcompat/widget/AppCompatTextHelper$Api21Impl;
+9Landroidx/appcompat/widget/AppCompatTextHelper$Api24Impl;
+9Landroidx/appcompat/widget/AppCompatTextHelper$Api26Impl;
+9Landroidx/appcompat/widget/AppCompatTextHelper$Api28Impl;
+9Landroidx/appcompat/widget/DropDownListView$PreApi33Impl;
+9Landroidx/core/app/OnPictureInPictureModeChangedProvider;
+9Landroidx/core/content/pm/PermissionInfoCompat$Api28Impl;
+9Landroidx/core/view/ScaleGestureDetectorCompat$Api19Impl;
+9Landroidx/core/view/ViewPropertyAnimatorCompat$Api16Impl;
+9Landroidx/core/view/ViewPropertyAnimatorCompat$Api18Impl;
+9Landroidx/core/view/ViewPropertyAnimatorCompat$Api19Impl;
+9Landroidx/core/view/ViewPropertyAnimatorCompat$Api21Impl;
+9Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
+9Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel$1;
+9Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;
+9Landroidx/loader/content/ModernAsyncTask$InternalHandler;
+9Lkotlin/streams/jdk8/StreamsKt$$ExternalSyntheticLambda0;
+:Landroidx/appcompat/widget/LinearLayoutCompat$DividerMode;
+:Landroidx/core/content/pm/ShortcutManagerCompat$Api25Impl;
+:Landroidx/core/graphics/drawable/DrawableCompat$Api19Impl;
+:Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;
+:Landroidx/core/graphics/drawable/DrawableCompat$Api23Impl;
+:Landroidx/core/telephony/TelephonyManagerCompat$Api23Impl;
+:Landroidx/core/telephony/TelephonyManagerCompat$Api26Impl;
+:Landroidx/core/telephony/TelephonyManagerCompat$Api30Impl;
+:Landroidx/core/view/AccessibilityDelegateCompat$Api16Impl;
+:Landroidx/lifecycle/SavedStateHandlesProvider$viewModel$2;
+:Landroidx/lifecycle/viewmodel/InitializerViewModelFactory;
+:Lkotlin/coroutines/jvm/internal/ModuleNameRetriever$Cache;
+;()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
+;Landroidx/core/content/IntentSanitizer$Api16Impl$Api31Impl;
+;Landroidx/core/view/DragAndDropPermissionsCompat$Api24Impl;
+;Landroidx/core/view/inputmethod/EditorInfoCompat$Api30Impl;
+;TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse
+;VIEW_MODEL_KEY must always be provided by ViewModelProvider
+<Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;
+<Landroidx/constraintlayout/motion/widget/MotionLayout$Model;
+<Landroidx/core/database/sqlite/SQLiteCursorCompat$Api28Impl;
+<Landroidx/lifecycle/viewmodel/InitializerViewModelFactoryKt;
+<Lkotlin/sequences/SequencesKt__SequencesKt$flatMapIndexed$1;
+<Module>
+=Landroidx/core/graphics/BlendModeColorFilterCompat$Api29Impl;
+=Landroidx/core/telephony/SubscriptionManagerCompat$Api29Impl;
+=Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;
+=Lkotlin/sequences/SequencesKt___SequencesKt$flatMapIndexed$1;
+=Lkotlin/sequences/SequencesKt___SequencesKt$flatMapIndexed$2;
+=Lkotlinx/coroutines/flow/internal/DownstreamExceptionContext;
+>Landroidx/appcompat/widget/ActivityChooserModel$DefaultSorter;
+>Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;
+>Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi28;
+>Landroidx/appcompat/widget/LinearLayoutCompat$OrientationMode;
+>Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;
+>Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
+>Lkotlin/streams/jdk8/StreamsKt$asSequence$$inlined$Sequence$1;
+>Lkotlin/streams/jdk8/StreamsKt$asSequence$$inlined$Sequence$2;
+>Lkotlin/streams/jdk8/StreamsKt$asSequence$$inlined$Sequence$3;
+>Lkotlin/streams/jdk8/StreamsKt$asSequence$$inlined$Sequence$4;
+>Lorg/intellij/lang/annotations/JdkConstants$ListSelectionMode;
+>Lorg/intellij/lang/annotations/JdkConstants$TreeSelectionMode;
+>This is internal API and may be removed in the future releases
+?Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;
+?Landroidx/core/app/NotificationCompat$BubbleMetadata$Api29Impl;
+?Landroidx/core/app/NotificationCompat$BubbleMetadata$Api30Impl;
+?Landroidx/core/content/res/FontResourcesParserCompat$Api21Impl;
+?Landroidx/core/hardware/display/DisplayManagerCompat$Api17Impl;
+?Landroidx/core/view/animation/PathInterpolatorCompat$Api21Impl;
+?Landroidx/core/widget/TextViewOnReceiveContentListener$ApiImpl;
+@Landroidx/appcompat/widget/AppCompatProgressBarHelper$Api23Impl;
+@Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;
+@Landroidx/core/app/NotificationCompat$BigPictureStyle$Api16Impl;
+@Landroidx/core/app/NotificationCompat$BigPictureStyle$Api23Impl;
+@Landroidx/core/app/NotificationCompat$BigPictureStyle$Api31Impl;
+@Landroidx/core/view/inputmethod/InputConnectionCompat$Api25Impl;
+@Landroidx/versionedparcelable/VersionedParcelStream$FieldBuffer;
+ALandroidx/appcompat/widget/ActionBarBackgroundDrawable$Api21Impl;
+ALandroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;
+ALandroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;
+ALandroidx/core/content/res/ResourcesCompat$ThemeCompat$Api29Impl;
+ALandroidx/core/widget/TextViewOnReceiveContentListener$Api16Impl;
+ALandroidx/lifecycle/viewmodel/InitializerViewModelFactoryBuilder;
+AbstractSavedStateViewModelFactory constructed with empty constructor supports only calls to create(modelClass: Class<T>, extras: CreationExtras).
+AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).
+BLandroidx/appcompat/app/AppLocalesMetadataHolderService$Api24Impl;
+BLandroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;
+BLandroidx/constraintlayout/motion/widget/MotionLayout$DevModeDraw;
+BLandroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl$1;
+C(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
+C:/Program Files/Unity/Hub/Editor/6000.5.2f1/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(20) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::CloseToken - "This icall is not supported by il2cpp."
+C:/Program Files/Unity/Hub/Editor/6000.5.2f1/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(34) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::SetCurrentToken - "This icall is not supported by il2cpp."
+C:/Program Files/Unity/Hub/Editor/6000.5.2f1/Editor/Data/il2cpp/libil2cpp/icalls/mscorlib/System.Security.Principal/WindowsImpersonationContext.cpp(41) : Unsupported internal call for IL2CPP:WindowsImpersonationContext::DuplicateToken - "This icall is not supported by il2cpp."
+C:/Program Files/Unity/Hub/Editor/6000.5.2f1/Editor/Data/il2cpp/libil2cpp/vm/Reflection.cpp(505) : Unsupported internal call for IL2CPP:MemberInfo::get_MetadataToken - "This icall is not supported by il2cpp."
+C:\Users\blade\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cipher-0.5.0\src\stream.rs
+C:\Users\blade\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/std/src/io/mod.rs
+C:\Users\blade\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/std/src/sync/mpmc/mod.rs
+C:\Users\blade\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/std/src/thread/mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\backtrace-0.3.76\src\symbolize\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\base64-0.22.1\src\engine\general_purpose\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\base64-0.22.1\src\engine\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\chrono-0.4.42\src\format\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\chrono-0.4.42\src\naive\date\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\chrono-0.4.42\src\naive\datetime\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cipher-0.4.4\src\stream.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cipher-0.5.0-rc.2\src\stream.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.31\src\mpsc\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\frame\stream_id.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\hpack\huffman\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\buffer.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\counts.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\flow_control.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\stream.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\hashbrown-0.15.5\src\raw\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\hashbrown-0.16.1\src\raw\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\hyper-1.8.1\src\proto\h2\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memchr-2.7.6\src\arch\all\packedpair\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\regex-automata-0.4.13\src\util\determinize\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\regex-syntax-0.8.8\src\ast\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\regex-syntax-0.8.8\src\hir\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ring-0.17.14\src\arithmetic\bigint\modulus.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ring-0.17.14\src\rsa\public_modulus.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustls-0.23.35\src\crypto\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustls-0.23.35\src\tls12\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustls-0.23.35\src\tls13\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustls-webpki-0.103.8\src\crl\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sharded-slab-0.1.7\src\page\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\time-0.3.44\src\parsing\combinator\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\loom\std\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\net\tcp\socket.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\net\tcp\stream.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\net\unix\stream.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\runtime\scheduler\current_thread\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\runtime\scheduler\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\runtime\scheduler\multi_thread\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\runtime\time\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.48.0\src\runtime\time\wheel\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-rustls-0.26.4\src\common\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tower-0.5.2\src\timeout\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tracing-subscriber-0.3.22\src\fmt\format\mod.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\winnow-0.7.14\src\stream\bstr.rs
+C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\winnow-0.7.14\src\stream\mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/alloc/src/collections/binary_heap/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/alloc/src/collections/vec_deque/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/alloc/src/raw_vec/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/alloc/src/vec/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/core/src/slice/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/core/src/str/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/std/src/io/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/std/src/sync/mpmc/mod.rs
+C:\Users\sondr\.rustup\toolchains\nightly-2025-08-11-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library/std/src/thread/mod.rs
+CLandroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+CLandroidx/appcompat/widget/AppCompatTextClassifierHelper$Api26Impl;
+CLandroidx/core/net/DatagramSocketWrapper$DatagramSocketImplWrapper;
+CLandroidx/core/view/ViewCompat$Api28Impl$$ExternalSyntheticLambda0;
+CLandroidx/emoji2/text/MetadataListReader$InputStreamOpenTypeReader;
+CLandroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion;
+CLkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$mapIndexed$1;
+Callsite`.SetGlobalDefaultErrora global default trace dispatcher has already been setnamestargetlevelmodule_pathfieldsKind(EVENT | span IDs must be > 0LevelTraceDebugInfoWarnLazy instance has previously been poisonedlog.targetlog.module_pathloglog event
+DLandroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;
+E(Landroidx/lifecycle/viewmodel/CreationExtras$Key;)Ljava/lang/Object;
+ELandroidx/activity/result/contract/ActivityResultContracts$Api33Impl;
+ELandroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;
+ELandroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Api16Impl;
+ELandroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Api18Impl;
+ELandroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Api23Impl;
+ELandroidx/core/view/accessibility/AccessibilityEventCompat$Api16Impl;
+ELandroidx/core/view/accessibility/AccessibilityEventCompat$Api19Impl;
+F(Landroidx/lifecycle/ViewModelProvider;)Landroidx/lifecycle/ViewModel;
+F(Landroidx/lifecycle/viewmodel/CreationExtras$Key;Ljava/lang/Object;)V
+F(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+FLOW_CONTROL_ERROR -- window_size (stream error PROTOCOL_ERROR -- recv_push_promise; promised request has invalid content-length ; promised_id=stream error PROTOCOL_ERROR -- recv_push_promise: method  is not safe and cacheable; promised_id=stream error PROTOCOL_ERROR -- recv_push_promise: headers fr
+FLandroidx/core/view/WindowInsetsAnimationCompat$Callback$DispatchMode;
+FLandroidx/core/view/accessibility/AccessibilityRecordCompat$Api15Impl;
+FLandroidx/core/view/accessibility/AccessibilityRecordCompat$Api16Impl;
+FragmentManagerViewModel{
+G(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;
+GLandroidx/appcompat/app/AppCompatDelegateImpl$AutoTimeNightModeManager;
+GLandroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;
+GLandroidx/core/view/accessibility/AccessibilityManagerCompat$Api19Impl;
+GOAWAY stream IDs shouldn't be higher; last_processed_id = , f.last_stream_id() = assertion failed: !id.is_zero()connection error PROTOCOL_ERROR -- cannot open stream  - not server initiated; - not client initiated;assertion failed: self.pending_pong.is_none()pending_ping should be for shutdownrecv
+HLandroidx/appcompat/graphics/drawable/DrawableContainerCompat$Api21Impl;
+HLandroidx/appcompat/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+HLandroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
+HLandroidx/core/view/accessibility/AccessibilityNodeInfoCompat$Api33Impl;
+HLandroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory$Companion;
+ILandroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;
+ILandroidx/appcompat/widget/AppCompatReceiveContentHelper$OnDropApi24Impl;
+ILandroidx/lifecycle/SavedStateHandleSupport$VIEW_MODEL_STORE_OWNER_KEY$1;
+J(Ljava/lang/Class;Landroid/app/Application;)Landroidx/lifecycle/ViewModel;
+JLandroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+JLandroidx/appcompat/app/AppCompatDelegateImpl$AutoBatteryNightModeManager;
+JLandroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView$Api17Impl;
+JLandroidx/core/view/ContentInfoCompat$Api31Impl$$ExternalSyntheticLambda0;
+JLandroidx/core/view/accessibility/AccessibilityWindowInfoCompat$Api21Impl;
+JLandroidx/core/view/accessibility/AccessibilityWindowInfoCompat$Api24Impl;
+JLandroidx/core/view/accessibility/AccessibilityWindowInfoCompat$Api33Impl;
+KLandroidx/appcompat/widget/ActivityChooserModel$ActivityChooserModelClient;
+KLandroidx/core/provider/DocumentsContractCompat$DocumentsContractApi19Impl;
+KLandroidx/core/provider/DocumentsContractCompat$DocumentsContractApi21Impl;
+KLandroidx/core/provider/DocumentsContractCompat$DocumentsContractApi24Impl;
+LLandroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;
+L_ERROR -- failed to load RESET frame; err=connection error PROTOCOL_ERROR -- failed to load GO_AWAY frame; err=stream error sent by user: stream error detected: stream error received: connection error sent by user: connection error detected: connection error received: user error: decodeIndexedLiter
+Landroid/app/UiModeManager;
+Landroid/graphics/BlendMode;
+Landroid/os/StrictMode;
+Landroid/view/ActionMode;
+Landroid/view/Display$Mode;
+Landroidx/core/view/Api16Impl;
+Landroidx/lifecycle/ViewModel;
+Landroidx/lifecycle/viewmodel/R;
+Ljava/io/BufferedInputStream;
+Ljava/io/BufferedOutputStream;
+Ljava/io/ByteArrayInputStream;
+Ljava/io/ByteArrayOutputStream;
+Ljava/io/DataInputStream;
+Ljava/io/DataOutputStream;
+Ljava/io/FileInputStream;
+Ljava/io/FileOutputStream;
+Ljava/io/FilterInputStream;
+Ljava/io/InputStream;
+Ljava/io/InputStreamReader;
+Ljava/io/ObjectInputStream;
+Ljava/io/ObjectOutputStream;
+Ljava/io/ObjectStreamClass;
+Ljava/io/ObjectStreamException;
+Ljava/io/OutputStream;
+Ljava/io/OutputStreamWriter;
+Ljava/io/PrintStream;
+Ljava/lang/reflect/Modifier;
+Ljava/math/RoundingMode;
+Ljava/net/DatagramSocket;
+Ljava/net/Socket;
+Ljava/net/SocketAddress;
+Ljava/net/SocketException;
+Ljava/net/SocketImpl;
+Ljava/nio/file/DirectoryStream;
+Ljava/util/stream/Collector;
+Ljava/util/stream/Collectors;
+Ljava/util/stream/DoubleStream;
+Ljava/util/stream/IntStream;
+Ljava/util/stream/LongStream;
+Ljava/util/stream/Stream;
+Ljava/util/stream/Stream<
+Ljava/util/stream/StreamSupport;
+Lkotlin/ExperimentalStdlibApi;
+Lkotlin/LazyThreadSafetyMode;
+Lkotlin/PublishedApi;
+Lkotlin/io/ByteStreamsKt;
+Lkotlin/io/TextStreamsKt;
+Lkotlin/streams/jdk8/StreamsKt;
+Lorg/fmod/FMODAudioDevice;
+Lorg/fmod/a;
+ModelCreationExtras
+    }
+OCOL_ERROR -- recv_data: stream not found; id=recv_data for old stream=assertion failed: sz <= super::MAX_WINDOW_SIZE as usizelocally-reset streams reached limit (too_many_internal_resetsreset_on_recv_stream_err; locally-reset streams reached limit (assertion failed: self.remote.is_none()connection
+OLandroidx/activity/OnBackPressedDispatcher$Api33Impl$$ExternalSyntheticLambda0;
+OLandroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+OLandroidx/emoji2/text/flatbuffer/FlatBufferBuilder$ByteBufferBackedInputStream;
+ORCONNECT_ERRORENHANCE_YOUR_CALMINADEQUATE_SECURITYHTTP_1_1_REQUIREDassertion failed: DEFAULT_MAX_FRAME_SIZE <= val && val <= MAX_MAX_FRAME_SIZEinvalid settings payload length; len=encoding SETTINGS; len=encoding setting; val=Settingsheader_table_sizeenable_pushmax_concurrent_streamsinitial_window_s
+QLandroidx/appcompat/app/AppCompatDelegateImpl$ContextThemeWrapperCompatApi17Impl;
+QLandroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;
+R(Landroidx/lifecycle/ViewModelStoreOwner;)Landroidx/lifecycle/SavedStateHandlesVM;
+RLandroidx/appcompat/app/AppCompatDelegateImpl$Api33Impl$$ExternalSyntheticLambda0;
+RLandroidx/core/location/LocationManagerCompat$Api30Impl$$ExternalSyntheticLambda0;
+ROR -- CONTINUATION frame header block size over ignorable limit;stream error PROTOCOL_ERROR -- malformed CONTINUATION frame; stream=connection error PROTOCOL_ERROR -- CONTINUATION frame stream ID does not match previous frame stream ID;connection error PROTOCOL_ERROR -- expected CONTINUATION, got c
+ROR -- malformed header block; stream=loaded partial header blockconnection error PROTOCOL_ERROR -- failed HPACK decoding; err=stream error PROTOCOL_ERROR -- invalid HEADERS dependency ID;connection error PROTOCOL_ERROR -- failed to load frame; err=stream error PROTOCOL_ERROR -- PRIORITY invalid dep
+RwLock reader count overflowLayoutaligncalled `Result::unwrap()` on an `Err` valuelayoutcapacity overflowa formatting trait implementation returned an error when the underlying stream did notfatal runtime error: thread local panicked on drop, aborting
+failed to write whole bufferfatal runtime error:
+S(Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/ViewModelStoreOwner;)V
+SECRETSERVER_HANDSHAKE_TRAFFIC_SECRETCLIENT_TRAFFIC_SECRET_0SERVER_TRAFFIC_SECRET_0EXPORTER_SECRETillegal write_vectored return value ( > no usable cipher suites configuredCiphersuite  requires  key exchange, but no -compatible key exchange groups were present in `CryptoProvider`'s `kx_groups` field
+SLandroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate$Api18Impl;
+SavedStateViewModelFactory constructed with empty constructor supports only calls to create(modelClass: Class<T>, extras: CreationExtras).
+TLandroidx/emoji2/text/DefaultEmojiCompatConfig$DefaultEmojiCompatConfigHelper_API19;
+TLandroidx/emoji2/text/DefaultEmojiCompatConfig$DefaultEmojiCompatConfigHelper_API28;
+TLandroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion$ViewModelKeyImpl;
+TOCOL_ERROR -- could not parse content-length; stream=stream error PROTOCOL_ERROR -- cannot use :protocol if extended connect protocol is disabled; stream=stream error PROTOCOL_ERROR -- cannot use :status header for requests; stream=stream error REQUEST_HEADER_FIELDS_TOO_LARGE -- recv_headers: frame
+Unity.Burst.LowLevel.BurstCompilerService::GetCurrentExecutionMode()
+Unity.Burst.LowLevel.BurstCompilerService::SetCurrentExecutionMode(System.UInt32)
+Unity.Hierarchy.HierarchyViewModel::Destroy(System.IntPtr)
+Unity.Hierarchy.HierarchyViewModel::get_Query_Injected(System.IntPtr)
+Unity.U2D.Physics.Scripting2D::PhysicsGlobal_CalculateWorldTransformWrite_Injected(Unity.U2D.Physics.PhysicsWorld&,Unity.U2D.Physics.PhysicsWorld/TransformPlane,Unity.U2D.Physics.PhysicsWorld/TransformPlaneCustom&,Unity.U2D.Physics.PhysicsWorld/TransformWriteMode,System.IntPtr,Unity.U2D.Physics.Scri
+UnityEngine.Animator::set_cullingMode_Injected(System.IntPtr,UnityEngine.AnimatorCullingMode)
+UnityEngine.Application::get_isBatchMode()
+UnityEngine.Application::get_streamingAssetsPath_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+UnityEngine.AudioSettings::GetSpeakerMode()
+UnityEngine.AudioSource::set_rolloffMode_Injected(System.IntPtr,UnityEngine.AudioRolloffMode)
+UnityEngine.Camera::get_depthTextureMode_Injected(System.IntPtr)
+UnityEngine.Camera::get_opaqueSortMode_Injected(System.IntPtr)
+UnityEngine.Camera::set_depthTextureMode_Injected(System.IntPtr,UnityEngine.DepthTextureMode)
+UnityEngine.Canvas::get_renderMode_Injected(System.IntPtr)
+UnityEngine.Canvas::set_renderMode_Injected(System.IntPtr,UnityEngine.RenderMode)
+UnityEngine.CanvasRenderer::CreateUIVertexStreamInternal_Injected(UnityEngine.Bindings.BlittableListWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.Manage
+UnityEngine.CanvasRenderer::SplitUIVertexStreamsInternal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.BlittableListWrapper&,UnityEngine.Bindings.BlittableListWrapper&,UnityEngine.Bindings.BlittableListWrapper&,UnityEngine.Bindings.BlittableListWrapper&,UnityEngine.Bindings.
+UnityEngine.ComputeBuffer::InitBuffer(System.Int32,System.Int32,UnityEngine.ComputeBufferType,UnityEngine.ComputeBufferMode)
+UnityEngine.Cursor::SetCursor_Injected(System.IntPtr,UnityEngine.Vector2&,UnityEngine.CursorMode)
+UnityEngine.Event::get_modifiers_Injected(System.IntPtr)
+UnityEngine.GUIUtility::set_imeCompositionMode(UnityEngine.IMECompositionMode)
+UnityEngine.Gradient::get_mode_Injected(System.IntPtr)
+UnityEngine.Gradient::set_mode_Injected(System.IntPtr,UnityEngine.GradientMode)
+UnityEngine.Graphics::Internal_DrawMeshInstanced_Injected(System.IntPtr,System.Int32,System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,System.IntPtr,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,System.IntPtr,UnityEngine.Rendering.LightProbeUsage,System.IntPtr
+UnityEngine.Graphics::Internal_DrawMesh_Injected(System.IntPtr,System.Int32,UnityEngine.Matrix4x4&,System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.IntPtr,UnityEngine.Rendering.LightProbeUsage,System.IntPtr)
+UnityEngine.HDROutputSettings::GetHDRModeChangeRequested(System.Int32)
+UnityEngine.HDROutputSettings::RequestHDRModeChangeInternal(System.Int32,System.Boolean)
+UnityEngine.Input::get_imeCompositionMode()
+UnityEngine.Input::set_imeCompositionMode(UnityEngine.IMECompositionMode)
+UnityEngine.Light::set_renderMode_Injected(System.IntPtr,UnityEngine.LightRenderMode)
+UnityEngine.Mesh::GetVertexAttributeStream_Injected(System.IntPtr,UnityEngine.Rendering.VertexAttribute)
+UnityEngine.MeshRenderer::get_additionalVertexStreams_Injected(System.IntPtr)
+UnityEngine.MonoBehaviour::OnCancellationTokenCreated_Injected(System.IntPtr)
+UnityEngine.Networking.UnityWebRequest::get_isModifiable_Injected(System.IntPtr)
+UnityEngine.Object::FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+UnityEngine.ParticleSystem/CollisionModule::set_bounceBlittable_Injected(UnityEngine.ParticleSystem/CollisionModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/CollisionModule::set_collidesWith_Injected(UnityEngine.ParticleSystem/CollisionModule&,UnityEngine.LayerMask&)
+UnityEngine.ParticleSystem/CollisionModule::set_dampenBlittable_Injected(UnityEngine.ParticleSystem/CollisionModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/CollisionModule::set_enableDynamicColliders(System.Boolean)
+UnityEngine.ParticleSystem/CollisionModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/CollisionModule::set_lifetimeLossBlittable_Injected(UnityEngine.ParticleSystem/CollisionModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/CollisionModule::set_mode(UnityEngine.ParticleSystemCollisionMode)
+UnityEngine.ParticleSystem/CollisionModule::set_quality(UnityEngine.ParticleSystemCollisionQuality)
+UnityEngine.ParticleSystem/CollisionModule::set_radiusScale(System.Single)
+UnityEngine.ParticleSystem/CollisionModule::set_type(UnityEngine.ParticleSystemCollisionType)
+UnityEngine.ParticleSystem/ColorOverLifetimeModule::set_colorBlittable_Injected(UnityEngine.ParticleSystem/ColorOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxGradientBlittable&)
+UnityEngine.ParticleSystem/ColorOverLifetimeModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/EmissionModule::SetBurst_Injected(UnityEngine.ParticleSystem/EmissionModule&,System.Int32,UnityEngine.ParticleSystem/Burst&)
+UnityEngine.ParticleSystem/EmissionModule::set_burstCount(System.Int32)
+UnityEngine.ParticleSystem/EmissionModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/EmissionModule::set_rateOverTimeBlittable_Injected(UnityEngine.ParticleSystem/EmissionModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/LimitVelocityOverLifetimeModule::set_dampen(System.Single)
+UnityEngine.ParticleSystem/LimitVelocityOverLifetimeModule::set_dragBlittable_Injected(UnityEngine.ParticleSystem/LimitVelocityOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/LimitVelocityOverLifetimeModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/LimitVelocityOverLifetimeModule::set_limitBlittable_Injected(UnityEngine.ParticleSystem/LimitVelocityOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_duration(System.Single)
+UnityEngine.ParticleSystem/MainModule::set_gravityModifierBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_loop(System.Boolean)
+UnityEngine.ParticleSystem/MainModule::set_maxParticles(System.Int32)
+UnityEngine.ParticleSystem/MainModule::set_playOnAwake(System.Boolean)
+UnityEngine.ParticleSystem/MainModule::set_simulationSpace(UnityEngine.ParticleSystemSimulationSpace)
+UnityEngine.ParticleSystem/MainModule::set_startColorBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxGradientBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startLifetimeBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startRotation3D(System.Boolean)
+UnityEngine.ParticleSystem/MainModule::set_startRotationBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startRotationXBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startRotationYBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startRotationZBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startSize3D(System.Boolean)
+UnityEngine.ParticleSystem/MainModule::set_startSizeBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startSizeXBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startSizeYBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startSizeZBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_startSpeedBlittable_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/MainModule::set_stopAction(UnityEngine.ParticleSystemStopAction)
+UnityEngine.ParticleSystem/RotationOverLifetimeModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/RotationOverLifetimeModule::set_separateAxes(System.Boolean)
+UnityEngine.ParticleSystem/RotationOverLifetimeModule::set_xBlittable_Injected(UnityEngine.ParticleSystem/RotationOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/RotationOverLifetimeModule::set_yBlittable_Injected(UnityEngine.ParticleSystem/RotationOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/RotationOverLifetimeModule::set_zBlittable_Injected(UnityEngine.ParticleSystem/RotationOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystem/ShapeModule::get_meshRenderer_Injected(UnityEngine.ParticleSystem/ShapeModule&)
+UnityEngine.ParticleSystem/ShapeModule::set_angle(System.Single)
+UnityEngine.ParticleSystem/ShapeModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/ShapeModule::set_meshRenderer_Injected(UnityEngine.ParticleSystem/ShapeModule&,System.IntPtr)
+UnityEngine.ParticleSystem/ShapeModule::set_radius(System.Single)
+UnityEngine.ParticleSystem/ShapeModule::set_shapeType(UnityEngine.ParticleSystemShapeType)
+UnityEngine.ParticleSystem/SizeOverLifetimeModule::set_enabled(System.Boolean)
+UnityEngine.ParticleSystem/SizeOverLifetimeModule::set_sizeBlittable_Injected(UnityEngine.ParticleSystem/SizeOverLifetimeModule&,UnityEngine.ParticleSystem/MinMaxCurveBlittable&)
+UnityEngine.ParticleSystemRenderer::SetActiveVertexStreams_Injected(System.IntPtr,UnityEngine.Bindings.BlittableListWrapper&)
+UnityEngine.ParticleSystemRenderer::set_renderMode_Injected(System.IntPtr,UnityEngine.ParticleSystemRenderMode)
+UnityEngine.Physics2D::get_simulationMode()
+UnityEngine.Physics::get_simulationMode()
+UnityEngine.Physics::set_simulationMode(UnityEngine.SimulationMode)
+UnityEngine.QualitySettings::get_shadowmaskMode()
+UnityEngine.ReflectionProbe::get_mode_Injected(System.IntPtr)
+UnityEngine.ReflectionProbe::get_refreshMode_Injected(System.IntPtr)
+UnityEngine.RenderSettings::get_ambientMode()
+UnityEngine.RenderSettings::set_ambientMode(UnityEngine.Rendering.AmbientMode)
+UnityEngine.RenderTexture::SetShadowSamplingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowSamplingMode)
+UnityEngine.Renderer::GetLightmapIndex_Injected(System.IntPtr,UnityEngineInternal.LightmapType)
+UnityEngine.Renderer::SetLightmapIndex_Injected(System.IntPtr,System.Int32,UnityEngineInternal.LightmapType)
+UnityEngine.Renderer::get_shadowCastingMode_Injected(System.IntPtr)
+UnityEngine.Renderer::set_shadowCastingMode_Injected(System.IntPtr,UnityEngine.Rendering.ShadowCastingMode)
+UnityEngine.Rendering.CommandBuffer::Internal_SetSinglePassStereo_Injected(System.IntPtr,UnityEngine.Rendering.SinglePassStereoMode)
+UnityEngine.Rendering.CommandBuffer::SetFoveatedRenderingMode_Injected(System.IntPtr,UnityEngine.Rendering.FoveatedRenderingMode)
+UnityEngine.Rendering.CommandBuffer::SetShadowSamplingMode_Impl_Injected(System.IntPtr,UnityEngine.Rendering.RenderTargetIdentifier&,UnityEngine.Rendering.ShadowSamplingMode)
+UnityEngine.ResourcesAPIInternal::FindObjectsOfTypeAll(System.Type)
+UnityEngine.ResourcesAPIInternal::FindShaderByName_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+UnityEngine.ResourcesAPIInternal::LoadAll_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Type)
+UnityEngine.ResourcesAPIInternal::LoadAsyncInternal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Type)
+UnityEngine.ResourcesAPIInternal::Load_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Type)
+UnityEngine.ResourcesAPIInternal::UnloadAsset_Injected(System.IntPtr)
+UnityEngine.Rigidbody2D::AddForce_Internal_Injected(System.IntPtr,UnityEngine.Vector2&,UnityEngine.ForceMode2D)
+UnityEngine.Rigidbody2D::AddTorque_Injected(System.IntPtr,System.Single,UnityEngine.ForceMode2D)
+UnityEngine.Rigidbody::AddForceAtPosition_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.ForceMode)
+UnityEngine.Rigidbody::AddForce_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.ForceMode)
+UnityEngine.Rigidbody::AddTorque_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.ForceMode)
+UnityEngine.Rigidbody::set_collisionDetectionMode_Injected(System.IntPtr,UnityEngine.CollisionDetectionMode)
+UnityEngine.SceneManagement.SceneManagerAPIInternal::GetNumScenesInBuildSettings()
+UnityEngine.SceneManagement.SceneManagerAPIInternal::GetSceneByBuildIndex_Injected(System.Int32,UnityEngine.SceneManagement.Scene&)
+UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,UnityEngine.SceneManagement.LoadSceneParameters&,System.Boolean)
+UnityEngine.SceneManagement.SceneManagerAPIInternal::UnloadSceneNameIndexInternal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,System.Boolean,UnityEngine.SceneManagement.UnloadSceneOptions,System.Boolean&)
+UnityEngine.SystemInfo::GetDeviceModel_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+UnityEngine.TextCore.LowLevel.FontEngine::SetTextureUploadMode(System.Boolean)
+UnityEngine.TextCore.LowLevel.FontEngine::TryAddGlyphToTexture_Internal_Injected(System.UInt32,System.Int32,UnityEngine.TextCore.LowLevel.GlyphPackingMode,UnityEngine.Bindings.BlittableArrayWrapper&,System.Int32&,UnityEngine.Bindings.BlittableArrayWrapper&,System.Int32&,UnityEngine.TextCore.LowLevel
+UnityEngine.TextCore.LowLevel.FontEngine::TryAddGlyphsToTexture_Internal_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Int32,UnityEngine.TextCore.LowLevel.GlyphPackingMode,UnityEngine.Bindings.BlittableArrayWrapper&,System.Int32&,UnityEngine.Bindings.BlittableArrayWrapper&,System.Int32&,U
+UnityEngine.TextCore.Text.FontAsset::UpdateRenderMode(System.IntPtr,UnityEngine.TextCore.LowLevel.GlyphRenderMode)
+UnityEngine.Texture::SetStreamingTextureMaterialDebugPropertiesWithSlot(System.Int32)
+UnityEngine.Texture::get_filterMode_Injected(System.IntPtr)
+UnityEngine.Texture::get_streamingTextureDiscardUnusedMips()
+UnityEngine.Texture::get_wrapMode_Injected(System.IntPtr)
+UnityEngine.Texture::set_filterMode_Injected(System.IntPtr,UnityEngine.FilterMode)
+UnityEngine.Texture::set_streamingTextureDiscardUnusedMips(System.Boolean)
+UnityEngine.Texture::set_wrapModeU_Injected(System.IntPtr,UnityEngine.TextureWrapMode)
+UnityEngine.Texture::set_wrapModeV_Injected(System.IntPtr,UnityEngine.TextureWrapMode)
+UnityEngine.Texture::set_wrapModeW_Injected(System.IntPtr,UnityEngine.TextureWrapMode)
+UnityEngine.Texture::set_wrapMode_Injected(System.IntPtr,UnityEngine.TextureWrapMode)
+UnityEngine.UIElements.MeshBuilderNative::MakeVectorGraphicsStretchBackground_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&,System.Single,System.Single,UnityEngine.Rect&,UnityEngine.Rect&,UnityEngine.ScaleMode,UnityEngine.Color&,UnityEngine.UIElements.Mes
+UnityEngine.UIElements.PanelRenderer::get_nativeWorldSpaceSizeMode_Injected(System.IntPtr)
+UnityEngine.UISystemProfilerApi::AddMarker_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.IntPtr)
+UnityEngine.UISystemProfilerApi::BeginSample(UnityEngine.UISystemProfilerApi/SampleType)
+UnityEngine.UISystemProfilerApi::EndSample(UnityEngine.UISystemProfilerApi/SampleType)
+UnityEngine.XR.XRDisplaySubsystem::GetPreferredMirrorBlitMode_Injected(System.IntPtr)
+UnityEngine.XR.XRDisplaySubsystem::SetPreferredMirrorBlitMode_Injected(System.IntPtr,System.Int32)
+UnityEngine.XR.XRSettings::get_stereoRenderingMode()
+VLandroidx/emoji2/text/UnprecomputeTextOnModificationSpannable$PrecomputedTextDetector;
+WLandroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatApi25Impl;
+WLandroidx/emoji2/text/UnprecomputeTextOnModificationSpannable$CharSequenceHelper_API24;
+W_UPDATErecv RST_STREAMConnection::poll; connection error    -> already going awaystream errorConnection::poll; IO errorClientconnection closing after flushinvalid GOAWAY framepoll_completewritinginvalid framereclaimedwasn't expecting a frame to reclaimnot reclaiming frame for cancelled streamremovi
+Y(Landroidx/lifecycle/ViewModelStoreOwner;Landroidx/lifecycle/ViewModelProvider$Factory;)V
+YLandroidx/emoji2/text/UnprecomputeTextOnModificationSpannable$PrecomputedTextDetector_28;
+[Landroid/view/Display$Mode;
+[Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory$Companion$ApplicationKeyImpl;
+[Lkotlin/LazyThreadSafetyMode;
+[getVisibleInsets() should not be called on API >= 30. Use WindowInsets.isVisible() instead.
+\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:149h2::proto::streams::stateC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-
+\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:94h2::proto::streams::prioritizeC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rsPrioritize::queue_framestream.idevent C:\Users\sond
+\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:514event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:536event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.1
+\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:574event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:607event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2
+\store.rs:300event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs:303event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs:315event C:\Users\sondr\.cargo\registry\src\index.crates.io-19
+^(Ljava/lang/Class;Landroidx/lifecycle/viewmodel/CreationExtras;)Landroidx/lifecycle/ViewModel;
+_close: Open => HalfClosedLocal(send_close: HalfClosedRemote => Closedsend_close: unexpected state assertion failed: self.ids.insert(id, index).is_none()dangling store key for stream_id=assertion failed: N::next(&stream).is_none()Queueindicesinvalid initial receive windowassertion failed: self.ref_c
+_reclaim_frameevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:609event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:621clear_queueevent C:\Users\sondr\.cargo\registry\
+a formatting trait implementation returned an error when the underlying stream did notfailed to fill whole buffer()Echo save failed: lck_rs::echo_bufferlck-encoderFailed to spawn encoder threadEncoder thread started (encoder-owning mode)lck_rs::encoder::threadFrame processing error: Encoder thread:
+aLandroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16;
+aLandroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi19;
+aLandroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi26;
+ableUnprocessable entityRate limitedService unavailableevent src\backend_client\mod.rs:62lck_core::backend_clientsrc\backend_client\mod.rsInvalid UTF-8 sequenceNull pointer encounteredgame_versioncompany_namepersistent_data_pathinteraction_systemsLckInfobuild_numberFailed to create underlying teleme
+alid type: assertion failed: edge.height == self.node.height - 1complete parsers should not report `ErrMode::Incomplete(_)`$__toml_private_datetimeno more values in next_value_seed, internal error in ValueDeserializernext_value_seed called before next_key_seedп
+ame is over size; promised_id=stream ID implicitly closed, PROTOCOL_ERROR; stream=recv_reset; remotely-reset pending-accept streams reached limit (too_many_resetsassertion failed: self.max_stream_id >= last_processed_idconnection error PROTOCOL_ERROR -- recv_push_promise: push is disabled;enqueue_re
+aminghas_user_configured_streamingevent src\core\ffi.rs:309Starting login attemptstart_login_attemptevent src\core\ffi.rs:333Disposing resourcesdisposeevent src\core\ffi.rs:349event src\core\ffi.rs:375event src\core\ffi.rs:384event src\core\ffi.rs:393event src\core\ffi.rs:430Could not set loggerFail
+api.
+argo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:324event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:328SlabIndexevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\sr
+assertion failed: q.elem_verify_is_not_zero(&z).is_ok()InconsistentComponentsInvalidEncodingRNG failedPublicKeyIsMissingVersionNotSupportedWrongAlgorithmPrivateModulusLenNotMultipleOf512BitsUnexpectedErrorassertion failed: em.len() >= digest_len + 11assertion failed: padding.iter().all(|&b| b == 0)a
+ates.io-1949cf8c6b5b557f\h2-0.4.12\src\frame\window_update.rsBadFrameSizeTooMuchPaddingInvalidSettingValueInvalidWindowUpdateValueInvalidPayloadLengthInvalidPayloadAckSettingsInvalidStreamIdInvalidDependencyIdHpackh2::clientC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.1
+attach-stacktraceprocess-stacktraceinvalid `SystemTime` instance: application/octet-stream{"type":"attachment","length":,"filename":"","attachment_type":"","content_type":""}
+cpu_subtypeimage_addrimage_sizeimage_vmaddrcookiesheadersstatus_codebody_sizeversionidcode_iddebug_filepublic_keysample_rates
+c(Ljava/lang/Class;Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Landroidx/lifecycle/ViewModel;
+c6b5b557f\h2-0.4.12\src\proto\streams\counts.rs:211h2::proto::streams::countsC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\counts.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\counts.rs:233eve
+c\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:760event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:783event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:814
+c\proto\streams\recv.rs:334event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:357event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:374event C:\Users\sondr\.cargo\registry\src\index.
+c\proto\streams\store.rs:260h2::proto::streams::storeC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs:263event C:\Users\sondr\.cargo\r
+cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:203effectiverecv_stream_window_updatestream.stateincevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:371assign_connection_capacitytry_assign_capacityevent C:\Users\sondr\.cargo\r
+connection error PROTOCOL_ERROR -- recv_reset: invalid stream ID 0;assertion failed: stream.state.is_closed()recv_headers for old stream=, sending STREAM_CLOSEDrecv_headers; ignoring trailers on ), ignoring HEADERSrecv_headers; stream=stream error PROTOCOL_ERROR -- recv_headers: trailers frame was n
+connection error PROTOCOL_ERROR -- reserve_remote: in unexpected state recv_close: Open => HalfClosedRemote(recv_close: HalfClosedLocal => Closedconnection error PROTOCOL_ERROR -- recv_close: in unexpected state recv_reset; frame=; queued=handle_error; err=stream closed because of a broken pipesend
+crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:402event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:438event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:467event C:
+ction error PROTOCOL_ERROR -- recv_data: failed to transition to closed state; stream=stream error PROTOCOL_ERROR -- recv_data: content-length underflow; stream=; len=stream error PROTOCOL_ERROR -- recv_data: content-length overflow; stream=recv_data; frame ignored on locally reset connection error
+cv.rs:138h2::proto::streams::recvC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:161event C:\Users\sondr\.cargo\registry\src\index.crat
+d([Landroidx/lifecycle/viewmodel/ViewModelInitializer;)Landroidx/lifecycle/ViewModelProvider$Factory;
+d: (source_pos + 2) & out_buf_size_mask < out_slice.len()dest is out of boundsErrora formatting trait implementation returned an error when the underlying stream did notcapacity overflownul byte found in provided data at position:
+d: (source_pos + 2) & out_buf_size_mask < out_slice.len()dest is out of boundscalled `Result::unwrap()` on an `Err` valueErrora formatting trait implementation returned an error when the underlying stream did not)) should be < len (is removal index (is capacity overflowLayoutError
+d=recv_stream_window_update !!; err=Queue::push_front -> first entry -> existing entries -> already queuedassertion failed: slot.next.is_none()internal error: entered unreachable code: Initiator::User should not error sending resetpoll_pending_open; stream = ) > max_stream_id (), ignoring RST_STREAM
+dex.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:608event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:632event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:642even
+dr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:284event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:378event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\prot
+e write: attempt to serialize struct, sequence or map with unknown lengthserialize data model is invalid: ()InvalidDigitPosOverflowNegOverflowZero`fmt::Error`s should be impossible without a `fmt::Formatter`punycode{internal error: entered unreachable code: str::from_utf8( was expected to have 1 cha
+ed to initialize state: Initializing state objectstaginglck_versionlck_buildtracking_idgame_nameproject_nameengine_versionrender_pipelinegraphics_apiinit_statelck_core::core::stategame_infosrc\core\state.rsevent src\core\state.rs:117event src\core\state.rs:128event src\core\state.rs:133Checking if l
+eer sent excess record sizepeer doesn't support any known protocolthe supplied max_fragment_size was too small or largekeys may not be consistent: other error: assertion failed: self.next_pre_encrypt_action() != PreEncryptAction::Refusemaster secretextended master secretkey expansionclient finisheds
+egistry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:432additionalwindowevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:463event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h
+egistry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs:275event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\store.rs:285event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams
+elemetry\ffi.rs:102game_initializedrecording_startedstreaming_startedservice_createdservice_disposedcamera_enabledcamera_disabledrecording_stoppedstreaming_stoppedstreaming_errorphoto_capturedrecorder_errorphoto_capture_errorsdk_errorperformanceecho_enabledecho_savedGameInitializedRecordingStartedSt
+end_reset -- queueing; frame= -> not sending explicit RST_STREAM ( was closed and send queue was flushed) -> not sending RST_STREAM ( is already reset)send_headers; frame=; init_window=decrementing all windows; dec=; flow=decrementing stream window; id=; decr=decremented stream window; id=; reclaime
+endency ID; stream=connection error PROTOCOL_ERROR -- failed to load PRIORITY frame; err=;;connection error PROTOCOL_ERROR -- invalid stream ID 0;connection error PROTOCOL_ERROR -- received unexpected CONTINUATION frame;too_many_continuations, max = too_many_continuationsconnection error PROTOCOL_ER
+enschedule_pending_open; stream=invalid initial remote window sizeassertion failed: self.refused.is_none()connection error PROTOCOL_ERROR -- id () < next_id ();opening stream; init_window=stream error PROTOCOL_ERROR -- recv_headers with END_STREAM: content-length is not zero; stream=stream error PRO
+erver finishedassertion failed: context.len() <= 0xffffivtraffic updresumptionexporting too muchtls13 res binderc e trafficc hs traffics hs trafficc ap traffics ap trafficexp masterres masterderivedech accept confirmationhrr ech accept confirmationCLIENT_EARLY_TRAFFIC_SECRETCLIENT_HANDSHAKE_TRAFFIC_
+es.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:182event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:197event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:215event C:\Use
+event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:902event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:917event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\
+event src\core\ffi.rs:96event src\core\ffi.rs:102event src\core\ffi.rs:107Parsing received tracking IDParsing received game infoLoaded backend token from storage: State is not initialized, cannot load backend tokenFailed to parse LCK info: Failed to parse game info: Invalid c string providedNull poi
+event src\cosmetics\cache.rs:256event src\cosmetics\cache.rs:287event src\cosmetics\cache.rs:353event src\cosmetics\cache.rs:366skipping send-closed stream; id=г
+extensionssec-websocket-keysec-websocket-protocolsec-websocket-versionserverset-cookiestrict-transport-securitytetrailertransfer-encodinguser-agentupgradeupgrade-insecure-requestsviax-content-type-optionsx-dns-prefetch-controlx-frame-optionsHeaderValue::from_static with invalid bytes1001011021031041
+f(Ljava/nio/file/Path;Ljava/nio/charset/Charset;[Ljava/nio/file/OpenOption;)Ljava/io/InputStreamReader;
+fter; stream=; pending_send_empty=; buffered_send_data=; num_recv=; num_send=dec_num_streams; stream=assertion failed: stream.is_countedassertion failed: self.num_recv_streams > 0assertion failed: self.num_send_streams > 0assertion failed: self.num_local_reset_streams > 0inc_window; sz=; old=; new=d
+g(Ljava/nio/file/Path;Ljava/nio/charset/Charset;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStreamWriter;
+gukhlinbnewaqaacsaurvithyiiiBin8Ext8dataoberV4_0v130duplolckqaaithai\x1buaryvoid12.1V3_2mendmodisoyotirhvaryOpenweekHINT\x0cmodeWord{
+gured_streamingevent src\core\handling.rs:95event src\core\handling.rs:105event src\core\handling.rs:112event src\core\handling.rs:116Checking if user is subscribed to streaming serviceSubscription status retrieved: handle_is_user_subscribedevent src\core\handling.rs:125event src\core\handling.rs:12
+h2-0.4.12\src\proto\streams\recv.rs:920event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:985event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:1075event C:\Users\sondr\.cargo\regist
+in CONNECTstream error PROTOCOL_ERROR -- error building request: malformed headers: missing schememalformed headers: :status field on requestmalformed headers: missing methodmalformed headers: malformed authority (malformed headers: malformed scheme (malformed headers: malformed path (FramedRead::de
+incorrect token <
+inpc13.0V2_1v120chrsdevahanghirasiddsinhtodr -> uuidenum to emodinscv100elymglaghatrhluwhmnpkaliKawiMiaonbatpermrohgthaaugar\x07cwcfDashidstdiaklisuoryazyyyetagidsuoidcgeorhrktitalmedftavttglg
+invalid header nameinvalid header valueinvalid new lineinvalid response statusinvalid tokentoo many headersinvalid HTTP versionall times should be after the epochdate must be before year 9999hyper::ext::HeaderCaseMaphyper::ext::h1_reason_phrase::ReasonPhraseOPTIONSGETPUTDELETECONNECTPATCHGoAwayReaso
+is over size; stream=stream error PROTOCOL_ERROR -- poll_response: stream=poll_response called after response returnedstream error PROTOCOL_ERROR -- recv_trailers: content-length is not zero; stream=release_connection_capacity; size=, connection in_flight_data=release_capacity; size=auto-release cl
+lck-streaming-rs\src\codec_utils.rs
+lck-streaming-rs\src\ffi\exports.rs
+lck-streaming-rs\src\ffi\types.rs
+lck-streaming-rs\src\ffi\unity_logger.rs
+lck-streaming-rs\src\rtmp\minirtmp.rs
+lck-streaming-rs\src\streamer.rs
+lck_streaming_rs::ffi::exportsDestroyStreamerDestroyStreamer called with null ctxGetStreamerCallbackFunctionSetGlobalUrlOverride: clearedSetGlobalUrlOverride: setSetGlobalUrlOverride: invalid UTF-8: SetPacketInterleaverEnabled()SetPacketInterleaverEnabled called with null ctxSetPluginLogLevel(SetStr
+lck_streaming_rs::rtmp::minirtmpUser is not authorized to streamassertion failed: idx < CAPACITYformat_avcc: SPS too short ( bytes, need >= 4)RTMP metadata sent: RTMP connection initializedRTMP connection closedpacket data fits i32TryFromIntErrorCreating new StreamerContextlck_streaming_rs::ffi::typ
+lient\client.rs:247event src\backend_client\client.rs:252event src\backend_client\client.rs:272event src\backend_client\client.rs:298home.start_streamingnotify_start_streamingapplication_idhome.verify_tracking_idverify_tracking_idFailed to retrieve user data after refreshcurrent_subscription_statecu
+lledpolled after completeabstract socket name must be shorter than SUN_LENMap must not be polled after it returned `Poll::Ready`Future polled twiceinternal error: entered unreachable code: http2 cannot upgradeunexpected polling after handshakeHTTP/2 connecting already in progress for reuse idle conn
+memory allocation of  bytes failed
+cannot modify the panic hook from a panicking threadnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread '' () panicked at Box<dyn Any>aborting due to panic at 
+thread panicked while processing panic. aborting.
+thread caused non-unw
+n errored state. Please reconfigure your streaming target.State not initializedstreamingTargetget_user_streaming_datalck_core::backend_client::streamingsrc\backend_client\streaming.rsYouTube stream key or URL is empty, returning empty string.get_youtube_stream_urlevent src\backend_client\streaming.r
+name out of boundscomm out of boundsassertion failed: msg.ends_with('\0')internal error: entered unreachable code: the rust API does not use filesOkStreamEndNeedDictErrNoStreamErrorDataErrorMemErrorBufErrorVersionErrormid > lenattempt to join into collection with len > usize::MAXUtf8Errorvalid_up_to
+nd_client\client.rs:226Retrieving current user dataNo auth token found, user not logged inAuth token found, sending request to get current userhome.meParsed user summaryNo auth token received to storeFailed to store token: refresh_current_userevent src\backend_client\client.rs:234event src\backend_c
+ndex.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:898event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:902event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\re
+ng dangling stream from pending_senddata framesending data framestream capacity is 0pop_frame; frame=invalid RST_STREAM framepending_window_updates -- pop; stream=invalid WINDOW_UPDATE frameunexpected flow control statesend_reset(..., reason=, initiator=, stream=; is_closed=; pending_send.is_empty=s
+ng/String;)Ljava/lang/String;get_string_from_shared_prefsState error: event src\device\mod.rs:34src\device\mod.rsevent src\backend_client\client.rs:109src\backend_client\client.rsevent src\backend_client\client.rs:113/liveness_checkerK
+nt C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\flow_control.rs:124C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\flow_control.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b55
+nter provided for tracking IDFailed to load backend token from storage: initializeevent src\core\ffi.rs:134event src\core\ffi.rs:137event src\core\ffi.rs:146event src\core\ffi.rs:156event src\core\ffi.rs:161event src\core\ffi.rs:169event src\core\ffi.rs:181event src\core\ffi.rs:185event src\core\ffi
+ntifierbackup_urlstruct variant StreamingTarget::Twitchstruct variant StreamingTarget::Twitch with 4 elementsstruct variant StreamingTarget::Youtubestruct variant StreamingTarget::Youtube with 5 elementsstruct variant StreamingTarget::Manualstruct variant StreamingTarget::Manual with 2 elementsstruc
+null cannot be cast to non-null type java.lang.reflect.Constructor<T of androidx.lifecycle.SavedStateViewModelFactoryKt.findMatchingConstructor>
+o\streams\send.rs:404event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:463event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:470event C:\Users\sondr\.cargo\registry\src\index.crates
+ogin attempt is completedLogin status retrieved: Failed to check login status because user is not logged in, or token is invalidNo current login attempt in local state; treating as expired so the client restarts the flowLogin attempt already synced; treating as expired so the client restarts the flo
+on failed: dst.remaining_mut() >= lenassertion failed: !stream_id.is_zero()encoding PING; ack= len=encoding RESET; id= code=encoding GO_AWAY; code=codec closedmutex poisonedrecv DATArecv HEADERSrecv PRIORITYrecv PUSH_PROMISErecv SETTINGSrecv PINGreceived unexpected shutdown pingrecv GOAWAYrecv WINDO
+osed stream () capacity: set_target_connection_window; target=, reserved=incrementing all windows; inc=assertion failed: sz <= MAX_WINDOW_SIZE as usizeconnection error PROTOCOL_ERROR -- unexpected DATA frame; stream=; connection=; stream=recv_data; frame ignored on stream release  for some timeconne
+ot EOS; stream=connection error PROTOCOL_ERROR -- recv_push_promise: initiating stream is in an invalid state;connection error PROTOCOL_ERROR -- recv_push_promise: initiating stream is not opened;), ignoring PUSH_PROMISEconnection closed because of a broken pipeStreams::recv_eofconnection error PROT
+ount < usize::MAXassertion failed: self.ref_count > 0  assigned capacity to stream; available=; buffered=; id=; max_buffer_size= prev=  sent stream data; available=Streamis_countedref_countnext_pending_sendis_pending_sendsend_flowrequested_send_capacitybuffered_send_datasend_taskpending_sendnext_pen
+r\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:129send_dataszrequestedevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:178event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949
+rc\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\frame\reset.rs:41C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\frame\reset.rsHeaderTableSizeEnablePushMaxConcurrentStreamsInitialWindowSizeMaxFrameSizeMaxHeaderListSizeEnableConnectProtocolevent C:\Users\sondr\.car
+ream_ref; stream=StreamRef::drop; mutex poisonedEND_STREAMPADDEDlast_stream_iddebug_dataloading headers; flags=Headersstream_depPushPromisepromised_idassertion failed: payload_len_be[0..5].iter().all(|b| *b == 0)END_HEADERShpack decoding error; err=malformed messageload_hpack; header list size over
+reamingStartedServiceCreatedServiceDisposedCameraEnabledCameraDisabledRecordingStoppedStreamingStoppedStreamingErrorPhotoCapturedRecorderErrorPhotoCaptureErrorSdkErrorPerformanceEchoEnabledEchoSavedevent src\telemetry\mod.rs:21lck_core::telemetrysrc\telemetry\mod.rslck_core::ffi_utilsevent src\ffi_u
+reams.rs:452event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:485event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:494event C:\Users\sondr\.cargo\registry\src\index.crates.io
+reams\streams.rs:986event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:1478event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:1490event C:\Users\sondr\.cargo\registry\src\index
+registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:775event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:866event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\st
+rrent_streaming_targetNo current login attempt foundCurrent login attempt found, expiring in Sending check login status request to backendhome.check_device_login_attemptLogin attempt has expiredLogin completedLogin response missing user IDcheck_login_completedevent src\backend_client\client.rs:395ev
+rs\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:240event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:245event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\sr
+ry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:88h2::proto::streams::sendC:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\s
+s:100{stream_key}Queried Twitch ingest server URL does not contain '{stream_key}' placeholder, using fallback.Using queried Twitch ingest server URL: Failed to query for Twitch ingest servers, using fallback.Provided backup URL does not contain '{stream_key}' placeholder, returning empty string.inge
+s_exclusiveWindowUpdatesize_incrementPoolDisabledCheckoutNoLongerWantedCheckedOutClosedValue`len` greater than remainingassertion failed: cnt <= self.limitWindowIncompleteBodyReasonPhraseFlowControlwindow_sizeavailable`Ready` polled after completionlast stream closed during poll, wake againconnectio
+see https://docs.rs/getrandom#nodejs-es-module-supportgetrandom: this target is not supportederrno: did not return a positive valueunexpected situationUnknown Error: assertion failed: path.contains(&0)h2::ext::Protocolinactive streamunexpected frame typepayload too bigrejectedrelease capacity too bi
+set_expiration; dropped , over max_concurrent_reset_streamsclear_stream_window_update_queue; stream=illegal connection-specific headers foundconnection error PROTOCOL_ERROR -- recv_go_away: last_stream_id (skipping 1xx response headersconnection error PROTOCOL_ERROR -- recv_open: in unexpected state
+sharded_slab::cfg::DefaultConfigoverflow adding duration to dateassertion failed: i < self.len()event src\cosmetics\cache.rs:162event src\cosmetics\cache.rs:214event src\cosmetics\cache.rs:428h2::proto::streams::flow_controlremoving expired connection for у
+src\auth\mod.rs
+src\backend_client\mod.rs
+src\backend_client\streaming.rs
+src\device\mod.rs
+src\device\secrets.rs
+src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:674pop_framepoppedevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:730event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\
+src\proto\streams\prioritize.rs:739eosevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:752event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:788updating stream flowupda
+src\telemetry\mod.rs
+streams\stream.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\stream.rs:315event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\stream.rs:333h2::proto::streams::streamsC:\Users\sondr\.cargo\regi
+stry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rsevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\streams.rs:432event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\st
+stsurl_templateget_twitch_stream_urlevent src\backend_client\streaming.rs:125event src\backend_client\streaming.rs:128event src\backend_client\streaming.rs:130event src\backend_client\streaming.rs:134Invalid response: Invalid tokenDevice error: User not logged inNo current login attemptNo data avail
+t C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:651event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\recv.rs:658event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0
+t TrackingVerificationDatastruct TrackingVerificationData with 1 elementevent src\backend_client\rate_limiter.rs:119lck_core::backend_client::rate_limitersrc\backend_client\rate_limiter.rsevent src\backend_client\rate_limiter.rs:132event src\backend_client\rate_limiter.rs:137Streaming target is in a
+tempt  with error: authorizedget_user_recording_datalck_core::authsrc\auth\mod.rsset_max_log_levellck_core::core::ffisrc\core\ffi.rsInitializing Android contextFailed to create global ref for Android contextFailed to attach to current threadFailed to get JavaVM from Android contextinitialize_android
+this token is not a boolean: <
+this token is not a null: <
+tils.rs:42event src\ffi_utils.rs:44event src\ffi_utils.rs:51event src\ffi_utils.rs:61MsgPackFailed to deserialize data: FailedToSerializeGetting serializer for type: get_serializerlck_core::serializationserialization_typesrc\serialization\mod.rsevent src\serialization\mod.rs:77Failed to acquire regi
+ting connection flowevent C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:859event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\prioritize.rs:869event C:\Users\sondr\.cargo\registry\src\i
+treams\send.rs:92event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:133event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\send.rs:185event C:\Users\sondr\.cargo\registry\src\index.crates.io-
+ublicKeyParseFailedInternalErrorConnectionNotInitializedInvalidActionUserNotLoggedInStreamingNotConfiguredInvalidTrackingIdSerializationErrorDeserializationErrorStreamingProviderErrorend of keystream reachedStreamCipherErrorkey_exchange failed: lck_auth::ffikey_exchange failed with unknown code: get
+when the underlying stream did notfailed to write whole bufferxEncrypted payload too short:  bytesXChaCha20-Poly1305 decryption failedFailed to parse auth response: lck_auth::providerKey exchange completed for client Initializing LckCoreAuthProvider for client LckCoreAuthProvider initialized success
+y\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:199event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state.rs:215event C:\Users\sondr\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\h2-0.4.12\src\proto\streams\state
+АжкQueue::push_backverification_algEmptyTicketValueMissingExtensioncode.module.nameУ
+ПeVщvvА*StreamDependencyHandshakeFailure>
+тъ*\Failed to create pinned HTTP clientnew_with_urlAttempting to load stored backend tokenBackend token retrieved from storageNo backend token found in storage: device_modelbundle_idtry_load_token_from_storageevent src\backend_client\client.rs:200event src\backend_client\client.rs:217event src\backe
+яяяsetclearedGlobal URL override lck_streaming_rs::streamerUsing global URL overrideFailed to initialize auth: Failed to get streaming data: RTMP connection closedStarting stream...Streaming has already startedget_nal_size returned 0, stoppingFailed to send NAL unit: Audio header already sent, skipp

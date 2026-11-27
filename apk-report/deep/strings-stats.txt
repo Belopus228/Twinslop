@@ -1,0 +1,14 @@
+urls: 4
+human: 312772
+russian: 296379
+idents: 31994
+tech: 923
+
+lib/arm64-v8a/libil2cpp.so: 1902922
+lib/arm64-v8a/liblck_streaming_rs.so: 11357
+lib/arm64-v8a/liblck_core.so: 97613
+lib/arm64-v8a/liblck_rs.so: 17245
+lib/arm64-v8a/libmodkit_gilla.so: 34145
+lib/arm64-v8a/libmain.so: 95
+lib/arm64-v8a/libnanosockets.so: 163
+classes.dex: 107836
