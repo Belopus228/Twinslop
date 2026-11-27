@@ -14,9 +14,9 @@ export const CFG = {
   maxSpeed: 7.4,
   damping: 2.6,
   armReach: 1.5,
-  grabRadius: 0.62,
   armSpeed: 9.0,
   playerRadius: 0.34,
+  handRadius: 0.11,          // кисть — маленькая сфера, она упирается в геометрию
   bounds: 13,               // половина комнаты по X/Z
   hearBase: 4.2,
   hearNoise: 8.4,
@@ -61,18 +61,6 @@ function buildLevel(rnd) {
   crates.push({ x: -9.5, y: 1.6, z: 0, w: 1.0, h: 0.4, d: 6.0 });
   crates.push({ x: 9.5, y: 2.2, z: 0, w: 1.0, h: 0.4, d: 6.0 });
 
-  // точки захвата: верхние углы и центр каждой крышки
-  const anchors = [];
-  for (const c of crates) {
-    const top = c.y + c.h;
-    const hw = c.w / 2 - 0.12;
-    const hd = c.d / 2 - 0.12;
-    anchors.push({ x: c.x - hw, y: top + 0.06, z: c.z - hd });
-    anchors.push({ x: c.x + hw, y: top + 0.06, z: c.z - hd });
-    anchors.push({ x: c.x - hw, y: top + 0.06, z: c.z + hd });
-    anchors.push({ x: c.x + hw, y: top + 0.06, z: c.z + hd });
-  }
-
   // добыча: на крышках
   const loot = [];
   const spots = crates.filter((c) => c.y + c.h > 1.2);
@@ -93,7 +81,7 @@ function buildLevel(rnd) {
     loot.push({ id: `l${loot.length}`, type: 'gold', x: (rnd() - 0.5) * 8, y: 0.4, z: (rnd() - 0.5) * 8, taken: false });
   }
 
-  return { crates, anchors, loot };
+  return { crates, loot };
 }
 
 // ---------------------------------------------------------------- создание мира
@@ -101,7 +89,7 @@ function buildLevel(rnd) {
 export function createSim(opts = {}) {
   const mode = opts.mode === 'hide' ? 'hide' : 'heist';
   const rnd = mulberry32(opts.seed ?? 1337);
-  const { crates, anchors, loot } = buildLevel(rnd);
+  const { crates, loot } = buildLevel(rnd);
 
   const sim = {
     mode,
@@ -110,7 +98,6 @@ export function createSim(opts = {}) {
     state: 'play',
     timeLimit: mode === 'hide' ? CFG.hideTime : CFG.heistTime,
     crates,
-    anchors,
     loot,
     exit: { x: -11, y: 0, z: -11, r: 1.9 },
     yaw: 0,
@@ -118,8 +105,8 @@ export function createSim(opts = {}) {
       p: [10.5, CFG.playerRadius, -10.5],
       v: [0, 0, 0],
       hands: {
-        L: { pos: [10.5, 1.1, -10.5], grabbed: false, anchor: null },
-        R: { pos: [10.5, 1.1, -10.5], grabbed: false, anchor: null },
+        L: { pos: [10.5, 1.1, -10.5], grabbed: false, anchor: null, normal: null },
+        R: { pos: [10.5, 1.1, -10.5], grabbed: false, anchor: null, normal: null },
       },
       input: { L: { x: 0, y: 0 }, R: { x: 0, y: 0 } },
       grounded: false,
@@ -197,52 +184,138 @@ function resolveCrate(p, v, r, c) {
   return n;
 }
 
+/**
+ * Кисть — сфера радиуса handRadius. Выталкиваем её из ящиков и возвращаем
+ * точку контакта: за неё и цепляемся. Так рука не проходит сквозь ящик,
+ * а цепляется за любую поверхность, а не только за углы.
+ */
+function resolveHandCollision(sim, pos) {
+  const r = CFG.handRadius;
+  let contact = null;
+
+  // пол и стены: кисть тоже не проходит сквозь них
+  if (pos[1] < r) pos[1] = r;
+  const lim = CFG.bounds - r;
+  if (pos[0] > lim) pos[0] = lim;
+  if (pos[0] < -lim) pos[0] = -lim;
+  if (pos[2] > lim) pos[2] = lim;
+  if (pos[2] < -lim) pos[2] = -lim;
+
+  for (const c of sim.crates) {
+    const minX = c.x - c.w / 2, maxX = c.x + c.w / 2;
+    const minY = c.y, maxY = c.y + c.h;
+    const minZ = c.z - c.d / 2, maxZ = c.z + c.d / 2;
+
+    const cx = clamp(pos[0], minX, maxX);
+    const cy = clamp(pos[1], minY, maxY);
+    const cz = clamp(pos[2], minZ, maxZ);
+    const dx = pos[0] - cx, dy = pos[1] - cy, dz = pos[2] - cz;
+    const d2 = dx * dx + dy * dy + dz * dz;
+
+    let nx; let ny; let nz; let push;
+
+    if (d2 < 1e-8) {
+      // центр кисти внутри ящика — выталкиваем через ближайшую грань
+      const faces = [
+        { d: pos[0] - minX, n: [-1, 0, 0] }, { d: maxX - pos[0], n: [1, 0, 0] },
+        { d: pos[1] - minY, n: [0, -1, 0] }, { d: maxY - pos[1], n: [0, 1, 0] },
+        { d: pos[2] - minZ, n: [0, 0, -1] }, { d: maxZ - pos[2], n: [0, 0, 1] },
+      ].sort((a, b) => a.d - b.d)[0];
+      nx = faces.n[0]; ny = faces.n[1]; nz = faces.n[2];
+      push = faces.d + r;
+    } else if (d2 < r * r) {
+      const d = Math.sqrt(d2);
+      nx = dx / d; ny = dy / d; nz = dz / d;
+      push = r - d;
+    } else {
+      continue;
+    }
+
+    pos[0] += nx * push;
+    pos[1] += ny * push;
+    pos[2] += nz * push;
+
+    contact = {
+      point: [pos[0] - nx * r, pos[1] - ny * r, pos[2] - nz * r],
+      normal: [nx, ny, nz],
+    };
+  }
+
+  return contact;
+}
+
+/** Точка строго внутри какого-нибудь ящика. */
+function insideAnyCrate(sim, pos) {
+  for (const c of sim.crates) {
+    if (pos[0] > c.x - c.w / 2 && pos[0] < c.x + c.w / 2 &&
+        pos[1] > c.y && pos[1] < c.y + c.h &&
+        pos[2] > c.z - c.d / 2 && pos[2] < c.z + c.d / 2) return true;
+  }
+  return false;
+}
+
+/** Отпускание руки. */
+function releaseHand(hand) {
+  hand.grabbed = false;
+  hand.anchor = null;
+  hand.normal = null;
+}
+
 function updateHand(sim, side, dt) {
   const hand = sim.player.hands[side];
   const inp = sim.player.input[side];
   const mag = Math.hypot(inp.x, inp.y);
-  const target = handTarget(sim, side);
 
   if (hand.grabbed) {
-    const anchor = hand.anchor;
-    hand.pos = [anchor[0], anchor[1], anchor[2]];
-    const d = dist(sim.player.p, anchor);
-    // отпускаем, если стик отпущен или опора стала слишком далеко
+    // держимся за точку на поверхности, кисть стоит на радиусе от неё
+    hand.pos = [
+      hand.anchor[0] + hand.normal[0] * CFG.handRadius,
+      hand.anchor[1] + hand.normal[1] * CFG.handRadius,
+      hand.anchor[2] + hand.normal[2] * CFG.handRadius,
+    ];
+
+    const d = dist(sim.player.p, hand.anchor);
     if (mag < 0.2 || d > CFG.armReach * 2.0) {
-      hand.grabbed = false;
-      hand.anchor = null;
-    } else {
-      const pull = [
-        (anchor[0] - sim.player.p[0]),
-        (anchor[1] - sim.player.p[1]),
-        (anchor[2] - sim.player.p[2]),
-      ];
-      const l = len(pull) || 1;
-      const k = CFG.pullStrength * dt;
-      sim.player.v[0] += (pull[0] / l) * k;
-      sim.player.v[1] += (pull[1] / l) * k;
-      sim.player.v[2] += (pull[2] / l) * k;
+      releaseHand(hand);
+      return;
     }
+
+    const pull = [
+      hand.anchor[0] - sim.player.p[0],
+      hand.anchor[1] - sim.player.p[1],
+      hand.anchor[2] - sim.player.p[2],
+    ];
+    const l = len(pull) || 1;
+    const k = CFG.pullStrength * dt;
+    sim.player.v[0] += (pull[0] / l) * k;
+    sim.player.v[1] += (pull[1] / l) * k;
+    sim.player.v[2] += (pull[2] / l) * k;
     return;
   }
 
   // свободная рука летит к цели
+  const target = handTarget(sim, side);
   const k = Math.min(1, CFG.armSpeed * dt);
   hand.pos[0] += (target[0] - hand.pos[0]) * k;
   hand.pos[1] += (target[1] - hand.pos[1]) * k;
   hand.pos[2] += (target[2] - hand.pos[2]) * k;
 
-  if (mag > 0.25) {
-    let best = null;
-    let bestD = CFG.grabRadius;
-    for (const a of sim.anchors) {
-      const d = dist(hand.pos, [a.x, a.y, a.z]);
-      if (d < bestD) { bestD = d; best = a; }
-    }
-    if (best) {
+  // кисть упирается в ящики: сквозь геометрию рука не проходит
+  const contact = resolveHandCollision(sim, hand.pos);
+  hand.contact = contact;
+
+  if (mag > 0.25 && contact) {
+    const rest = [
+      contact.point[0] + contact.normal[0] * CFG.handRadius,
+      contact.point[1] + contact.normal[1] * CFG.handRadius,
+      contact.point[2] + contact.normal[2] * CFG.handRadius,
+    ];
+    // не цепляемся, если точка покоя оказалась внутри соседнего ящика
+    if (!insideAnyCrate(sim, rest)) {
       hand.grabbed = true;
-      hand.anchor = [best.x, best.y, best.z];
-      hand.pos = [best.x, best.y, best.z];
+      hand.anchor = contact.point.slice();
+      hand.normal = contact.normal.slice();
+      hand.pos = rest;
       sim.events.push('grab');
     }
   }

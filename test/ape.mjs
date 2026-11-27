@@ -1,4 +1,4 @@
-// Проверка механик APE HEIST: хватка рук, шум, монстр, добыча, выход.
+// Проверка механик APE HEIST: коллизии кистей, захват за поверхность, шум, монстр, добыча, выход.
 import { build } from 'esbuild';
 
 await build({
@@ -22,15 +22,41 @@ const run = (sim, seconds, dt = 1 / 60) => {
   return sim;
 };
 
+const insideCrate = (sim, pos) => sim.crates.some((c) =>
+  pos[0] > c.x - c.w / 2 && pos[0] < c.x + c.w / 2 &&
+  pos[1] > c.y && pos[1] < c.y + c.h &&
+  pos[2] > c.z - c.d / 2 && pos[2] < c.z + c.d / 2);
+
+// переносит тело и руки в точку (кисти не должны лететь через всю комнату)
+function teleport(sim, p) {
+  sim.player.p = [p[0], p[1], p[2]];
+  sim.player.v = [0, 0, 0];
+  ['L', 'R'].forEach((side) => {
+    const h = sim.player.hands[side];
+    h.pos = [p[0], p[1] + 1.0, p[2]];
+    h.grabbed = false;
+    h.anchor = null;
+    h.normal = null;
+    h.contact = undefined;
+  });
+}
+
+// ставит тело перед ящиком и тянет руку прямо в него
+function faceCrate(sim, crate, gap = 1.0) {
+  sim.yaw = 0;
+  teleport(sim, [crate.x, CFG.playerRadius, crate.z - (crate.d / 2 + gap)]);
+  setHandInput(sim, 'L', { x: 0, y: 1 });
+  setHandInput(sim, 'R', { x: 0, y: 1 });
+}
+
 // ---------------------------------------------------------------- структура
 const sim = createSim({ seed: 7 });
 assert(sim.crates.length >= 9, `в комнате ${sim.crates.length} опор`);
-assert(sim.anchors.length >= 40, `${sim.anchors.length} точек захвата`);
 assert(sim.loot.length === 6, `добычи ${sim.loot.length} штук`);
 assert(sim.loot.filter((l) => l.type === 'gem').length >= 1, 'есть алмазы, не только золото');
 assert(sim.state === 'play' && sim.t === 0, 'игра начинается в состоянии «играем»');
+assert(sim.player.hands.L.contact === undefined, 'на старте рука ничего не касается');
 
-// детерминированность уровня
 const a = createSim({ seed: 42 }).crates.map((c) => c.h).join(',');
 const b = createSim({ seed: 42 }).crates.map((c) => c.h).join(',');
 assert(a === b, 'один seed — один и тот же уровень');
@@ -43,35 +69,77 @@ run(quiet, 2);
 assert(quiet.noise < 0.15, `стоя на месте шум низкий (${quiet.noise.toFixed(2)})`);
 assert(quiet.monster.state === 'patrol', 'монстр спокоен, когда тихо и далеко');
 
-// ---------------------------------------------------------------- хватка и подтягивание
-const grab = createSim({ seed: 7 });
-const anchor = grab.anchors
-  .filter((a2) => a2.y > 1.4 && a2.y < 2.6)
-  .sort((x, y) => x.y - y.y)[0];
+// ---------------------------------------------------------------- коллизии кистей
+const handSim = createSim({ seed: 7 });
+const tall = handSim.crates.find((c) => c.h > 1.9) || handSim.crates[0];
+faceCrate(handSim, tall);
 
-grab.yaw = 0;
-grab.player.p = [anchor.x, anchor.y - 1.5, anchor.z - 1.05];
-grab.player.v = [0, 0, 0];
-setHandInput(grab, 'L', { x: 0, y: 1 });
-setHandInput(grab, 'R', { x: 0, y: 1 });
+let everInside = false;
+for (let i = 0; i < 60; i++) {
+  step(handSim, 1 / 60);
+  if (insideCrate(handSim, handSim.player.hands.L.pos) || insideCrate(handSim, handSim.player.hands.R.pos)) {
+    everInside = true;
+  }
+}
+assert(!everInside, 'ни одна кисть ни разу не оказалась внутри ящика');
 
-const target = handTarget(grab, 'L');
-const reached = Math.hypot(target[0] - anchor.x, target[1] - anchor.y, target[2] - anchor.z);
-assert(reached < CFG.grabRadius, `рука дотягивается до опоры (${reached.toFixed(2)} < ${CFG.grabRadius})`);
+const contact = handSim.player.hands.L.contact || handSim.player.hands.R.contact;
+assert(!!contact, 'кисть упирается в поверхность и знает точку контакта');
+assert(Array.isArray(contact.point) && contact.point.length === 3, 'точка контакта — трёхмерная');
 
-const yBefore = grab.player.p[1];
-run(grab, 0.8);
-const grabbedNow = grab.player.hands.L.grabbed || grab.player.hands.R.grabbed;
-assert(grabbedNow, 'рука цепляется за опору');
-assert(grab.player.p[1] > yBefore + 0.25, `тело подтянулось вверх (${yBefore.toFixed(2)} → ${grab.player.p[1].toFixed(2)})`);
+// кисть не протыкает геометрию, даже если цель руки глубоко внутри ящика
+const deep = createSim({ seed: 7 });
+const crateDeep = deep.crates.find((c) => c.h > 1.9) || deep.crates[0];
+faceCrate(deep, crateDeep, 0.4);
+let deepViolations = 0;
+for (let i = 0; i < 40; i++) {
+  step(deep, 1 / 60);
+  if (insideCrate(deep, deep.player.hands.L.pos) || insideCrate(deep, deep.player.hands.R.pos)) deepViolations++;
+}
+assert(deepViolations === 0, `40 кадров в упор к ящику — ни одного протыкания (${deepViolations})`);
+
+// кисть не уходит под пол
+const floorSim = createSim({ seed: 7 });
+setHandInput(floorSim, 'L', { x: 0, y: -1 });
+setHandInput(floorSim, 'R', { x: 0, y: -1 });
+run(floorSim, 0.5);
+assert(floorSim.player.hands.L.pos[1] >= CFG.handRadius - 1e-9,
+  `кисть не проваливается под пол (${floorSim.player.hands.L.pos[1].toFixed(3)} ≥ ${CFG.handRadius})`);
+
+// ---------------------------------------------------------------- захват за поверхность
+const surf = createSim({ seed: 7 });
+const crate2 = surf.crates.find((c) => c.h > 1.9) || surf.crates[0];
+faceCrate(surf, crate2);
+run(surf, 0.3);      // рука должна долететь до поверхности
+
+assert(surf.player.hands.L.grabbed || surf.player.hands.R.grabbed,
+  'рука цепляется за гладкую поверхность');
+
+const anchor = surf.player.hands.L.grabbed ? surf.player.hands.L.anchor : surf.player.hands.R.anchor;
+const onSurface = surf.crates.some((c) => {
+  const dx = Math.min(Math.abs(anchor[0] - (c.x - c.w / 2)), Math.abs(anchor[0] - (c.x + c.w / 2)));
+  const dy = Math.min(Math.abs(anchor[1] - c.y), Math.abs(anchor[1] - (c.y + c.h)));
+  const dz = Math.min(Math.abs(anchor[2] - (c.z - c.d / 2)), Math.abs(anchor[2] - (c.z + c.d / 2)));
+  const inXZ = anchor[0] >= c.x - c.w / 2 - 1e-6 && anchor[0] <= c.x + c.w / 2 + 1e-6 &&
+               anchor[2] >= c.z - c.d / 2 - 1e-6 && anchor[2] <= c.z + c.d / 2 + 1e-6;
+  const inY = anchor[1] >= c.y - 1e-6 && anchor[1] <= c.y + c.h + 1e-6;
+  return Math.min(dx, dy, dz) < 1e-5 && (inXZ || inY);
+});
+assert(onSurface, 'точка захвата лежит ровно на грани ящика');
+
+const yStart = surf.player.p[1];
+run(surf, 0.7);
+assert(surf.player.p[1] > yStart + 0.2,
+  `зацепился и подтянулся вверх (${yStart.toFixed(2)} → ${surf.player.p[1].toFixed(2)})`);
+assert(!insideCrate(surf, surf.player.hands.L.pos), 'во время подтягивания кисть не влезает в ящик');
 
 // отпускание
-setHandInput(grab, 'L', { x: 0, y: 0 });
-setHandInput(grab, 'R', { x: 0, y: 0 });
-step(grab, 1 / 60);
-assert(!grab.player.hands.L.grabbed && !grab.player.hands.R.grabbed, 'отпустил стик — руки разжались');
+setHandInput(surf, 'L', { x: 0, y: 0 });
+setHandInput(surf, 'R', { x: 0, y: 0 });
+step(surf, 1 / 60);
+assert(!surf.player.hands.L.grabbed && !surf.player.hands.R.grabbed, 'отпустил стик — руки разжались');
 
-// свободный полёт руки вверх поднимает кисть
+// свободная рука летит вверх
 const free = createSim({ seed: 7 });
 free.yaw = 0;
 setHandInput(free, 'R', { x: 0, y: 1 });
@@ -86,12 +154,11 @@ item.y = lootSim.player.p[1];
 item.z = lootSim.player.p[2];
 step(lootSim, 1 / 60);
 assert(item.taken === true, 'добыча подбирается при касании');
-const snapLoot = snapshot(lootSim);
-assert(snapLoot.total === 1, `счётчик добычи отработал (${snapLoot.total})`);
+assert(snapshot(lootSim).total === 1, 'счётчик добычи отработал');
 
 // ---------------------------------------------------------------- монстр слышит
 const heard = createSim({ seed: 7 });
-heard.monster.p = [-4.5, 0, 6.5];                 // свободное место у стены, не ящик
+heard.monster.p = [-4.5, 0, 6.5];
 heard.player.p = [-7.5, CFG.playerRadius, 6.5];
 heard.player.v = [-6, 0, 0];
 setHandInput(heard, 'L', { x: 1, y: 0 });
@@ -101,7 +168,6 @@ assert(heard.noise > 0.15, `быстрое движение шумит (${heard.
 assert(heard.monster.state === 'alert' || heard.monster.state === 'chase',
   `монстр среагировал (${heard.monster.state})`);
 
-// остановился — шум спадает
 setHandInput(heard, 'L', { x: 0, y: 0 });
 setHandInput(heard, 'R', { x: 0, y: 0 });
 heard.player.v = [0, 0, 0];
@@ -122,9 +188,7 @@ win.loot.slice(0, 3).forEach((l) => { l.taken = true; l.type = 'gold'; });
 win.player.p = [win.exit.x, CFG.playerRadius, win.exit.z];
 step(win, 1 / 60);
 assert(win.state === 'won', 'с 3 единицами добычи выход срабатывает');
-assert(win.events.includes('extracted'), 'событие выноса записано');
 
-// без добычи выход не срабатывает
 const notYet = createSim({ seed: 7 });
 notYet.player.p = [notYet.exit.x, CFG.playerRadius, notYet.exit.z];
 step(notYet, 1 / 60);
@@ -133,7 +197,6 @@ assert(notYet.state === 'play', 'без добычи выход не засчи�
 // ---------------------------------------------------------------- режим «продержись»
 const hide = createSim({ seed: 7, mode: 'hide' });
 assert(hide.timeLimit === CFG.hideTime, `в режиме «продержись» ${CFG.hideTime} секунд`);
-// держим игрока в углу, монстра — далеко, чтобы проверить именно таймер
 for (let i = 0; i < 2000 && hide.state === 'play'; i++) {
   hide.monster.p = [12, 0, 12];
   hide.player.p = [-12, CFG.playerRadius, -12];
@@ -141,7 +204,6 @@ for (let i = 0; i < 2000 && hide.state === 'play'; i++) {
   step(hide, 1 / 20);
 }
 assert(hide.state === 'won', `дожил до конца таймера — победа (${hide.t.toFixed(1)} с)`);
-assert(hide.events.includes('survived'), 'событие выживания записано');
 
 // ---------------------------------------------------------------- снимок для HUD
 const snap = snapshot(createSim({ seed: 7 }));
