@@ -1,0 +1,253 @@
+, audio=, bytes=
+..RefCell already borrowedinvalid utf-8 sequence of  bytes from index incomplete utf-8 byte sequence from index
+.Hj`F
+.comment
+.data.rel.ro
+.debug_macro.dwo
+.dynamic
+.dynstr
+.dynsym
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.gcc_except_table
+.gnu.hash
+.gnu.version
+.gnu.version_r
+.got.plt
+.note.android.ident
+.rela.dyn
+.rela.plt
+.relro_padding
+.rodata
+.shstrtab
+Android
+CIE ID is not zero
+CIE start does not match
+CIE version is not 1 or 3
+Can't binary search on variable length encoded data.
+Couldn't find addressCouldn't find permissionsCouldn't find offsetCouldn't find devCouldn't find inodeCouldn't parse hex numbertoo many permsCouldn't parse devCouldn't parse address rangeinsufficient perms
+CreateStreamer
+DWARF opcode not implemented
+DW_EH_PE_aligned pointer encoding not supported
+DW_EH_PE_datarel is invalid with a datarelBase of 0
+DW_EH_PE_funcrel pointer encoding not supported
+DW_EH_PE_textrel pointer encoding not supported
+DW_OP_deref_size with bad size
+DW_OP_fbreg not implemented
+DW_OP_piece not implemented
+DestroyStreamer
+FDE has zero length
+FDE is really a CIE
+GetStreamerCallbackFunction
+Hash table capacity overflow
+I7Cxl2i5n
+Jil8_
+Kii8K
+MU86J
+MeJyOa
+MoreData
+OInHN
+PIik8
+PJYix
+PPSPPS lengthPPS countSPSSPS length()a Display implementation returned an error unexpectedlyError
+RTMP stream started successfullyg
+RTMP_IsConnected
+RTMP_IsTimedout
+Rij58
+Rijh8I
+SetGlobalUrlOverride
+SetPacketInterleaverEnabled
+SetPluginLogLevel
+SetStreamerLogLevel
+SetStreamerUrlOverride
+StartStreamer
+StopStreamer
+THku8
+TIih8i
+TKii8
+TLib8
+TNib8
+TOii8
+TOil8
+TThj8
+Thjb8
+Tjji8J
+Tmim8J
+Unknown DWARF encoding for search table.
+Vtube
+X5AHx
+Z n5Z nZZ nvX n
+[index out of bounds: the len is
+_Unwind_GetDataRelBase
+_Unwind_GetDataRelBase() not implemented
+_Unwind_GetTextRelBase
+_Unwind_GetTextRelBase() not implemented
+_Unwind_Resume
+_Unwind_Resume() can't return
+__cxa_atexit
+__cxa_finalize
+__errno
+__rust_end_short_backtrace__rust_begin_short_backtraces      [... omitted  frame ...]
+_authorisation' not found: Symbol 'key_exchange' not found: Failed to load lck-core library:
+``invalid length , expected duplicate field `struct StreamingData
+a string
+a3SeVC
+abort
+amerStopStreamer called with null ctxstream_packet_callback: user_data is nullstream_packet_callback: ffi_packet is nullstream_packet_callback: panic caughtstream_packet_callback: process_packet failed: stream_packet_callback: unknown track type format_avcc failed (returned )
+bH9_I
+bytes failedRUST_BACKTRACEcannot access a Thread Local Storage value during or after destruction: note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+calloc
+clock_gettime
+close
+column
+deadlock
+description() is deprecated; use DisplayError: Errorgetrandom: this target is not supportederrno: did not return a positive valueunexpected situationSecRandomCopyBytes: iOS Security framework failureRtlGenRandom: Windows system function failureRDRAND: failed multiple times: CPU issue likelyRDRAND: i
+dl_iterate_phdr
+dlclose
+dlerror
+dlopen
+dlopen failed, but system did not report the errordlsym failed, but system did not report the errordlclose failed, but system did not report the errorLoadLibraryExW failedLoadLibraryExW failed, but system did not report the errorGetModuleHandleExW failedGetModuleHandleExWUnknown failed, but system d
+dlsym
+during phase1 personality function said it would stop here, but now in phase2 it did not stop here
+e underlying stream did notfailed to fill whole bufferfailed to write whole bufferOsmessageErrorCustomerrorpermission deniedconnection refusednetwork unreachableconnection abortednot connectedaddress in useaddress not availablenetwork downbroken pipeentity already existsoperation would blocknot a di
+eamerLogLevel(SetStreamerLogLevel called with null ctxSetStreamerUrlOverride called with null ctxSetStreamerUrlOverride: clearedSetStreamerUrlOverride: setSetStreamerUrlOverride: invalid UTF-8: StartStreamer(width=, height=StartStreamer called with null ctxStartStreamer: invalid dimensions xStopStre
+ected end of hex escaperecursion limit exceeded`infNaN
+ekhHD
+entity not found
+esa Display implementation returned an error unexpectedlyErrorVideoAudioMetadataDropping StreamerContext
+evaluateExpression
+exceeds buffer: need  bytes at position , have invalid AVCC data: missing SPS or PPS: SPS size , PPS size invalid Annex-B data: no start code at beginninginvalid Annex-B data: failed to extract SPS/PPS: SPS size format_avcc returned empty bufferunknown config formatbuffer too small: need  bytes, ha
+expand 32-byte k
+extension cannot contain path separators: memory allocation of  bytes failed
+extern "
+failed to write #
+failed to write whole bufferOKErrorEOFfatal runtime error: thread local panicked on drop, aborting
+fatal runtime error: Rust cannot catch foreign exceptions, aborting
+fatal runtime error: Rust panics must be rethrown, aborting
+fatal runtime error: assertion failed: key as usize != KEY_SENTVAL, aborting
+fatal runtime error: failed to initiate panic, error , aborting
+fatal runtime error: out of TLS keys, aborting
+fatal runtime error: thread local panicked on drop, aborting
+fflush
+floating point `%
+fprintf
+fstat
+fwrite
+getEncodedP
+getRegister
+getSLEB128
+getSavedFloatRegister
+getSavedRegister
+getTableEntrySize
+getULEB128
+getcwd
+getenv
+getrandom
+gettid
+id not report the errorGetProcAddress failedGetProcAddress failed, but system did not report the errorFreeLibrary failedFreeLibrary failed, but system did not report the errorrequested type cannot possibly workcould not create a C string from bytescould not create a C string from bytes with trailing
+ii8_1
+in8iO
+internal error: entered unreachable codeauthorizedstruct StreamingData with 2 elements
+invalid filename%
+jaUOo
+kFileHandleInvalidInputInvalidDataTimedOutWriteZeroStorageFullNotSeekableQuotaExceededFileTooLargeResourceBusyExecutableFileBusyDeadlockCrossesDevicesTooManyLinksInvalidFilenameArgumentListTooLongInterruptedUnsupportedUnexpectedEofOutOfMemoryInProgressOtherUncategorizedAccessErrorcannot panic during
+libc.so
+libdl.so
+liblck_streaming_rs.so
+libminirtmp.so
+libngfx_rs.so
+library/alloc/src/fmt.rs
+library/core/src/panicking.rs
+library/std/src/alloc.rs
+library/std/src/panicking.rs
+library/std/src/path.rs
+library/std/src/time.rs
+libunwind: %s - %s
+libunwind: malformed DW_CFA_GNU_negative_offset_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa_register DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa_sf DWARF unwind, reg too big
+libunwind: malformed DW_CFA_expression DWARF unwind, reg too big
+libunwind: malformed DW_CFA_offset_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_offset_extended_sf DWARF unwind, reg too big
+libunwind: malformed DW_CFA_register DWARF unwind, reg too big
+libunwind: malformed DW_CFA_register DWARF unwind, reg2 too big
+libunwind: malformed DW_CFA_restore_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_same_value DWARF unwind, reg too big
+libunwind: malformed DW_CFA_undefined DWARF unwind, reg too big
+libunwind: malformed DW_CFA_val_expression DWARF unwind, reg too big
+libunwind: malformed DW_CFA_val_offset DWARF unwind, reg (%lu) out of range
+libunwind: malformed DW_CFA_val_offset_sf DWARF unwind, reg too big
+libunwind: unsupported .eh_frame_hdr at %lx: need at least 4 bytes of data but only got %zd
+libunwind: unsupported .eh_frame_hdr version: %u at %lx
+lseek64
+mY86J
+m`boolean `integer `character `string byte arrayunit valueOption valuenewtype structmapunit variantnewtype varianttuple variantstruct variant.0a boolean
+malloc
+memcmp
+memcpy
+memmove
+memset
+minirtmp_close
+minirtmp_format_avcc
+minirtmp_init
+minirtmp_metadata
+minirtmp_write
+munmap
+neJypa
+nim8_
+no storage space
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+nstruction not supportedWeb Crypto API is unavailableCalling Web API crypto.getRandomValues failedrandSecure: VxWorks RNG module is not initializedNode.js crypto CommonJS module is unavailableCalling Node.js API crypto.randomFillSync failedNode.js ES modules are not directly supported, see https://d
+null
+ocs.rs/getrandom#nodejs-es-module-supportinternal_codedescriptionunknown_codeUnknown Error: OS Error:
+pj18B
+posix_memalign
+pthread_getspecific
+pthread_key_create
+pthread_key_delete
+pthread_mutex_lock
+pthread_mutex_unlock
+pthread_rwlock_rdlock
+pthread_rwlock_unlock
+pthread_rwlock_wrlock
+pthread_setspecific
+qQYkx
+qji58
+r for client LckCoreAuthProvider initialized successfullySuccessUnitializedPointerInvalidPublicKeyDecryptionFailedPublicKeyParseFailedInternalErrorConnectionNotInitializedInvalidActionUserNotLoggedInStreamingNotConfiguredInvalidTrackingIdSerializationErrorDeserializationErrorStreamingProviderErroren
+rIJHE
+raB3G
+range end index
+readlink
+realloc
+realpath
+rectoryis a directorydirectory not emptyread-only filesystem or storage mediumfilesystem loop or indirection limit (e.g. symlink loop)stale network file handleinvalid input parameterinvalid datatimed outwrite zeroseek on unseekable filequota exceededfile too largeresource busyexecutable file busycro
+right` failed: URL override set
+rtmp_url
+sched_yield
+sequenceos_error
+setRegister
+ss-device link or renametoo many linksargument list too longoperation interruptedunsupportedunexpected end of fileout of memoryin progressother erroruncategorized erroradvancing io slices beyond their lengthadvancing IoSlice beyond its lengthfatal runtime error: initialization or cleanup bug, aborti
+strerror_r
+strlen
+syscall
+tC7Ddx
+the backtrace functionoverflow when adding duration to instant
+thread '' () panicked at :
+thread caused non-unwinding panic. aborting.
+thread panicked while processing panic. aborting.
+tsa formatting trait implementation returned an error when the underlying stream did notfatal runtime error: thread local panicked on drop, aborting
+uB5yr
+uRDZZ
+ug_str_offsets.debug_types (os error )NotFoundPermissionDeniedConnectionRefusedConnectionResetHostUnreachableNetworkUnreachableConnectionAbortedNotConnectedAddrInUseAddrNotAvailableNetworkDownBrokenPipeAlreadyExistsNotADirectoryIsADirectoryDirectoryNotEmptyReadOnlyFilesystemFilesystemLoopStaleNetwor
+unity_log
+unknown pointer encoding
+unknown register
+unsupported arm64 register
+unsupported restore location for float register
+unsupported restore location for register
+unwind_phase2
+ve  config data is emptyempty data buffervideo packet has no start codecodec error: RTMP error: not initializedalready streamingnot streamingvideo header not sentaudio header not sentauth initialization failed: not authorized to streamauth error: RTMP connection lostfailed to send  interleaved packe
+write
+writev

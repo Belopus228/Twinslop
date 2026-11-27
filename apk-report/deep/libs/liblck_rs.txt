@@ -1,0 +1,432 @@
+#version 300 es
+, aborting
+, skipping frame
+, video=extern "
+-Ypx.Ynx
+.Hj`F
+.comment
+.data.rel.ro
+.debug_macro.dwono video content
+.dynamic
+.dynstr
+.dynsym
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.gcc_except_table
+.gnu.hash
+.gnu.version
+.gnu.version_r
+.got.plt
+.note.android.ident
+.rela.dyn
+.rela.plt
+.relro_padding
+.rodata
+.shstrtab
+0123456789ABCDEFStopping encoder
+:  @  fps, Video encoder initialized successfullysignal_eos: no input buffer available within timeoutoverflow when adding durationsOutput format changedOutput buffers changedEGL context destroyed
+: disk clear failed: Creating EchoBuffer with target duration s), buffering s) to account for keyframe alignmentEchoBuffer: disk compact failed: Creating disk-backed EchoBuffer with target duration s)EchoBuffer clearedEcho save: completed successfully to
+AMediaCodec_configure
+AMediaCodec_createEncoderByType
+AMediaCodec_createInputSurface
+AMediaCodec_delete
+AMediaCodec_dequeueInputBuffer
+AMediaCodec_dequeueOutputBuffer
+AMediaCodec_getInputBuffer
+AMediaCodec_getOutputBuffer
+AMediaCodec_getOutputFormat
+AMediaCodec_queueInputBuffer
+AMediaCodec_releaseOutputBuffer
+AMediaCodec_signalEndOfInputStream
+AMediaCodec_start
+AMediaCodec_stop
+AMediaFormat_delete
+AMediaFormat_getInt32
+AMediaFormat_new
+AMediaFormat_setBuffer
+AMediaFormat_setInt32
+AMediaFormat_setInt64
+AMediaFormat_setString
+AMediaMuxer_addTrack
+AMediaMuxer_delete
+AMediaMuxer_new
+AMediaMuxer_start
+AMediaMuxer_stop
+AMediaMuxer_writeSampleData
+ANativeWindow_release
+AddEncoderPacketCallback
+AllocErr
+AllocateFrameSubmission
+Android
+Attempted to access thread-local data while allocating said data.
+CIE ID is not zero
+CIE start does not match
+CIE version is not 1 or 3
+Can't binary search on variable length encoded data.
+CapacityOverflowrange end index
+ClearEchoBuffer
+Couldn't find addressCouldn't find permissionsCouldn't find offsetCouldn't find devCouldn't find inodeCouldn't parse hex numbertoo many permsCouldn't parse devCouldn't parse address rangeinsufficient permsthread name may not contain interior null bytes
+CreateEchoDiskBuffer
+CreateEchoMemoryBuffer
+CreateEncoder
+CreateMuxer
+Created
+DWARF opcode not implemented
+DW_EH_PE_aligned pointer encoding not supported
+DW_EH_PE_datarel is invalid with a datarelBase of 0
+DW_EH_PE_funcrel pointer encoding not supported
+DW_EH_PE_textrel pointer encoding not supported
+DW_OP_deref_size with bad size
+DW_OP_fbreg not implemented
+DW_OP_piece not implemented
+DestroyEchoBuffer
+DestroyEncoder
+DestroyMuxer
+Do not access functions that allocate in the global allocator!
+EGL_BAD_ATTRIBUTEEGL_BAD_CONFIGEGL_BAD_CONTEXTEGL_BAD_CURRENT_SURFACEEGL_BAD_DISPLAYEGL_BAD_MATCHEGL_BAD_NATIVE_PIXMAPEGL_BAD_NATIVE_WINDOWEGL_BAD_PARAMETEREGL_BAD_SURFACEUnknown EGL erroreglMakeCurrenteglSwapBufferseglDestroySurface failed: EGL destroy surfaceEGL make current noneeglMakeCurrent(non
+EchoBufferEnabled(FFI: SetEchoCompletionCallbackFFI: SetEchoMuxerConfigFFI: SetEchoMuxerConfig - null pointerFFI: TriggerEchoSaveFFI: TriggerEchoSave - null pointerFFI: TriggerEchoSave - no muxer config setFFI: TriggerEchoSave - invalid output path encodinga Display implementation returned an error
+ErrorUnsupported
+FDE has zero length
+FDE is really a CIE
+FFI: AddEncoderPacketCallbackeglTerminate
+FFI: CreateMuxer
+FFI: StopEncoder
+GLES function: glDeleteBuffersFailed to load GLES function: glBindBufferFailed to load GLES function: glBufferDataFailed to load GLES function: glVertexAttribPointerFailed to load GLES function: glEnableVertexAttribArrayFailed to load GLES function: glActiveTextureFailed to load GLES function: glTex
+GPU copy (fence=
+GetAudioTrackFrameSize
+GetEchoBufferDataSizeBytes
+GetEchoBufferDurationUs
+GetEchoBufferMaxDuration
+GetEchoCallbackFunction
+GetInitResourcesFunction
+GetMuxerCallbackFunction
+GetPluginUpdateFunction
+GetReleaseResourcesFunction
+GetResourceContext
+Hash table capacity overflow
+I7Cxl2i5n
+IsEchoBufferEnabled
+Jil8_
+Kii8K
+LC( n
+MU86J
+MeJyOa
+NulError
+OInHN
+PIik8
+PJYix
+RemoveEncoderPacketCallback
+Rhja8
+Rij58
+Rijh8I
+S yvx
+SetAllowBFrames
+SetCaptureErrorCallback
+SetEchoBufferEnabled
+SetEchoCompletionCallback
+SetEchoMuxerConfig
+SetEncoderLogLevel
+SetMuxerLogLevel
+StartEncoder
+StartMuxer
+StopEncoder
+StopMuxer
+THkh8
+THku8
+TKii8
+TLib8
+TNib8
+TOii8
+TOil8
+TThj8
+This is a bug in the global allocator.
+Thjb8
+Tjji8J
+Tmim8J
+TriggerEchoSave
+Unknown DWARF encoding for search table.
+Vtube
+Writing
+X5AHx
+Z n5Z nZZ nvX n
+[encode_video_frame: got texture index out of bounds: the len is EGL context created successfullyFFI: GetReleaseResourcesFunctionFFI: RemoveEncoderPacketCallback
+_Unwind_GetDataRelBase
+_Unwind_GetDataRelBase() not implemented
+_Unwind_GetTextRelBase
+_Unwind_GetTextRelBase() not implemented
+_Unwind_Resume
+_Unwind_Resume() can't return
+__cxa_atexit
+__cxa_finalize
+__errno
+__rust_end_short_backtrace__rust_begin_short_backtraces      [... omitted  frame ...]
+_action_authorisation failed: get_action_authorisation failed with unknown code: liblck_core.sokey_exchangeget_action_authorisationlck-core library loaded successfullySymbol 'get_action_authorisation' not found: Symbol 'key_exchange' not found: Failed to load lck-core library:
+``invalid length , expected duplicate field `struct RecordingDatastruct StreamingData
+a Display implementation returned an error unexpectedlyErrorTrackIndexPoolIndexD3D11
+a formatting trait implementation returned an error when the underlying stream did notfailed to write whole bufferx: EncoderErrorMuxerErrorStreamerErrorEchoError
+a string
+a3SeVC
+abort
+aded - call init() firstInitializing EGL contextEGL/GLES functions loaded at runtimeEGL initialized: version .EGL config selected,  configs availableEGL context initialized successfullyeglChooseConfigeglInitializelibEGL.soFailed to load : Failed to load libEGL.so: Failed to load GLES function: glBin
+bH9_I
+bitrate
+c not createdmetadata encoding not supportedencoder open failed buffer not availablemedia format creation failedinput surface creation failed codec configuration failed codec start failedinput buffer queue failedEGL display not availableEGL config not availableEGL not initializedEGL surface not avai
+calloc
+clock_gettime
+close
+color buffer allocation failed:
+column
+connection reset) when slicing `assertion `left
+context is null in ResourceDataRelease resources callback complete
+d: Deleting AMediaMuxerAMediaMuxer_delete failed: Android muxer closed
+dFramebufferFailed to load GLES function: glGenFramebuffersFailed to load GLES function: glDeleteFramebuffersFailed to load GLES function: glFramebufferTexture2DFailed to load GLES function: glCheckFramebufferStatusFailed to load GLES function: glBlitFramebufferFailed to load GLES function: glGenTex
+dataFound SPS: Found PPS: Skipping NAL type config data too shortOkErrorUnknownErrorMalformedErrorInvalidObjectErrorInvalidParameterErrorInvalidOperationOpening Android muxer: path=@fps, audio=Hz  tracksAndroid muxer opened successfullyClosing Android muxerStopping AMediaMuxerAMediaMuxer_stop faile
+deadlock
+description() is deprecated; use DisplayError: Errorgetrandom: this target is not supportederrno: did not return a positive valueunexpected situationSecRandomCopyBytes: iOS Security framework failureRtlGenRandom: Windows system function failureRDRAND: failed multiple times: CPU issue likelyRDRAND: i
+dl_iterate_phdr
+dlclose
+dlerror
+dlopen
+dlopen failed, but system did not report the errordlsym failed, but system did not report the errordlclose failed, but system did not report the errorLoadLibraryExW failedLoadLibraryExW failed, but system did not report the errorGetModuleHandleExW failedGetModuleHandleExWUnknown failed, but system d
+dlsym
+durationUs
+during phase1 personality function said it would stop here, but now in phase2 it did not stop here
+e underlying stream did notfailed to fill whole bufferfailed to write whole bufferOsmessageErrorCustomerrorpermission deniedconnection refusednetwork unreachableconnection abortednot connectedaddress in useaddress not availablenetwork downbroken pipeentity already existsoperation would blocknot a di
+eProgramFailed to load GLES function: glGetUniformLocationFailed to load GLES function: glUniform1iFailed to load GLES function: glGenVertexArraysFailed to load GLES function: glDeleteVertexArraysFailed to load GLES function: glBindVertexArrayFailed to load GLES function: glGenBuffersFailed to load
+ebug_str_offsets.debug_types (os error )NotFoundPermissionDeniedConnectionRefusedConnectionResetHostUnreachableNetworkUnreachableConnectionAbortedNotConnectedAddrInUseAddrNotAvailableNetworkDownBrokenPipeAlreadyExistsNotADirectoryIsADirectoryDirectoryNotEmptyReadOnlyFilesystemFilesystemLoopStaleNetw
+ected end of hex escaperecursion limit exceeded`infNaN
+ed to load GLES function: glCreateProgramFailed to load GLES function: glDeleteProgramFailed to load GLES function: glAttachShaderFailed to load GLES function: glLinkProgramFailed to load GLES function: glGetProgramivFailed to load GLES function: glGetProgramInfoLogFailed to load GLES function: glUs
+eglChooseConfig
+eglCreateContext
+eglCreateWindowSurface
+eglDestroyContext
+eglDestroySurface
+eglGetCurrentContext
+eglGetCurrentDisplay
+eglGetCurrentSurface
+eglGetDisplay
+eglGetError
+eglGetProcAddress
+eglInitialize
+eglMakeCurrent
+eglPresentationTimeANDROID
+eglSwapBuffers
+ekhHD
+encoder context destroyedrelease_resources_callback: context already destroyed, skippingpool size fits u32TryFromIntErrorthreads should not terminate unexpectedlyRUST_MIN_STACKfatal runtime error: something here is badly broken!, aborting
+encoder not open
+entity not found
+evaluateExpression
+expand 32-byte k
+extension cannot contain path separators: memory allocation of  bytes failed
+exture: ok= pool_idx=Cannot create Vulkan texture pool - GL extensions not availableProcessing config packets for all tracksGL functions not loaded - call open() firstCreating Android encoderOpening Android encoder with  tracksNo EGL context available from ngfx-rs - encoder context will not share re
+fC9ij
+failed to generate unique thread ID: bitspace exhaustednote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+failed to write whole buffera Display implementation returned an error unexpectedlyErrorVideoAudioMetadatainvalid frame data: platform not supportedinvalid track index: color conversion failed: channel closedchannel fullmuxer not openI/O error: callback failed: auth failed: not authorized to recordm
+failed to write whole bufferfatal runtime error: thread local panicked on drop, aborting
+fatal runtime error: Rust cannot catch foreign exceptions, aborting
+fatal runtime error: Rust panics must be rethrown, aborting
+fatal runtime error: assertion failed: key as usize != KEY_SENTVAL, aborting
+fatal runtime error: failed to initiate panic, error , aborting
+fatal runtime error: out of TLS keys, aborting
+fatal runtime error: thread local panicked on drop, aborting
+fatal runtime error: thread result panicked on drop, aborting
+fflush
+floating point `
+fprintf
+fstat
+ftruncate64
+fwrite
+getEncodedP
+getRegister
+getSLEB128
+getSavedFloatRegister
+getSavedRegister
+getTableEntrySize
+getULEB128
+getauxval
+getcwd
+getenv
+getrandom
+gettid
+glActiveTexture
+glAttachShader
+glBindBuffer
+glBindFramebuffer
+glBindTexture
+glBindVertexArray
+glBlitFramebuffer
+glBufferData
+glCheckFramebufferStatus
+glClear
+glClearColor
+glCompileShader
+glCreateMemoryObjectsEXT
+glCreateProgram
+glCreateShader
+glDeleteBuffers
+glDeleteFramebuffers
+glDeleteMemoryObjectsEXT
+glDeleteProgram
+glDeleteShader
+glDeleteTextures
+glDeleteVertexArrays
+glDrawArrays
+glEnableVertexAttribArray
+glFinish
+glFlush
+glFramebufferTexture2D
+glGenBuffers
+glGenFramebuffers
+glGenTextures
+glGenVertexArrays
+glGetError
+glGetProgramInfoLog
+glGetProgramiv
+glGetShaderInfoLog
+glGetShaderiv
+glGetUniformLocation
+glImportMemoryFdEXT
+glLinkProgram
+glShaderSource
+glTexParameteri
+glTexStorageMem2DEXT
+glUniform1i
+glUseProgram
+glVertexAttribPointer
+glViewport
+height
+i1"AEGL make currentEGL swap buffers
+id not report the errorGetProcAddress failedGetProcAddress failed, but system did not report the errorFreeLibrary failedFreeLibrary failed, but system did not report the errorrequested type cannot possibly workcould not create a C string from bytescould not create a C string from bytes with trailing
+ii8_1
+in8iO
+inUpdateFunctionStartEncoder: invalid parametersAMediaMuxer created successfullyg
+index fits u32unknown panicplugin_update_callback: panic caught: init_resources_callback: data is nullinit_resources_callback: encoder_context is null in ResourceDataprocess_frame_submission: encoder_context is nullResources not yet initialized, skipping video frame processing (audio will still be
+internal error: entered unreachable codeauthorizedstruct RecordingData with 1 elementstruct StreamingData with 2 elements
+invalid filenameno audio content
+jaUOo
+lablenative window is nullEGL call failed:  ()
+level
+libandroid.so
+libc.so
+libdl.so
+liblck_rs.so
+libmediandk.so
+libngfx_rs.so
+library/alloc/src/fmt.rs
+library/alloc/src/sync.rs
+library/core/src/panicking.rs
+library/std/src/alloc.rs
+library/std/src/panicking.rs
+library/std/src/path.rs
+library/std/src/time.rs
+libunwind: %s - %s
+libunwind: malformed DW_CFA_GNU_negative_offset_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa_register DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa_sf DWARF unwind, reg too big
+libunwind: malformed DW_CFA_expression DWARF unwind, reg too big
+libunwind: malformed DW_CFA_offset_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_offset_extended_sf DWARF unwind, reg too big
+libunwind: malformed DW_CFA_register DWARF unwind, reg too big
+libunwind: malformed DW_CFA_register DWARF unwind, reg2 too big
+libunwind: malformed DW_CFA_restore_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_same_value DWARF unwind, reg too big
+libunwind: malformed DW_CFA_undefined DWARF unwind, reg too big
+libunwind: malformed DW_CFA_val_expression DWARF unwind, reg too big
+libunwind: malformed DW_CFA_val_offset DWARF unwind, reg (%lu) out of range
+libunwind: malformed DW_CFA_val_offset_sf DWARF unwind, reg too big
+libunwind: unsupported .eh_frame_hdr at %lx: need at least 4 bytes of data but only got %zd
+libunwind: unsupported .eh_frame_hdr version: %u at %lx
+load GLES function: glFinishFailed to load GLES function: glCreateShaderFailed to load GLES function: glDeleteShaderFailed to load GLES function: glShaderSourceFailed to load GLES function: glCompileShaderFailed to load GLES function: glGetShaderivFailed to load GLES function: glGetShaderInfoLogFail
+lseek64
+mY86J
+m`boolean `integer `character `string byte arrayunit valueOption valuenewtype structmapunit variantnewtype varianttuple variantstruct variant.0a boolean
+malloc
+memcmp
+memcpy
+memmove
+memset
+munmap
+neJypa
+ngfx_context_remove_resource
+ngfx_context_shrink
+ngfx_create_context
+ngfx_create_external_texture
+ngfx_create_staging_texture
+ngfx_destroy_context
+ngfx_fence_delete
+ngfx_fence_wait
+ngfx_get_egl_context
+ngfx_get_external_texture_info
+ngfx_get_graphics_api
+ngfx_get_resource_fbo
+ngfx_get_resource_texture_id
+ngfx_refresh_from_current_context
+ngfx_render_buffer_copy_to_fenced
+nim8_
+nnot panic during the backtrace functionoverflow when adding duration to instant
+no storage space
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+nstruction not supportedWeb Crypto API is unavailableCalling Web API crypto.getRandomValues failedrandSecure: VxWorks RNG module is not initializedNode.js crypto CommonJS module is unavailableCalling Node.js API crypto.randomFillSync failedNode.js ES modules are not directly supported, see https://d
+null
+ocs.rs/getrandom#nodejs-es-module-supportinternal_codedescriptionunknown_codeUnknown Error: OS Error:
+ol with ngfx-rsGraphics API: , is_vulkan: Failed to make EGL current for extension loading: GL_EXT_memory_object_fd extensions not available - Vulkan texture import will failAndroid encoder resources initialized successfullyFailed to refresh ngfx-rs glow context for GLES init_resourcesNo graphics AP
+path, falling back to in-memoryFFI: CreateEchoDiskBuffer (dir=)FFI: CreateEchoDiskBuffer - disk creation failed, falling back to in-memoryFFI: CreateEchoDiskBuffer - invalid path encoding, falling back to in-memoryFFI: CreateEchoMemoryBufferFFI: DestroyEchoBufferFFI: GetEchoCallbackFunctionFFI: Set
+posix_memalign
+prctl
+profile
+pthread_attr_destroy
+pthread_attr_init
+pthread_attr_setstacksize
+pthread_create
+pthread_detach
+pthread_getspecific
+pthread_join
+pthread_key_create
+pthread_key_delete
+pthread_mutex_lock
+pthread_mutex_unlock
+pthread_rwlock_rdlock
+pthread_rwlock_unlock
+pthread_rwlock_wrlock
+pthread_setspecific
+qQYkx
+qji58
+rIJHE
+raB3G
+readlink
+realloc
+realpath
+rectoryis a directorydirectory not emptyread-only filesystem or storage mediumfilesystem loop or indirection limit (e.g. symlink loop)stale network file handleinvalid input parameterinvalid datatimed outwrite zeroseek on unseekable filequota exceededfile too largeresource busyexecutable file busycro
+right` failed:
+rtmp_url
+sched_yield
+sequenceos_error
+setRegister
+sources with UnityVulkan graphics API detected - encoder will use standalone EGL context (expected)Using shared EGL context from ngfx-rs: Android encoder opened successfullyEGL context released after initializationMetadata track not supported, skippingClosing Android encoderAndroid encoder closedErr
+ss-device link or renametoo many linksargument list too longoperation interruptedunsupportedunexpected end of fileout of memoryin progressother erroruncategorized erroradvancing io slices beyond their lengthadvancing IoSlice beyond its lengthfatal runtime error: initialization or cleanup bug, aborti
+strerror_r
+strlen
+syscall
+sysconf
+tC7Ddx
+thread '' () panicked at :
+thread caused non-unwinding panic. aborting.
+thread panicked while processing panic. aborting.
+turesFailed to load GLES function: glDeleteTexturesFailed to load GLES function: glBindTextureFailed to load GLES function: glClearColorFailed to load GLES function: glClearFailed to load GLES function: glViewportFailed to load GLES function: glGetErrorFailed to load GLES function: glFlushFailed to
+uB5yr
+uRDZZ
+unexpectedlyErrorCreating new EchoBufferContext (disk-backed at Failed to create disk-backed echo buffer at : Creating new EchoBufferContext (in-memory)echo_packet_callback: panic caughtecho_packet_callback: push_packet failed: a Display implementation returned an error unexpectedlyoverflow in Durat
+unity_log
+unknown pointer encoding
+unknown register
+unlink
+unsupported arm64 register
+unsupported restore location for float register
+unsupported restore location for register
+unwind_phase2
+uxer open failedformat creation failedmuxer already openempty  config packetmuxer handle not available track not initializedtrack  not found not added to muxerAMediaMuxer API call failed: failed to open file '': invalid file descriptor for ''invalid data: no tracks provided config not available code
+width
+write
+writev

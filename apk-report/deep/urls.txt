@@ -1,4 +1,0 @@
-http://
-https://
-https://AllocErrAssignedBugineseduployanKatakanaoverflow0.999999НМММММм?
-https://ingest.twitch.tv/ingestsevent src\telemetry\client.rs:97

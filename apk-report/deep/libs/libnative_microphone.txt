@@ -1,0 +1,228 @@
+(bytes ThreadId
+) = ZerolongNull.dwpargsBool
+.data.rel.ro
+.dynamic
+.dynstr
+.dynsym
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.gcc_except_table
+.gnu.hash
+.gnu.version
+.gnu.version_r
+.got.plt
+.note.android.ident
+.rela.dyn
+.rela.plt
+.relro_padding
+.rodata
+.shstrtab
+AAudioStreamBuilder_delete
+AAudioStreamBuilder_openStream
+AAudioStreamBuilder_setBufferCapacityInFrames
+AAudioStreamBuilder_setChannelCount
+AAudioStreamBuilder_setDataCallback
+AAudioStreamBuilder_setDeviceId
+AAudioStreamBuilder_setDirection
+AAudioStreamBuilder_setErrorCallback
+AAudioStreamBuilder_setFormat
+AAudioStreamBuilder_setSampleRate
+AAudioStream_close
+AAudioStream_getTimestamp
+AAudioStream_requestStart
+AAudio_createStreamBuilder
+ADqA0
+ADqaI
+Android
+CIE ID is not zero
+CIE start does not match
+CIE version is not 1 or 3
+CallStaticFloatMethodAlooking up jni method CallStaticFloatMethodACallStaticFloatMethodAcalling checked jni method: CallStaticIntMethodAlooking up jni method CallStaticIntMethodACallStaticIntMethodAcalling checked jni method: CallStaticLongMethodAlooking up jni method CallStaticLongMethodACallStatic
+Can't binary search on variable length encoded data.
+DWARF opcode not implemented
+DW_EH_PE_aligned pointer encoding not supported
+DW_EH_PE_datarel is invalid with a datarelBase of 0
+DW_EH_PE_funcrel pointer encoding not supported
+DW_EH_PE_textrel pointer encoding not supported
+DW_OP_deref_size with bad size
+DW_OP_fbreg not implemented
+DW_OP_piece not implemented
+FDE has zero length
+FDE is really a CIE
+FX ngX n
+FindClass result
+InternalDeadlockdeadlockthread '
+InvalidArguments
+JNI_OnLoad
+KeJym
+LIBC_P
+LeJyn
+Lii8k
+LongMethodAcalling checked jni method: CallStaticShortMethodAlooking up jni method CallStaticShortMethodACallStaticShortMethodAcalling checked jni method: CallStaticVoidMethodAlooking up jni method CallStaticVoidMethodACallStaticVoidMethodAcalling checked jni method: CallStaticObjectMethodAlooking u
+NotFoundTimedOutlifetime
+PermissionDenied
+R 1Hz
+RUST_BACKTRACElibrary/std/src/env.rsfailed to set environment variable `` to ``: stream did not contain valid UTF-8permission deniedconnection refusednetwork unreachableconnection abortednot connectedaddress in useaddress not availablenetwork downbroken pipeentity already existsoperation would block
+Rhja8
+Riyix
+Rkjt8k
+T.ij8
+T0ik8
+T0in8
+T5ih8
+THil8
+TIii8
+TJil8_
+TKih8
+TNih8
+TOih8
+Taks8
+Takx8
+Thread internalchannelsHdmiEarc
+Tmim8J
+Tuhj8
+Tvht8
+Tyki8
+UnityPluginLoad
+UnityPluginUnload
+Unknown DWARF encoding for search table.
+Ybxb0
+Yzd M
+Zzd M
+_Unwind_GetDataRelBase
+_Unwind_GetDataRelBase() not implemented
+_Unwind_GetTextRelBase
+_Unwind_GetTextRelBase() not implemented
+_Unwind_Resume
+_Unwind_Resume() can't return
+__android_log_write
+__cxa_atexit
+__cxa_finalize
+__cxa_pure_virtual
+__errno
+__register_atfork
+__rust_begin_short_backtrace__rust_end_short_backtrace      [... omitted  frame ...]
+abort
+bH9_A
+bytes failedlibrary/std/src/alloc.rsfatal runtime error: Rust panics must be rethrown
+calloc
+clock_gettime
+close
+connection resetassertion `left ) when slicing `Detached thread Critical Error:
+dl_iterate_phdr
+during phase1 personality function said it would stop here, but now in phase2 it did not stop here
+efault input device: Using input config: Input will be resampled to output channels:  and sample rate: Microphone input capture stream startedInput device has more than 2 channels, only stereo or mono is supportedFailed to lock audio dataStream error: Failed to send error signalError received from s
+entity not found
+etoo many permsCouldn't parse hex numberCouldn't parse devCouldn't parse address range
+eunexpected situationSecRandomCopyBytes: iOS Security framework failureRtlGenRandom: Windows system function failureRDRAND: failed multiple times: CPU issue likelyRDRAND: instruction not supportedWeb Crypto API is unavailableCalling Web API crypto.getRandomValues failedrandSecure: VxWorks RNG module
+evaluateExpression
+extern "
+fJy4aJy
+failed to generate unique thread ID: bitspace exhaustedmain
+fatal runtime error: Rust cannot catch foreign exceptions
+fflush
+fprintf
+fstat
+fwrite
+getEncodedP
+getRegister
+getSLEB128
+getSavedFloatRegister
+getSavedRegister
+getTableEntrySize
+getULEB128
+getcwd
+getenv
+getrandom
+hi8_5
+id8Ghd8
+iiiii
+ik8_1
+invalid filenamerange end index
+j38YM
+j48W4
+j48lK
+j58iM
+jij8kil8
+jji8_
+kjj8k
+libaaudio.so
+libc.so
+libdl.so
+liblog.so
+libunwind: %s - %s
+libunwind: malformed DW_CFA_GNU_negative_offset_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa_register DWARF unwind, reg too big
+libunwind: malformed DW_CFA_def_cfa_sf DWARF unwind, reg too big
+libunwind: malformed DW_CFA_expression DWARF unwind, reg too big
+libunwind: malformed DW_CFA_offset_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_offset_extended_sf DWARF unwind, reg too big
+libunwind: malformed DW_CFA_register DWARF unwind, reg too big
+libunwind: malformed DW_CFA_register DWARF unwind, reg2 too big
+libunwind: malformed DW_CFA_restore_extended DWARF unwind, reg too big
+libunwind: malformed DW_CFA_same_value DWARF unwind, reg too big
+libunwind: malformed DW_CFA_undefined DWARF unwind, reg too big
+libunwind: malformed DW_CFA_val_expression DWARF unwind, reg too big
+libunwind: malformed DW_CFA_val_offset DWARF unwind, reg (%lu) out of range
+libunwind: malformed DW_CFA_val_offset_sf DWARF unwind, reg too big
+libunwind: unsupported .eh_frame_hdr at %lx: need at least 4 bytes of data but only got %zd
+libunwind: unsupported .eh_frame_hdr version: %u at %lx
+llStaticByteMethodACallStaticByteMethodAcalling checked jni method: CallStaticCharMethodAlooking up jni method CallStaticCharMethodACallStaticCharMethodAcalling checked jni method: CallStaticDoubleMethodAlooking up jni method CallStaticDoubleMethodACallStaticDoubleMethodAcalling checked jni method:
+lseek64
+mR86J
+malloc
+memalign
+memcmp
+memcpy
+memmove
+memory allocation of  bytes failed
+memset
+microphone_capture_free
+microphone_capture_get_audio
+microphone_capture_new
+microphone_capture_start
+microphone_capture_stop
+munmap
+no storage spaceAddrNotAvailable right` failed: @
+not a directoryis a directorydirectory not emptyread-only filesystem or storage mediumfilesystem loop or indirection limit (e.g. symlink loop)stale network file handleinvalid input parameterinvalid datatimed outwrite zeroseek on unseekable filefilesystem quota exceededfile too largeresource busyexec
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+on an `Err` valueinternal error: entered unreachable code: ErrorWrongJValueTypeInvalidCtorReturnInvalidArgListMethodNotFoundsigFieldNotFoundJavaExceptionJNIEnvMethodNotFoundNullPtrNullDerefTryLockJavaVMMethodNotFoundFieldAlreadySetThrowFailedParseFailedJniCallUnknownThreadDetachedWrongVersionAlready
+os_error
+pthread_getspecific
+pthread_key_create
+pthread_key_delete
+pthread_mutex_lock
+pthread_mutex_unlock
+pthread_rwlock_rdlock
+pthread_rwlock_unlock
+pthread_rwlock_wrlock
+pthread_setspecific
+readlink
+realloc
+realpath
+sched_yield
+setRegister
+set_max_log_level
+setenv
+start index  out of range for slice of length slice index starts at  but ends at attempted to index slice up to maximum usizesource slice length () does not match destination slice length (attempted to index str up to maximum usize
+strerror_r
+strlen
+syscall
+tachCurrentThreadAsDaemonlooking up JavaVM method AttachCurrentThreadAsDaemonAttachCurrentThreadAsDaemonAttached daemon thread calling unchecked JavaVM method: DetachCurrentThreadlooking up JavaVM method DetachCurrentThreadDetachCurrentThread threads remain attachedWrongJValueTypeInvalidCtorReturnIn
+thread caused non-unwinding panic. aborting.
+thread panicked while processing panic. aborting.
+tream: Could not set loggerRUST_BACKTRACE
+unknown pointer encoding
+unknown register
+unsupported arm64 register
+unsupported restore location for float register
+unsupported restore location for register
+unwind_phase2
+was discardedSizeLimitExhausted
+write
+writev
+yqxqP
+yxfJy
