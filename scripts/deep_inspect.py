@@ -193,6 +193,10 @@ type_counter = Counter()
 try:
     import UnityPy  # type: ignore
 
+    if os.path.exists(os.path.join(OUT, "scripts.txt")):
+        log("scripts.txt уже есть — UnityPy-проход пропущен")
+        raise SystemExit
+
     files = sorted(f for f in os.listdir(WORK) if f.startswith("data_"))
     for fname in files:
         try:

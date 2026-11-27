@@ -77,6 +77,8 @@ jobs:
         run: |
           python3 scripts/deep_inspect.py /tmp/apk/app.apk apk-report/deep || \
             echo "глубокий разбор упал частично"
+          python3 scripts/strings_deep.py /tmp/apk/app.apk apk-report/deep || \
+            echo "строковый разбор упал частично"
           du -sh apk-report apk-report/deep 2>/dev/null || true
 
       - name: Закоммитить отчёт
