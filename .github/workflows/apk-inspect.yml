@@ -1,0 +1,79 @@
+name: apk-inspect
+
+# Снимает «паспорт» с APK из релиза и коммитит отчёт в репозиторий.
+# Запускается при изменении самого workflow/скрипта, либо вручную (Run workflow),
+# либо через gh: gh workflow run apk-inspect
+
+on:
+  workflow_dispatch:
+    inputs:
+      asset_url:
+        description: 'Прямая ссылка на APK (по умолчанию — релиз Ai)'
+        required: false
+        default: 'https://github.com/Belopus228/Twinslop/releases/download/Ai/WVRClientv1release.1.apk'
+  push:
+    paths:
+      - '.github/workflows/apk-inspect.yml'
+      - 'scripts/inspect_apk.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk-inspect-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ASSET_URL: ${{ github.event.inputs.asset_url || 'https://github.com/Belopus228/Twinslop/releases/download/Ai/WVRClientv1release.1.apk' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Скачать APK
+        run: |
+          mkdir -p /tmp/apk
+          echo "Скачиваю: $ASSET_URL"
+          curl -L --retry 3 --retry-delay 5 --fail -o /tmp/apk/app.apk "$ASSET_URL"
+          ls -lh /tmp/apk/app.apk
+
+      - name: Инструменты
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq aapt binutils unzip file || \
+            sudo apt-get install -y -qq android-sdk-build-tools || true
+          python3 -m pip install --quiet androguard || echo "androguard не встал — не страшно"
+
+      - name: Анализ
+        run: |
+          python3 scripts/inspect_apk.py /tmp/apk/app.apk apk-report || \
+            echo "анализ упал частично"
+          ls -la apk-report || true
+
+      - name: Закоммитить отчёт
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A apk-report
+          if git diff --cached --quiet; then
+            echo "Изменений нет"
+            exit 0
+          fi
+          git commit -m "chore(apk-report): паспорт APK [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && \
+              git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep 5
+          done
+
+      - name: Отчёт в артефакт
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-report
+          path: apk-report
+          retention-days: 14
+          if-no-files-found: warn
