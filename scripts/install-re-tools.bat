@@ -172,7 +172,8 @@ if "%DRY_RUN%"=="1" (
     echo   [dry] скачать %~1
     exit /b 0
 )
-curl -fL --retry 2 -o "%~2" "%~1" 2>nul
+echo         качаю %~nx2 ...
+curl -fL --retry 2 --progress-bar -o "%~2" "%~1"
 if errorlevel 1 (
     call :err "скачать не удалось: %~1"
     exit /b 1
@@ -185,6 +186,7 @@ if "%DRY_RUN%"=="1" (
     echo   [dry] распаковать %~1
     exit /b 0
 )
+echo         распаковываю %~nx1 ...
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Expand-Archive -LiteralPath '%~1' -DestinationPath '%~2' -Force" >nul 2>&1
 if errorlevel 1 (
     call :err "распаковать не удалось: %~1"
@@ -203,9 +205,12 @@ if "%DRY_RUN%"=="1" (
     echo   [dry] winget install %~1
     exit /b 0
 )
-winget install --id %~1 --silent --accept-package-agreements --accept-source-agreements >nul 2>&1
+echo   [..]  %~2
+echo         winget качает и ставит: 1-3 минуты. Экран может «стоять» - это нормально.
+echo         Если выскочило окно контроля учётных записей (UAC) - нажми «Да».
+winget install --id %~1 --silent --accept-package-agreements --accept-source-agreements %~3
 if errorlevel 1 (
-    call :warn "winget не поставил %~1 (возможно, уже стоит)"
+    call :warn "winget не поставил %~1 (уже стоит или нет прав администратора)"
 ) else (
     call :ok "%~2"
 )
@@ -217,9 +222,18 @@ rem ============================================================================
 
 :install_system
 call :step "системные зависимости"
-call :winget_install EclipseAdoptium.Temurin.17.JDK "Java 17 (нужна apktool, Ghidra, SDK)"
-call :winget_install Python.Python.3.12 "Python 3.12 (androguard, frida)"
-call :winget_install Microsoft.DotNet.Runtime.8 ".NET 8 runtime (Il2CppDumper)"
+call :reload_path
+for %%T in (java python dotnet) do (
+    where %%T >nul 2>&1 && echo   [ok] %%T уже стоит
+)
+net session >nul 2>&1
+if errorlevel 1 echo   [i] Права администратора: нет. Java и .NET могут спросить UAC.
+call :have java
+if errorlevel 1 call :winget_install EclipseAdoptium.Temurin.17.JDK "Java 17 (нужна apktool, Ghidra, Android SDK)"
+call :have python
+if errorlevel 1 call :winget_install Python.Python.3.12 "Python 3.12 (androguard, frida)" "--scope user"
+call :have dotnet
+if errorlevel 1 call :winget_install Microsoft.DotNet.Runtime.8 ".NET 8 runtime (Il2CppDumper)"
 call :have curl
 if errorlevel 1 (
     call :warn "curl.exe не найден: нужен Windows 10 1803+ или установить curl вручную"
@@ -227,6 +241,9 @@ if errorlevel 1 (
     call :ok "curl.exe есть"
 )
 call :reload_path
+echo.
+echo   Дальше пойдут загрузки с GitHub: jadx, apktool, Android SDK, dex2jar.
+echo   У каждого будет строка «качаю ...» и полоса прогресса.
 exit /b 0
 
 rem ============================================================================
