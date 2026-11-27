@@ -36,6 +36,10 @@ scripts\install-re-tools.bat             :: базовый набор
 scripts\install-re-tools.bat --full      :: + Ghidra
 ```
 
+Тянется с GitHub в кодировке Windows-1251: скачивай файл кнопкой **Raw**
+(или `Download`), не копируй текст через буфер — иначе переводы строк и
+кодировка поедут, и `cmd` начнёт выполнять обрывки строк.
+
 **Linux / macOS:**
 
 ```bash

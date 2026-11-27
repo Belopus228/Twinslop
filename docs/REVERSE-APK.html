@@ -161,6 +161,9 @@ footer {
 scripts\install-re-tools.bat             :: базовый набор
 scripts\install-re-tools.bat --full      :: + Ghidra
 </code></pre>
+<p>Тянется с GitHub в кодировке Windows-1251: скачивай файл кнопкой <strong>Raw</strong>
+(или <code>Download</code>), не копируй текст через буфер — иначе переводы строк и
+кодировка поедут, и <code>cmd</code> начнёт выполнять обрывки строк.</p>
 <p><strong>Linux / macOS:</strong></p>
 <pre><code class="language-bash">chmod +x scripts/install-re-tools.sh
 ./scripts/install-re-tools.sh --check     # что уже стоит

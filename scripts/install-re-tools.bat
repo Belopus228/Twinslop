@@ -1,23 +1,25 @@
 @echo off
-chcp 65001 >nul 2>&1
+rem  Кодировка файла: Windows-1251 (CP1251). Не пересохраняй в UTF-8:
+rem  cmd.exe сбивается на UTF-8 в .bat и начинает выполнять обрывки строк.
+chcp 1251 >nul 2>&1
 setlocal EnableExtensions EnableDelayedExpansion
-title Twinslop: СѓСЃС‚Р°РЅРѕРІРєР° РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ РґР»СЏ СЂРµРІРµСЂСЃР° APK
+title Twinslop: установка инструментов для реверса APK
 
 rem ============================================================================
-rem  install-re-tools.bat вЂ” СЃС‚Р°РІРёС‚ РЅР°Р±РѕСЂ РґР»СЏ СЂРµРІРµСЂСЃР° APK РІ Windows.
+rem  install-re-tools.bat — ставит набор для реверса APK в Windows.
 rem
-rem  РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ (РјРѕР¶РЅРѕ РґРІРѕР№РЅС‹Рј РєР»РёРєРѕРј вЂ” С‚РѕРіРґР° Р±Р°Р·РѕРІС‹Р№ РЅР°Р±РѕСЂ):
-rem    install-re-tools.bat              Р±Р°Р·РѕРІС‹Р№ РЅР°Р±РѕСЂ
+rem  Использование (можно двойным кликом — тогда базовый набор):
+rem    install-re-tools.bat              базовый набор
 rem    install-re-tools.bat --full       + Ghidra
-rem    install-re-tools.bat --check      С‚РѕР»СЊРєРѕ РїРѕРєР°Р·Р°С‚СЊ, С‡С‚Рѕ СѓР¶Рµ СЃС‚РѕРёС‚
-rem    install-re-tools.bat --dry-run    РїРѕРєР°Р·Р°С‚СЊ РїР»Р°РЅ, РЅРёС‡РµРіРѕ РЅРµ РјРµРЅСЏС‚СЊ
-rem    install-re-tools.bat --dir D:\re  РєСѓРґР° СЃС‚Р°РІРёС‚СЊ (РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ %USERPROFILE%\re-tools)
+rem    install-re-tools.bat --check      только показать, что уже стоит
+rem    install-re-tools.bat --dry-run    показать план, ничего не менять
+rem    install-re-tools.bat --dir D:\re  куда ставить (по умолчанию %USERPROFILE%\re-tools)
 rem
-rem  РўСЂРµР±СѓРµС‚СЃСЏ Windows 10/11. РСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ winget (РµСЃР»Рё РµСЃС‚СЊ), curl.exe Рё
-rem  PowerShell (РѕР±Р° РІС…РѕРґСЏС‚ РІ Windows) вЂ” РЅРёС‡РµРіРѕ РґРѕСѓСЃС‚Р°РЅР°РІР»РёРІР°С‚СЊ РЅРµ РЅСѓР¶РЅРѕ.
+rem  Требуется Windows 10/11. Используются winget (если есть), curl.exe и
+rem  PowerShell (оба входят в Windows) — ничего доустанавливать не нужно.
 rem
-rem  РРЅСЃС‚СЂСѓРјРµРЅС‚С‹ вЂ” РґР»СЏ РЎР’РћРРҐ РїСЂРёР»РѕР¶РµРЅРёР№ Рё СЃС‚РµРЅРґРѕРІ. РћР±С…РѕРґ Р·Р°С‰РёС‚С‹ С‡СѓР¶РѕРіРѕ РџРћ
-rem  РЅР°СЂСѓС€Р°РµС‚ Р·Р°РєРѕРЅ Рё РїСЂР°РІРёР»Р° РјР°РіР°Р·РёРЅРѕРІ.
+rem  Инструменты — для СВОИХ приложений и стендов. Обход защиты чужого ПО
+rem  нарушает закон и правила магазинов.
 rem ============================================================================
 
 set "TOOLS_DIR=%USERPROFILE%\re-tools"
@@ -40,7 +42,7 @@ if /i "%~1"=="--dir" (
 )
 if /i "%~1"=="-h"     goto usage
 if /i "%~1"=="--help" goto usage
-echo РќРµРёР·РІРµСЃС‚РЅС‹Р№ Р°СЂРіСѓРјРµРЅС‚: %~1
+echo Неизвестный аргумент: %~1
 goto usage
 
 :args_done
@@ -48,10 +50,10 @@ if not defined TOOLS_DIR set "TOOLS_DIR=%USERPROFILE%\re-tools"
 set "BIN_DIR=%TOOLS_DIR%\bin"
 
 echo.
-echo  Twinslop: СѓСЃС‚Р°РЅРѕРІРєР° РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ РґР»СЏ СЂРµРІРµСЂСЃР° APK
-echo  РљР°С‚Р°Р»РѕРі: %TOOLS_DIR%
-echo  Р РµР¶РёРј:   %MODE%
-if "%DRY_RUN%"=="1" echo  Р РµР¶РёРј:   dry-run (РЅРёС‡РµРіРѕ РЅРµ РјРµРЅСЏСЋ)
+echo  Twinslop: установка инструментов для реверса APK
+echo  Каталог: %TOOLS_DIR%
+echo  Режим:   %MODE%
+if "%DRY_RUN%"=="1" echo  Режим:   dry-run (ничего не меняю)
 echo.
 
 if "%CHECK_ONLY%"=="1" (
@@ -73,24 +75,24 @@ call :setup_path
 
 if "%DRY_RUN%"=="1" (
     echo.
-    echo  [dry-run] РќРёС‡РµРіРѕ РЅРµ РёР·РјРµРЅРµРЅРѕ. Р—Р°РїСѓСЃС‚Рё Р±РµР· --dry-run, С‡С‚РѕР±С‹ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ.
+    echo  [dry-run] Ничего не изменено. Запусти без --dry-run, чтобы установить.
 ) else (
     call :verify
 )
 
 echo.
-echo  Р”Р°Р»СЊС€Рµ:
-echo    1^) РѕС‚РєСЂРѕР№ РќРћР’РћР• РѕРєРЅРѕ С‚РµСЂРјРёРЅР°Р»Р° ^(PATH РѕР±РЅРѕРІРёС‚СЃСЏ С‚РѕР»СЊРєРѕ С‚Р°Рј^)
-echo    2^) С‚СЂРёР°Р¶ APK:   bash scripts/apk-triage.sh app.apk      ^(Git Bash / WSL^)
-echo    3^) РёРЅСЃС‚СЂСѓРєС†РёСЏ:  docs\PROSTO.html  Рё  docs\REVERSE-APK.html
-echo    4^) С‚РµР»РµС„РѕРЅ:     adb devices
+echo  Дальше:
+echo    1^) открой НОВОЕ окно терминала ^(PATH обновится только там^)
+echo    2^) триаж APK:   bash scripts/apk-triage.sh app.apk      ^(Git Bash / WSL^)
+echo    3^) инструкция:  docs\PROSTO.html  и  docs\REVERSE-APK.html
+echo    4^) телефон:     adb devices
 echo.
-echo  РќР°РїРѕРјРёРЅР°РЅРёРµ: РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹ вЂ” РґР»СЏ СЃРІРѕРёС… РїСЂРёР»РѕР¶РµРЅРёР№ Рё РѕР±СЂР°Р·С†РѕРІ СЃ СЂР°Р·СЂРµС€РµРЅРёСЏ.
+echo  Напоминание: инструменты — для своих приложений и образцов с разрешения.
 echo.
 goto done
 
 rem ============================================================================
-rem  РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ
+rem  вспомогательные
 rem ============================================================================
 
 :ok
@@ -111,9 +113,17 @@ echo == %~1 ==
 exit /b 0
 
 :have
-rem %1 вЂ” РёРјСЏ РїСЂРѕРіСЂР°РјРјС‹ РІ PATH
+rem %1 — имя программы в PATH
 where "%~1" >nul 2>&1
 exit /b %errorlevel%
+
+:reload_path
+rem перечитывает PATH из реестра: winget ставит Java/Python уже ПОСЛЕ старта окна
+if "%DRY_RUN%"=="1" exit /b 0
+set "NEWPATH="
+for /f "usebackq delims=" %%P in (`powershell -NoProfile -Command "[Environment]::GetEnvironmentVariable('Path','Machine')+';'+[Environment]::GetEnvironmentVariable('Path','User')"`) do set "NEWPATH=%%P"
+if defined NEWPATH set "PATH=%NEWPATH%"
+exit /b 0
 
 :ensure_dirs
 if "%DRY_RUN%"=="1" (
@@ -127,7 +137,7 @@ exit /b 0
 
 rem gh_latest_url <repo> <needle1> <needle2> <outVar>
 :gh_latest_url
-call :step "РёС‰Сѓ РїРѕСЃР»РµРґРЅРёР№ СЂРµР»РёР· %~1"
+call :step "ищу последний релиз %~1"
 set "JSON=%TEMP%\twinslop-rel.json"
 if "%DRY_RUN%"=="1" (
     echo   [dry] curl https://api.github.com/repos/%~1/releases/latest
@@ -136,7 +146,7 @@ if "%DRY_RUN%"=="1" (
 del /q "%JSON%" >nul 2>&1
 curl -fsSL -H "User-Agent: twinslop-installer" "https://api.github.com/repos/%~1/releases/latest" -o "%JSON%" >nul 2>&1
 if errorlevel 1 (
-    call :warn "GitHub API РЅРµРґРѕСЃС‚СѓРїРµРЅ РґР»СЏ %~1"
+    call :warn "GitHub API недоступен для %~1"
     set "%~4="
     exit /b 0
 )
@@ -159,12 +169,12 @@ exit /b 0
 rem download <url> <dest>
 :download
 if "%DRY_RUN%"=="1" (
-    echo   [dry] СЃРєР°С‡Р°С‚СЊ %~1
+    echo   [dry] скачать %~1
     exit /b 0
 )
 curl -fL --retry 2 -o "%~2" "%~1" 2>nul
 if errorlevel 1 (
-    call :err "СЃРєР°С‡Р°С‚СЊ РЅРµ СѓРґР°Р»РѕСЃСЊ: %~1"
+    call :err "скачать не удалось: %~1"
     exit /b 1
 )
 exit /b 0
@@ -172,21 +182,21 @@ exit /b 0
 rem unzip <zip> <dest>
 :unzip
 if "%DRY_RUN%"=="1" (
-    echo   [dry] СЂР°СЃРїР°РєРѕРІР°С‚СЊ %~1
+    echo   [dry] распаковать %~1
     exit /b 0
 )
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Expand-Archive -LiteralPath '%~1' -DestinationPath '%~2' -Force" >nul 2>&1
 if errorlevel 1 (
-    call :err "СЂР°СЃРїР°РєРѕРІР°С‚СЊ РЅРµ СѓРґР°Р»РѕСЃСЊ: %~1"
+    call :err "распаковать не удалось: %~1"
     exit /b 1
 )
 exit /b 0
 
-rem winget_install <id> <С‡С‚Рѕ СЌС‚Рѕ>
+rem winget_install <id> <что это>
 :winget_install
 call :have winget
 if errorlevel 1 (
-    call :warn "winget РЅРµС‚ вЂ” РїРѕСЃС‚Р°РІСЊ %~2 РІСЂСѓС‡РЅСѓСЋ"
+    call :warn "winget нет — поставь %~2 вручную"
     exit /b 0
 )
 if "%DRY_RUN%"=="1" (
@@ -195,27 +205,28 @@ if "%DRY_RUN%"=="1" (
 )
 winget install --id %~1 --silent --accept-package-agreements --accept-source-agreements >nul 2>&1
 if errorlevel 1 (
-    call :warn "winget РЅРµ РїРѕСЃС‚Р°РІРёР» %~1 (РІРѕР·РјРѕР¶РЅРѕ, СѓР¶Рµ СЃС‚РѕРёС‚)"
+    call :warn "winget не поставил %~1 (возможно, уже стоит)"
 ) else (
     call :ok "%~2"
 )
 exit /b 0
 
 rem ============================================================================
-rem  СЃРёСЃС‚РµРјРЅС‹Рµ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё
+rem  системные зависимости
 rem ============================================================================
 
 :install_system
-call :step "СЃРёСЃС‚РµРјРЅС‹Рµ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё"
-call :winget_install EclipseAdoptium.Temurin.17.JDK "Java 17 (РЅСѓР¶РЅР° apktool, Ghidra, SDK)"
+call :step "системные зависимости"
+call :winget_install EclipseAdoptium.Temurin.17.JDK "Java 17 (нужна apktool, Ghidra, SDK)"
 call :winget_install Python.Python.3.12 "Python 3.12 (androguard, frida)"
 call :winget_install Microsoft.DotNet.Runtime.8 ".NET 8 runtime (Il2CppDumper)"
 call :have curl
 if errorlevel 1 (
-    call :warn "curl.exe РЅРµ РЅР°Р№РґРµРЅ: РЅСѓР¶РµРЅ Windows 10 1803+ РёР»Рё СѓСЃС‚Р°РЅРѕРІРёС‚СЊ curl РІСЂСѓС‡РЅСѓСЋ"
+    call :warn "curl.exe не найден: нужен Windows 10 1803+ или установить curl вручную"
 ) else (
-    call :ok "curl.exe РµСЃС‚СЊ"
+    call :ok "curl.exe есть"
 )
+call :reload_path
 exit /b 0
 
 rem ============================================================================
@@ -226,12 +237,12 @@ rem ============================================================================
 call :step "jadx (dex -> Java)"
 call :have jadx
 if not errorlevel 1 (
-    call :ok "jadx СѓР¶Рµ РІ PATH"
+    call :ok "jadx уже в PATH"
     exit /b 0
 )
 call :gh_latest_url skylot/jadx "jadx-" ".zip" JADX_URL "gui"
 if not defined JADX_URL (
-    call :warn "РЅРµ РЅР°С€С‘Р» СЂРµР»РёР· jadx"
+    call :warn "не нашёл релиз jadx"
     exit /b 0
 )
 call :download "%JADX_URL%" "%TOOLS_DIR%\jadx.zip"
@@ -247,22 +258,22 @@ rem  apktool
 rem ============================================================================
 
 :install_apktool
-call :step "apktool (СЂРµСЃСѓСЂСЃС‹ Рё smali)"
+call :step "apktool (ресурсы и smali)"
 call :have apktool
 if not errorlevel 1 (
-    call :ok "apktool СѓР¶Рµ РІ PATH"
+    call :ok "apktool уже в PATH"
     exit /b 0
 )
 call :gh_latest_url iBotPeaches/Apktool "apktool_" ".jar" APKTOOL_URL
 if not defined APKTOOL_URL (
-    call :warn "РЅРµ РЅР°С€С‘Р» СЂРµР»РёР· apktool"
+    call :warn "не нашёл релиз apktool"
     exit /b 0
 )
 if not "%DRY_RUN%"=="1" if not exist "%TOOLS_DIR%\apktool" mkdir "%TOOLS_DIR%\apktool"
 call :download "%APKTOOL_URL%" "%TOOLS_DIR%\apktool\apktool.jar"
 if errorlevel 1 exit /b 0
 if "%DRY_RUN%"=="1" (
-    echo   [dry] СЃРѕР·РґР°С‚СЊ %BIN_DIR%\apktool.bat
+    echo   [dry] создать %BIN_DIR%\apktool.bat
     exit /b 0
 )
 if not exist "%BIN_DIR%" mkdir "%BIN_DIR%"
@@ -279,7 +290,7 @@ rem ============================================================================
 call :step "Android SDK (aapt2, apksigner, adb)"
 set "SDK=%TOOLS_DIR%\android-sdk"
 if exist "%SDK%\cmdline-tools\latest\bin\sdkmanager.bat" (
-    call :ok "cmdline-tools СѓР¶Рµ СЂР°СЃРїР°РєРѕРІР°РЅС‹"
+    call :ok "cmdline-tools уже распакованы"
     goto sdk_packages
 )
 call :download "https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip" "%TEMP%\cmdline-tools.zip"
@@ -296,7 +307,7 @@ if "%DRY_RUN%"=="1" (
     exit /b 0
 )
 if not exist "%SDK%\cmdline-tools\latest\bin\sdkmanager.bat" (
-    call :warn "sdkmanager РЅРµ СЂР°СЃРїР°РєРѕРІР°Р»СЃСЏ вЂ” Android SDK РїСЂРѕРїСѓС‰РµРЅ"
+    call :warn "sdkmanager не распаковался — Android SDK пропущен"
     exit /b 0
 )
 set "ANDROID_HOME=%SDK%"
@@ -304,21 +315,27 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "[Environment]::SetEnviro
 echo y| "%SDK%\cmdline-tools\latest\bin\sdkmanager.bat" --licenses >nul 2>&1
 call "%SDK%\cmdline-tools\latest\bin\sdkmanager.bat" --install "platform-tools" "build-tools;34.0.0" >nul 2>&1
 if errorlevel 1 (
-    call :warn "sdkmanager РЅРµ РїРѕСЃС‚Р°РІРёР» РїР°РєРµС‚С‹ (РЅРµС‚ СЃРµС‚Рё?)"
+    call :warn "sdkmanager не поставил пакеты (нет сети?)"
 ) else (
     call :ok "platform-tools + build-tools 34.0.0"
 )
 exit /b 0
 
 rem ============================================================================
-rem  Python-РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹
+rem  Python-инструменты
 rem ============================================================================
 
 :install_python_tools
 call :step "Python: androguard, apkid, frida-tools"
+set "PYEXE="
 call :have python
-if errorlevel 1 (
-    call :warn "Python РЅРµ РЅР°Р№РґРµРЅ вЂ” РїСЂРѕРїСѓСЃРєР°СЋ (РїРµСЂРµР·Р°РїСѓСЃС‚Рё РїРѕСЃР»Рµ СѓСЃС‚Р°РЅРѕРІРєРё Python)"
+if not errorlevel 1 set "PYEXE=python"
+if not defined PYEXE (
+    call :have py
+    if not errorlevel 1 set "PYEXE=py -3"
+)
+if not defined PYEXE (
+    call :warn "Python не найден — поставь Python 3 и запусти установщик снова"
     exit /b 0
 )
 if "%DRY_RUN%"=="1" (
@@ -327,23 +344,23 @@ if "%DRY_RUN%"=="1" (
     echo   [dry] pip install frida-tools objection
     exit /b 0
 )
-python -m pip install --quiet --upgrade pip >nul 2>&1
-python -m pip install --quiet androguard pyaxmlparser apkid >nul 2>&1
+%PYEXE% -m pip install --quiet --upgrade pip >nul 2>&1
+%PYEXE% -m pip install --quiet androguard pyaxmlparser apkid >nul 2>&1
 if errorlevel 1 (
-    call :warn "pip РЅРµ РїРѕСЃС‚Р°РІРёР» androguard/apkid"
+    call :warn "pip не поставил androguard/apkid"
 ) else (
     call :ok "androguard, pyaxmlparser, apkid"
 )
 set "FRIDA_VENV=%TOOLS_DIR%\frida-venv"
 if not exist "%FRIDA_VENV%\Scripts\frida.exe" (
-    python -m venv "%FRIDA_VENV%" >nul 2>&1
+    %PYEXE% -m venv "%FRIDA_VENV%" >nul 2>&1
     "%FRIDA_VENV%\Scripts\python.exe" -m pip install --quiet --upgrade pip >nul 2>&1
     "%FRIDA_VENV%\Scripts\python.exe" -m pip install --quiet frida-tools objection >nul 2>&1
 )
 if exist "%FRIDA_VENV%\Scripts\frida.exe" (
     call :ok "frida-tools + objection -> %FRIDA_VENV%\Scripts"
 ) else (
-    call :warn "frida-tools РЅРµ СѓСЃС‚Р°РЅРѕРІРёР»РёСЃСЊ"
+    call :warn "frida-tools не установились"
 )
 exit /b 0
 
@@ -355,12 +372,12 @@ rem ============================================================================
 call :step "dex2jar (dex -> jar)"
 call :have d2j-dex2jar
 if not errorlevel 1 (
-    call :ok "dex2jar СѓР¶Рµ РІ PATH"
+    call :ok "dex2jar уже в PATH"
     exit /b 0
 )
 call :gh_latest_url pxb1988/dex2jar "dex-tools" ".zip" D2J_URL
 if not defined D2J_URL (
-    call :warn "РЅРµ РЅР°С€С‘Р» СЂРµР»РёР· dex2jar"
+    call :warn "не нашёл релиз dex2jar"
     exit /b 0
 )
 call :download "%D2J_URL%" "%TOOLS_DIR%\dex2jar.zip"
@@ -378,13 +395,13 @@ rem ============================================================================
 :install_il2cpp
 call :step "Il2CppDumper (Unity IL2CPP)"
 if exist "%TOOLS_DIR%\Il2CppDumper\Il2CppDumper.exe" (
-    call :ok "Il2CppDumper СѓР¶Рµ СЂР°СЃРїР°РєРѕРІР°РЅ"
+    call :ok "Il2CppDumper уже распакован"
     exit /b 0
 )
 call :gh_latest_url Perfare/Il2CppDumper "Il2CppDumper-win" ".zip" I2C_URL
 if not defined I2C_URL call :gh_latest_url Perfare/Il2CppDumper "Il2CppDumper" ".zip" I2C_URL
 if not defined I2C_URL (
-    call :warn "РЅРµ РЅР°С€С‘Р» СЂРµР»РёР· Il2CppDumper"
+    call :warn "не нашёл релиз Il2CppDumper"
     exit /b 0
 )
 call :download "%I2C_URL%" "%TOOLS_DIR%\il2cppdumper.zip"
@@ -400,17 +417,17 @@ rem  Ghidra (--full)
 rem ============================================================================
 
 :install_ghidra
-call :step "Ghidra (РЅР°С‚РёРІРЅС‹Р№ РєРѕРґ -> РїСЃРµРІРґРѕ-C)"
+call :step "Ghidra (нативный код -> псевдо-C)"
 if exist "%TOOLS_DIR%\ghidra\ghidraRun.bat" (
-    call :ok "Ghidra СѓР¶Рµ СЂР°СЃРїР°РєРѕРІР°РЅР°"
+    call :ok "Ghidra уже распакована"
     exit /b 0
 )
 call :gh_latest_url NationalSecurityAgency/ghidra "_PUBLIC_" ".zip" GHIDRA_URL
 if not defined GHIDRA_URL (
-    call :warn "РЅРµ РЅР°С€С‘Р» СЂРµР»РёР· Ghidra"
+    call :warn "не нашёл релиз Ghidra"
     exit /b 0
 )
-call :warn "Ghidra РІРµСЃРёС‚ РѕРєРѕР»Рѕ 450 РњР‘ вЂ” РєР°С‡Р°РµС‚СЃСЏ РґРѕР»РіРѕ"
+call :warn "Ghidra весит около 450 МБ — качается долго"
 call :download "%GHIDRA_URL%" "%TOOLS_DIR%\ghidra.zip"
 if errorlevel 1 exit /b 0
 call :unzip "%TOOLS_DIR%\ghidra.zip" "%TOOLS_DIR%\ghidra-tmp"
@@ -421,28 +438,28 @@ rmdir /s /q "%TOOLS_DIR%\ghidra-tmp" >nul 2>&1
 if exist "%TOOLS_DIR%\ghidra\ghidraRun.bat" (
     call :ok "Ghidra -> %TOOLS_DIR%\ghidra"
 ) else (
-    call :warn "Ghidra СЂР°СЃРїР°РєРѕРІР°Р»Р°СЃСЊ РЅРµ С‚СѓРґР° вЂ” РїСЂРѕРІРµСЂСЊ %TOOLS_DIR%"
+    call :warn "Ghidra распаковалась не туда — проверь %TOOLS_DIR%"
 )
 exit /b 0
 
 rem ============================================================================
-rem  frida-server РЅР° СѓСЃС‚СЂРѕР№СЃС‚РІРѕ (--with-device)
+rem  frida-server на устройство (--with-device)
 rem ============================================================================
 
 :install_frida_server
-call :step "frida-server РЅР° С‚РµР»РµС„РѕРЅ"
+call :step "frida-server на телефон"
 call :have adb
 if errorlevel 1 (
-    call :warn "adb РЅРµС‚ вЂ” РїСЂРѕРїСѓСЃРєР°СЋ"
+    call :warn "adb нет — пропускаю"
     exit /b 0
 )
 for /f "tokens=*" %%S in ('adb devices 2^>nul ^| findstr /r /c:"device$"') do set "SERIAL=%%S"
 if not defined SERIAL (
-    call :warn "С‚РµР»РµС„РѕРЅ РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ (adb devices) вЂ” РїСЂРѕРїСѓСЃРєР°СЋ"
+    call :warn "телефон не подключён (adb devices) — пропускаю"
     exit /b 0
 )
-echo   РўРµР»РµС„РѕРЅ: !SERIAL!
-echo   РџРѕРґРєР»СЋС‡Рё С‚РµР»РµС„РѕРЅ СЃ РІРєР»СЋС‡С‘РЅРЅРѕР№ РѕС‚Р»Р°РґРєРѕР№ Рё root, Р·Р°С‚РµРј:
+echo   Телефон: !SERIAL!
+echo   Подключи телефон с включённой отладкой и root, затем:
 echo     adb shell "su -c '/data/local/tmp/frida-server &'"
 echo     frida-ps -U
 exit /b 0
@@ -462,23 +479,23 @@ if exist "%TOOLS_DIR%\frida-venv\Scripts" set "PATHS=%PATHS%;%TOOLS_DIR%\frida-v
 if exist "%TOOLS_DIR%\dex2jar" set "PATHS=%PATHS%;%TOOLS_DIR%\dex2jar"
 
 if "%DRY_RUN%"=="1" (
-    echo   [dry] РґРѕР±Р°РІРёС‚СЊ РІ PATH РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ: %PATHS%
+    echo   [dry] добавить в PATH пользователя: %PATHS%
     exit /b 0
 )
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$dirs='%PATHS%' -split ';'; $p=[Environment]::GetEnvironmentVariable('Path','User'); if(-not $p){$p=''}; $add=@(); foreach($d in $dirs){ if($d -and ($p -notlike ('*'+$d+'*'))){ $add += $d } }; if($add.Count -gt 0){ $new = if($p){ $p + ';' + ($add -join ';') } else { $add -join ';' }; [Environment]::SetEnvironmentVariable('Path',$new,'User'); Write-Host ('   [ok] РґРѕР±Р°РІР»РµРЅРѕ: ' + ($add -join '; ')) } else { Write-Host '   [ok] PATH СѓР¶Рµ РЅР°СЃС‚СЂРѕРµРЅ' }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$dirs='%PATHS%' -split ';'; $p=[Environment]::GetEnvironmentVariable('Path','User'); if(-not $p){$p=''}; $add=@(); foreach($d in $dirs){ if($d -and ($p -notlike ('*'+$d+'*'))){ $add += $d } }; if($add.Count -gt 0){ $new = if($p){ $p + ';' + ($add -join ';') } else { $add -join ';' }; [Environment]::SetEnvironmentVariable('Path',$new,'User'); Write-Host ('   [ok] добавлено: ' + ($add -join '; ')) } else { Write-Host '   [ok] PATH уже настроен' }"
 exit /b 0
 
 rem ============================================================================
-rem  РїСЂРѕРІРµСЂРєР°
+rem  проверка
 rem ============================================================================
 
 :verify
-call :step "РїСЂРѕРІРµСЂРєР° СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ"
+call :step "проверка установленного"
 set "MISSING="
 for %%T in (jadx apktool aapt2 apksigner adb d2j-dex2jar frida dotnet python) do (
     where %%T >nul 2>&1
     if errorlevel 1 (
-        echo    %%T   РЅРµС‚
+        echo    %%T   нет
         set "MISSING=!MISSING! %%T"
     ) else (
         for /f "delims=" %%P in ('where %%T 2^>nul') do (
@@ -493,30 +510,30 @@ if "%MODE%"=="full" (
     if exist "%TOOLS_DIR%\ghidra\ghidraRun.bat" (
         echo    ghidra  -^>  %TOOLS_DIR%\ghidra\ghidraRun.bat
     ) else (
-        echo    ghidra   РЅРµС‚
+        echo    ghidra   нет
     )
 )
 if defined MISSING (
     echo.
-    echo    РќРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ:!MISSING!
-    echo    РћС‚РєСЂРѕР№ РќРћР’РћР• РѕРєРЅРѕ С‚РµСЂРјРёРЅР°Р»Р° Рё Р·Р°РїСѓСЃС‚Рё РїСЂРѕРІРµСЂРєСѓ СЃРЅРѕРІР°:
+    echo    Не установлено:!MISSING!
+    echo    Открой НОВОЕ окно терминала и запусти проверку снова:
     echo      install-re-tools.bat --check
 ) else (
     echo.
-    echo    Р’СЃС‘ РЅР° РјРµСЃС‚Рµ.
+    echo    Всё на месте.
 )
 exit /b 0
 
 :usage
 echo.
-echo  install-re-tools.bat вЂ” СѓСЃС‚Р°РЅРѕРІРєР° РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ РґР»СЏ СЂРµРІРµСЂСЃР° APK
+echo  install-re-tools.bat — установка инструментов для реверса APK
 echo.
-echo    install-re-tools.bat              Р±Р°Р·РѕРІС‹Р№ РЅР°Р±РѕСЂ
-echo    install-re-tools.bat --full       + Ghidra (РѕРєРѕР»Рѕ 450 РњР‘)
-echo    install-re-tools.bat --check      РїРѕРєР°Р·Р°С‚СЊ, С‡С‚Рѕ СѓР¶Рµ СЃС‚РѕРёС‚
-echo    install-re-tools.bat --dry-run    РїРѕРєР°Р·Р°С‚СЊ РїР»Р°РЅ, РЅРёС‡РµРіРѕ РЅРµ РјРµРЅСЏС‚СЊ
-echo    install-re-tools.bat --dir D:\re  РєР°С‚Р°Р»РѕРі СѓСЃС‚Р°РЅРѕРІРєРё
-echo    install-re-tools.bat --with-device  РїРѕРґСЃРєР°Р·РєРё РїРѕ frida-server
+echo    install-re-tools.bat              базовый набор
+echo    install-re-tools.bat --full       + Ghidra (около 450 МБ)
+echo    install-re-tools.bat --check      показать, что уже стоит
+echo    install-re-tools.bat --dry-run    показать план, ничего не менять
+echo    install-re-tools.bat --dir D:\re  каталог установки
+echo    install-re-tools.bat --with-device  подсказки по frida-server
 echo.
 goto done
 
