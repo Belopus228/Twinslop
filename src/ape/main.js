@@ -1,11 +1,13 @@
 import * as THREE from 'three';
 import { createSim, step, setHandInput, snapshot, CFG } from './sim.js';
+import { load as loadSettings, stickToHand } from '../shared/settings.js';
 
 const $ = (id) => document.getElementById(id);
 
 const params = new URLSearchParams(location.search);
 let mode = params.get('mode') === 'hide' ? 'hide' : 'heist';
 let sim = createSim({ mode });
+let settings = loadSettings();
 
 // ---------------------------------------------------------------- three.js
 
@@ -375,8 +377,11 @@ function frame() {
     const kr = keyboardHand('R');
     const L = stickState.L.active ? stickState.L : kl;
     const R = stickState.R.active ? stickState.R : kr;
-    setHandInput(sim, 'L', L);
-    setHandInput(sim, 'R', R);
+    // настройки: какой стик какой рукой управляет, чувствительность, инверсия
+    const lh = stickToHand('L', L, settings);
+    const rh = stickToHand('R', R, settings);
+    setHandInput(sim, lh.hand, { x: lh.x, y: lh.y });
+    setHandInput(sim, rh.hand, { x: rh.x, y: rh.y });
     sim.yaw = yaw;
     step(sim, dt);
 
@@ -415,6 +420,16 @@ document.querySelectorAll('[data-mode]').forEach((b) => {
 });
 $('bannerRestart')?.addEventListener('click', () => restart());
 $('hudRestart')?.addEventListener('click', () => restart());
+
+// настройки перечитываем при возврате со страницы настроек
+window.addEventListener('pageshow', () => { settings = loadSettings(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') settings = loadSettings();
+});
+
+// подсказка сама уходит, чтобы не мешать играть
+const hintEl = $('hint');
+if (hintEl) setTimeout(() => { hintEl.hidden = true; }, 7000);
 
 const hintClose = $('hintClose');
 if (hintClose) {

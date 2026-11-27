@@ -18,6 +18,7 @@
     inv: false,
     vib: true,
     wake: true,
+    swap: false,
   };
 
   const store = {
@@ -30,7 +31,7 @@
     save() {
       try {
         localStorage.setItem('twinslop-hands', JSON.stringify({
-          sens: S.sens, dead: S.dead, inv: S.inv, vib: S.vib, wake: S.wake,
+          sens: S.sens, dead: S.dead, inv: S.inv, vib: S.vib, wake: S.wake, swap: S.swap,
         }));
       } catch (_) { /* ignore */ }
     },
@@ -39,8 +40,14 @@
   // ---------------------------------------------------------------- стики
   const pads = {};
 
+  // какой рукой управляет этот стик (с учётом настройки «поменять руки»)
+  function handOf(side) {
+    if (!S.swap) return side;
+    return side === 'L' ? 'R' : 'L';
+  }
+
   function setupPad(el, handName) {
-    const hand = S[handName];
+    const hand = S[handOf(handName)];
     const thumb = el.querySelector('.pad-thumb');
     let pid = null;
     let base = { x: 0, y: 0 };
@@ -122,7 +129,7 @@
   // ---------------------------------------------------------------- кнопки
   function setupButtons() {
     document.querySelectorAll('.abtn').forEach((btn) => {
-      const hand = S[btn.dataset.hand];
+      const hand = S[handOf(btn.dataset.hand)];
       const field = btn.dataset.btn;
       let pid = null;
 
@@ -322,51 +329,8 @@
   }
 
   function setupSettings() {
-    const sheet = $('#sheet');
-    const sens = $('#sens');
-    const dead = $('#dead');
-    const vib = $('#vib');
-    const inv = $('#inv');
-    const wake = $('#wake');
-    const lblS = $('#lblSens');
-    const lblD = $('#lblDead');
-
-    sens.value = String(S.sens);
-    dead.value = String(S.dead);
-    vib.checked = S.vib;
-    inv.checked = S.inv;
-    wake.checked = S.wake;
-    lblS.textContent = `${Number(S.sens).toFixed(1)}×`;
-    lblD.textContent = Number(S.dead).toFixed(2);
-
-    sens.addEventListener('input', () => {
-      S.sens = Number(sens.value);
-      lblS.textContent = `${S.sens.toFixed(1)}×`;
-      store.save();
-    });
-    dead.addEventListener('input', () => {
-      S.dead = Number(dead.value);
-      lblD.textContent = S.dead.toFixed(2);
-      store.save();
-    });
-    vib.addEventListener('change', () => { S.vib = vib.checked; store.save(); buzz(10); });
-    inv.addEventListener('change', () => { S.inv = inv.checked; store.save(); });
-    wake.addEventListener('change', () => {
-      S.wake = wake.checked;
-      store.save();
-      if (S.wake) requestWake();
-      else releaseWake();
-    });
-
-    $('#btnSettings').addEventListener('click', () => {
-      sheet.hidden = false;
-      hideHint();
-    });
-    $('#btnClose').addEventListener('click', () => { sheet.hidden = true; });
-    sheet.addEventListener('click', (e) => {
-      if (e.target === sheet) sheet.hidden = true;
-    });
-
+    // все настройки живут на отдельной странице settings.html и в localStorage;
+    // здесь — только полноэкранный режим и перечитывание настроек при возврате
     $('#btnFull').addEventListener('click', async () => {
       try {
         if (!document.fullscreenElement) {
@@ -396,6 +360,15 @@
       wakeLock.release().catch(() => {});
       wakeLock = null;
     }
+  }
+
+  // буквы на стиках показывают, какой рукой они управляют
+  function paintHandLabels() {
+    [['padL', handOf('L')], ['padR', handOf('R')]].forEach(([id, hand]) => {
+      const el = document.getElementById(id);
+      const label = el && el.querySelector('.pad-thumb span');
+      if (label) label.textContent = hand;
+    });
   }
 
   // ---------------------------------------------------------------- клавиатура
@@ -444,6 +417,7 @@
     setupButtons();
     setupSettings();
     setupKeyboard();
+    paintHandLabels();
 
     resize();
     window.addEventListener('resize', resize);
@@ -456,6 +430,11 @@
     requestWake();
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') requestWake();
+    });
+
+    window.addEventListener('pageshow', () => { store.load(); paintHandLabels(); });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') { store.load(); paintHandLabels(); }
     });
 
     window.addEventListener('contextmenu', (e) => e.preventDefault());

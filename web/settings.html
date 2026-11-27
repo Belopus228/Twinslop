@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#05070d" />
+<title>Настройки — Twinslop</title>
+<link rel="stylesheet" href="./settings.css" />
+</head>
+<body>
+
+<header class="top">
+  <a class="back" href="./index.html" aria-label="Назад">←</a>
+  <div class="title">НАСТРОЙКИ</div>
+</header>
+
+<main class="wrap">
+
+  <section class="card">
+    <h2>Стики и руки</h2>
+    <p class="sub">Какой стик управляет какой рукой. Работает и в контроллере, и в игре.</p>
+
+    <div class="hands-preview">
+      <div class="pv">
+        <div class="pv-stick" id="pvStickL">L</div>
+        <div class="pv-arrow">→</div>
+        <div class="pv-hand" id="pvHandL">левая рука</div>
+      </div>
+      <div class="pv">
+        <div class="pv-stick" id="pvStickR">R</div>
+        <div class="pv-arrow">→</div>
+        <div class="pv-hand" id="pvHandR">правая рука</div>
+      </div>
+    </div>
+
+    <label class="row switch">
+      <span>Поменять руки (левый стик → правая рука)</span>
+      <input type="checkbox" id="swap" />
+    </label>
+  </section>
+
+  <section class="card">
+    <h2>Управление</h2>
+
+    <label class="row">
+      <span>Чувствительность <b id="lblSens">1.3×</b></span>
+      <input type="range" id="sens" min="0.4" max="2.6" step="0.1" value="1.3" />
+    </label>
+
+    <label class="row">
+      <span>Мёртвая зона <b id="lblDead">0.06</b></span>
+      <input type="range" id="dead" min="0" max="0.4" step="0.01" value="0.06" />
+    </label>
+
+    <label class="row switch">
+      <span>Инвертировать вертикаль</span>
+      <input type="checkbox" id="inv" />
+    </label>
+
+    <label class="row switch">
+      <span>Вибрация при нажатиях</span>
+      <input type="checkbox" id="vib" />
+    </label>
+
+    <label class="row switch">
+      <span>Не гасить экран</span>
+      <input type="checkbox" id="wake" />
+    </label>
+  </section>
+
+  <section class="card">
+    <h2>Инструменты</h2>
+    <a class="link" href="./apk.html"><span>📦</span> Разбор APK-файла</a>
+    <a class="link" href="./apps.html"><span>📱</span> Приложения на телефоне</a>
+  </section>
+
+  <div class="actions">
+    <button class="primary" id="reset">Сбросить настройки</button>
+    <a class="ghost" href="./index.html">Готово</a>
+  </div>
+
+  <p class="note">Настройки хранятся только на этом телефоне.</p>
+</main>
+
+<script src="./settings.bundle.js"></script>
+</body>
+</html>

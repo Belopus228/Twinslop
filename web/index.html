@@ -27,12 +27,10 @@
     </div>
 
     <div class="hud-actions">
-      <a class="ghost" href="./game.html" aria-label="Играть">▶</a>
-      <a class="ghost" href="./apk.html" aria-label="Разбор APK">📦</a>
-      <a class="ghost" href="./apps.html" aria-label="Приложения">📱</a>
       <a class="ghost" href="./ape.html" aria-label="APE HEIST">🐒</a>
+      <a class="ghost" href="./game.html" aria-label="Играть">▶</a>
+      <a class="ghost" href="./settings.html" aria-label="Настройки">⚙</a>
       <button class="ghost" id="btnFull" aria-label="На весь экран">⛶</button>
-      <button class="ghost" id="btnSettings" aria-label="Настройки">⚙</button>
     </div>
   </header>
 
@@ -65,41 +63,6 @@
         <div class="pad-thumb"><span>R</span></div>
       </div>
     </section>
-  </div>
-</div>
-
-<!-- настройки -->
-<div class="sheet" id="sheet" hidden>
-  <div class="sheet-card">
-    <h2>Настройки</h2>
-
-    <label class="row">
-      <span>Чувствительность <b id="lblSens">1.0×</b></span>
-      <input type="range" id="sens" min="0.4" max="2.6" step="0.1" value="1.3" />
-    </label>
-
-    <label class="row">
-      <span>Мёртвая зона <b id="lblDead">0.06</b></span>
-      <input type="range" id="dead" min="0" max="0.4" step="0.01" value="0.06" />
-    </label>
-
-    <label class="row switch">
-      <span>Вибрация при нажатиях</span>
-      <input type="checkbox" id="vib" checked />
-    </label>
-
-    <label class="row switch">
-      <span>Инвертировать вертикаль</span>
-      <input type="checkbox" id="inv" />
-    </label>
-
-    <label class="row switch">
-      <span>Держать экран включённым</span>
-      <input type="checkbox" id="wake" checked />
-    </label>
-
-    <div class="sheet-note" id="netNote">состояние связи: —</div>
-    <button class="primary" id="btnClose">Готово</button>
   </div>
 </div>
 
