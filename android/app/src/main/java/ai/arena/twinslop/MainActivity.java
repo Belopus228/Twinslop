@@ -2,6 +2,10 @@ package ai.arena.twinslop;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +17,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.List;
 
 /**
  * Обёртка приложения: WebView со страницей из assets/www.
@@ -96,7 +105,12 @@ public class MainActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    /** Вызовы из JS: window.TwinslopApp.openUrl(...) */
+    /**
+     * Мостик в страницу.
+     *  openUrl(url)       — открыть ссылку во внешнем браузере (сети у нас нет)
+     *  listApps()         — установленные приложения (label, package, разрешения)
+     *  launch(packageName) — запустить приложение системным интентом
+     */
     public class Bridge {
         @JavascriptInterface
         public void openUrl(String url) {
@@ -113,6 +127,55 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public String platform() {
             return "android";
+        }
+
+        @JavascriptInterface
+        public String listApps() {
+            JSONArray out = new JSONArray();
+            try {
+                PackageManager pm = getPackageManager();
+                Intent launcher = new Intent(Intent.ACTION_MAIN);
+                launcher.addCategory(Intent.CATEGORY_LAUNCHER);
+                List<ResolveInfo> resolved = pm.queryIntentActivities(launcher, 0);
+
+                for (ResolveInfo ri : resolved) {
+                    ApplicationInfo ai = ri.activityInfo == null ? null : ri.activityInfo.applicationInfo;
+                    if (ai == null) continue;
+                    try {
+                        JSONObject o = new JSONObject();
+                        o.put("package", ai.packageName);
+                        o.put("label", String.valueOf(pm.getApplicationLabel(ai)));
+                        o.put("system", (ai.flags & ApplicationInfo.FLAG_SYSTEM) != 0);
+                        o.put("targetSdk", ai.targetSdkVersion);
+
+                        PackageInfo pi = pm.getPackageInfo(ai.packageName, PackageManager.GET_PERMISSIONS);
+                        JSONArray perms = new JSONArray();
+                        if (pi.requestedPermissions != null) {
+                            for (String perm : pi.requestedPermissions) perms.put(perm);
+                        }
+                        o.put("permissions", perms);
+                        out.put(o);
+                    } catch (Exception ignored) {
+                        // одно приложение не прочиталось — список не рушим
+                    }
+                }
+            } catch (Exception ignored) {
+                return "[]";
+            }
+            return out.toString();
+        }
+
+        @JavascriptInterface
+        public boolean launch(String packageName) {
+            try {
+                Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
+                if (intent == null) return false;
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
         }
     }
 

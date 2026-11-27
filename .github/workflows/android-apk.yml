@@ -68,8 +68,7 @@ jobs:
         run: |
           npm ci --no-audit --no-fund
           npm run build
-          node test/smoke.mjs
-          node test/apk.mjs
+          npm test
 
       - name: Уложить веб-часть в assets
         run: |
@@ -125,7 +124,7 @@ jobs:
           APK=$(find android -name "*.apk" | head -n 1)
           echo "== содержимое =="
           unzip -l "$APK" | grep -E "assets/www/(index|game|apk)\.(html|js)" || true
-          for f in index.html game.html apk.html apk.bundle.js game.bundle.js; do
+          for f in index.html game.html apk.html apps.html apps.bundle.js apk.bundle.js game.bundle.js; do
             unzip -l "$APK" | grep -q "assets/www/$f" || { echo "::error::в APK нет assets/www/$f"; exit 1; }
           done
           echo "APK: $APK"

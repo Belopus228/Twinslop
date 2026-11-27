@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#05070d" />
+<title>Приложения на телефоне — Twinslop</title>
+<link rel="stylesheet" href="./apps.css" />
+</head>
+<body>
+
+<header class="top">
+  <a class="back" href="./index.html" aria-label="Назад">←</a>
+  <div class="title">ПРИЛОЖЕНИЯ</div>
+  <a class="ghost" href="./apk.html">APK-файл</a>
+</header>
+
+<main class="wrap">
+
+  <section class="intro">
+    <h1>Выбери приложение на телефоне</h1>
+    <p>Список читается системой. Запуск — обычный <code>startActivity</code>, работает. «Прицепиться» к чужому процессу и подменить ввод или картинку — нельзя, и ниже объяснено почему.</p>
+    <input id="appSearch" class="search" type="search" placeholder="Поиск по названию или пакету" autocomplete="off" />
+    <div class="summary" id="appsSummary"></div>
+    <div class="status" id="appsStatus"></div>
+  </section>
+
+  <section class="demo" id="appsDemo" hidden>
+    <b>Список доступен только в APK.</b>
+    <p>В браузере у страницы нет доступа к установленным приложениям — это системный API. Поставь APK из релиза и открой этот экран в нём.</p>
+  </section>
+
+  <ul class="app-list" id="appList"></ul>
+
+  <section id="appDetail" hidden></section>
+
+  <section class="card">
+    <h3>Что реально можно, а что нет</h3>
+    <ul class="facts-list">
+      <li><b>Список приложений</b> — да, <code>PackageManager</code>.</li>
+      <li><b>Запустить приложение</b> — да, системный интент.</li>
+      <li><b>Читать его разрешения и targetSdk</b> — да, это публичные данные манифеста.</li>
+      <li><b>Показать поверх него свои стики</b> — да, но только как оверлей (<code>SYSTEM_ALERT_WINDOW</code>); ввод в чужое приложение он не передаёт.</li>
+      <li><b>Подменить рендер / влезть в память</b> — нет. Нужен root: приложения изолированы (UID, SELinux, <code>ptrace</code> запрещён).</li>
+      <li><b>Эмулировать VR для установленного Quest-приложения</b> — нет: ему нужен OpenXR-рантайм и сервисы Meta, а не экран.</li>
+    </ul>
+  </section>
+</main>
+
+<script src="./apps.bundle.js"></script>
+</body>
+</html>

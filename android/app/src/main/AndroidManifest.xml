@@ -8,6 +8,9 @@
         Всё, что нужно, лежит в assets/www.
     -->
 
+    <!-- список установленных приложений: нужен только для экрана «Приложения» -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
     <application
         android:allowBackup="false"
         android:hardwareAccelerated="true"
