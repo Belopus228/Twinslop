@@ -115,9 +115,38 @@ for m in MARKERS:
 report["markers"] = marker_hits
 note(f"маркеры: {marker_hits}")
 
+# ---------------------------------------------------------------- 1b. граница шифра
+boundary = None
+for off in range(0, len(meta), 4096):
+    chunk = meta[off:off + 4096]
+    if sum(1 for b in chunk if 32 <= b < 127) > 3500:
+        boundary = off
+        break
+report["plaintext_boundary"] = boundary
+note(f"граница открытого текста: {boundary}")
+
+# ---------------------------------------------------------------- 1c. сжатие?
+import zlib
+compression_hits = {"zlib": [], "gzip": [], "lz4": [], "zstd": []}
+head = meta[:max(1, boundary or 2_000_000)]
+for i in range(0, min(len(head) - 8, 400_000)):
+    if head[i] == 0x78 and head[i + 1] in (0x01, 0x5E, 0x9C, 0xDA):
+        try:
+            zlib.decompressobj().decompress(head[i:i + 65536])
+            compression_hits["zlib"].append(i)
+        except Exception:  # noqa: BLE001
+            pass
+    if head[i:i + 2] == b"\x1f\x8b":
+        compression_hits["gzip"].append(i)
+    if head[i:i + 4] == b"\x04\x22\x4d\x18":
+        compression_hits["lz4"].append(i)
+    if head[i:i + 4] == b"\x28\xb5\x2f\xfd":
+        compression_hits["zstd"].append(i)
+report["compression_hits"] = {k: v[:3] for k, v in compression_hits.items()}
+
 # ---------------------------------------------------------------- 2. XOR-попытки
 cracked = None
-if marker_hits.get("mscorlib", -1) < 0 and marker_hits.get("UnityEngine", -1) < 0:
+if True:
     best = None
     sample_offsets = [0, len(meta) // 3, 2 * len(meta) // 3, len(meta) - 200000]
     for version in range(16, 41):
@@ -161,6 +190,7 @@ if cracked is None and (marker_hits.get("mscorlib", -1) >= 0 or marker_hits.get(
             fh.write(patched)
         code, tail = try_dumper(p, il2cpp_path, os.path.join(WORK, f"dump_v{version}"))
         note(f"версия {version}: code={code} {tail[-140:]}")
+        report.setdefault("dumper_tries", []).append({"version": version, "code": code, "tail": tail[-300:]})
         if code == 0 and os.path.exists(os.path.join(WORK, f"dump_v{version}", "dump.cs")):
             cracked = os.path.join(WORK, f"dump_v{version}", "dump.cs")
             report["header_fixed_version"] = version
@@ -256,6 +286,33 @@ for n in frida_files:
 json_assets = [n for n in zf.namelist() if n.startswith("assets/") and n.lower().endswith(".json")]
 report["json_assets"] = json_assets[:20]
 
+# ---------------------------------------------------------------- 5b. кто расшифровывает
+CRYPTO = ["decrypt", "encrypt", "aes", "chacha", "salsa", "xxtea", "tea", "rc4",
+          "xsalsa", "poly1305", "metadata", "global-metadata", "il2cpp", "mmap",
+          "mprotect", "dlopen", "frida", "hook", "inline", "bangcle", "ijiami",
+          "virbox", "naga", "hardening", "obfuscat", "anti", "ptrace", "debugger"]
+loaders = {}
+for name in zf.namelist():
+    if not (name.startswith("lib/") and name.endswith(".so")):
+        continue
+    base = os.path.basename(name)
+    if base in ("libil2cpp.so", "libunity.so", "libc++_shared.so"):
+        continue
+    try:
+        data = zf.read(name)
+    except Exception:  # noqa: BLE001
+        continue
+    hits = Counter()
+    for m in re.finditer(rb"[\x20-\x7e]{4,80}", data):
+        s = m.group().decode("ascii", "ignore").lower()
+        for kw in CRYPTO:
+            if kw in s:
+                hits[kw] += 1
+    if hits:
+        loaders[base] = {"size": len(data), "hits": dict(hits.most_common(12))}
+report["loader_scan"] = loaders
+note(f"скан загрузчиков: { {k: list(v['hits'])[:6] for k, v in loaders.items()} }")
+
 # ---------------------------------------------------------------- 6. отчёт
 import json as _json
 with open(os.path.join(OUT, "probe.json"), "w", encoding="utf-8") as fh:
@@ -283,5 +340,8 @@ if mod:
         lines.append(f"  - секция @{sec['offset']} size={sec['size']} entropy={sec['entropy']}")
 with open(os.path.join(OUT, "PROBE.md"), "w", encoding="utf-8") as fh:
     fh.write("\n".join(lines))
+
+with open(os.path.join(OUT, "run-log.txt"), "w", encoding="utf-8") as fh:
+    fh.write("\n".join(notes))
 
 print("\n".join(lines))
