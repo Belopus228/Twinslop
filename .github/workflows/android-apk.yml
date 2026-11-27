@@ -10,6 +10,10 @@ on:
     paths:
       - 'android/**'
       - 'web/**'
+      - 'src/**'
+      - 'test/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/android-apk.yml'
 
 permissions:
