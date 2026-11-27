@@ -427,6 +427,10 @@ root, и напоминание: <strong>только для своих прил
 <td>то же самое: закрой и открой <code>cmd</code> заново</td>
 </tr>
 <tr>
+<td><code>Error: Unable to access jarfile …</code> с кракозябрами вместо пути</td>
+<td>обёртка <code>apktool.bat</code> записалась с русским путём в кодировке консоли. Переустанови/обнови через новый <code>install-re-tools.bat</code> — обёртка теперь без единого русского символа</td>
+</tr>
+<tr>
 <td><code>'unzip' is not recognized</code> / <code>'head' is not recognized</code></td>
 <td>это команды Linux, их в Windows нет. Замени: <code>unzip -l</code> → <code>tar -tf</code>, <code>head</code>/<code>grep</code> → <code>apk-triage.bat app.apk</code>, <code>sha256sum</code> → <code>certutil -hashfile app.apk SHA256</code></td>
 </tr>

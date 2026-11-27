@@ -126,6 +126,8 @@ if defined NEWPATH set "PATH=%NEWPATH%"
 exit /b 0
 
 :ensure_dirs
+powershell -NoProfile -Command "if ('%TOOLS_DIR%' -match '[^\x20-\x7E]') { exit 1 } else { exit 0 }" >nul 2>&1
+if errorlevel 1 call :warn "в пути к инструментам есть кириллица: часть утилит может капризничать, при сбоях переставь с --dir C:\re"
 if "%DRY_RUN%"=="1" (
     echo   [dry] mkdir "%TOOLS_DIR%"
     echo   [dry] mkdir "%BIN_DIR%"
@@ -280,27 +282,24 @@ rem ============================================================================
 
 :install_apktool
 call :step "apktool (ресурсы и smali)"
-call :have apktool
-if not errorlevel 1 (
-    call :ok "apktool уже в PATH"
-    exit /b 0
+if not exist "%TOOLS_DIR%\apktool\apktool.jar" (
+    call :gh_latest_url iBotPeaches/Apktool "apktool_" ".jar" APKTOOL_URL
+    if not defined APKTOOL_URL set "APKTOOL_URL=https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
+    if not "%DRY_RUN%"=="1" if not exist "%TOOLS_DIR%\apktool" mkdir "%TOOLS_DIR%\apktool"
+    call :download "%APKTOOL_URL%" "%TOOLS_DIR%\apktool\apktool.jar"
+    if errorlevel 1 exit /b 0
+) else (
+    call :ok "apktool.jar уже скачан"
 )
-call :gh_latest_url iBotPeaches/Apktool "apktool_" ".jar" APKTOOL_URL
-if not defined APKTOOL_URL set "APKTOOL_URL=https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar"
-if not defined APKTOOL_URL (
-    call :warn "не нашёл релиз apktool"
-    exit /b 0
-)
-if not "%DRY_RUN%"=="1" if not exist "%TOOLS_DIR%\apktool" mkdir "%TOOLS_DIR%\apktool"
-call :download "%APKTOOL_URL%" "%TOOLS_DIR%\apktool\apktool.jar"
-if errorlevel 1 exit /b 0
 if "%DRY_RUN%"=="1" (
     echo   [dry] создать %BIN_DIR%\apktool.bat
     exit /b 0
 )
 if not exist "%BIN_DIR%" mkdir "%BIN_DIR%"
+rem  обёртка без единого русского символа: путь берётся из %%~dp0 при запуске.
+rem  Иначе кириллица из %USERPROFILE% пишется в кодировке консоли и ломает путь.
 > "%BIN_DIR%\apktool.bat" echo @echo off
->> "%BIN_DIR%\apktool.bat" echo java -Xmx1024m -jar "%TOOLS_DIR%\apktool\apktool.jar" %%*
+>> "%BIN_DIR%\apktool.bat" echo java -Xmx1024m -jar "%%~dp0..\apktool\apktool.jar" %%*
 call :ok "apktool -> %BIN_DIR%\apktool.bat"
 exit /b 0
 
