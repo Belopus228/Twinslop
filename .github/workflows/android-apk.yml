@@ -34,18 +34,31 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.7'
-
-      - name: Компоненты SDK
+      - name: Gradle 8.7
         run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "platforms;android-34" "build-tools;34.0.0" > /dev/null || true
+          if ! command -v gradle > /dev/null; then
+            curl -sSL --retry 3 -o /tmp/gradle.zip https://services.gradle.org/distributions/gradle-8.7-bin.zip
+            sudo unzip -q /tmp/gradle.zip -d /opt
+            sudo ln -sf /opt/gradle-8.7/bin/gradle /usr/local/bin/gradle
+          fi
+          gradle --version | head -n 6
+
+      - name: Android SDK
+        run: |
+          echo "ANDROID_HOME=${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          export ANDROID_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          export ANDROID_SDK_ROOT="$ANDROID_HOME"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
+          ls "$ANDROID_HOME"
+          SDKM=$(find "$ANDROID_HOME" -name sdkmanager -type f | head -n 1)
+          echo "sdkmanager: $SDKM"
+          if [ -n "$SDKM" ]; then
+            yes | "$SDKM" --licenses > /dev/null 2>&1 || true
+            "$SDKM" "platforms;android-34" "build-tools;34.0.0" > /dev/null 2>&1 || true
+          fi
+          ls "$ANDROID_HOME/platforms" || true
+          ls "$ANDROID_HOME/build-tools" || true
 
       - name: Уложить веб-часть в assets
         run: |
