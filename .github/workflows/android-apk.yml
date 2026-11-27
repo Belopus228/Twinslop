@@ -79,6 +79,8 @@ jobs:
           fi
 
       - name: Сборка
+        id: assemble
+        continue-on-error: true
         env:
           KEYSTORE_PATH: keystore.jks
           KEYSTORE_PASS: twinslop
@@ -86,7 +88,26 @@ jobs:
           KEY_PASS: twinslop
         run: |
           cd android
-          gradle assembleRelease --no-daemon --stacktrace
+          gradle assembleRelease --no-daemon --console=plain > /tmp/build.log 2>&1 || true
+          tail -n 60 /tmp/build.log
+          if find . -name "*-release.apk" | grep -q .; then
+            echo "ok=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Лог сборки в репозиторий (если упало)
+        if: steps.assemble.outputs.ok != '1'
+        run: |
+          mkdir -p build-logs
+          cp /tmp/build.log build-logs/android-build.log || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add build-logs
+          git commit -m "ci: лог сборки apk [skip ci]" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}" || true
+          echo "::error::сборка APK упала, лог в build-logs/android-build.log"
+          exit 1
 
       - name: Проверить, что INTERNET не запрошен
         run: |
