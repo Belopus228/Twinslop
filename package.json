@@ -8,8 +8,9 @@
     "build:game": "esbuild src/game/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/game.bundle.js",
     "build:apk": "esbuild src/apk/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/apk.bundle.js",
     "build:apps": "esbuild src/apps/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/apps.bundle.js",
-    "build": "npm run build:game && npm run build:apk && npm run build:apps",
-    "test": "node test/smoke.mjs && node test/apk.mjs && node test/apps.mjs",
+    "build:ape": "esbuild src/ape/main.js --bundle --format=iife --minify --target=es2019 --outfile=web/ape.bundle.js",
+    "build": "npm run build:game && npm run build:apk && npm run build:apps && npm run build:ape",
+    "test": "node test/smoke.mjs && node test/apk.mjs && node test/apps.mjs && node test/ape.mjs",
     "start": "node server.js"
   },
   "engines": {
