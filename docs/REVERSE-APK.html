@@ -295,6 +295,51 @@ unzip -l &quot;$APK&quot; | awk '{print $4}' | grep -E '^(lib|assets|res|classes
 <pre><code class="language-bash">./scripts/apk-triage.sh sample.apk out/
 </code></pre>
 <hr>
+<h2 id="25-apk">Шаг 2.5. «Расшифровать APK» — это три разные задачи</h2>
+<p>Слово «расшифровать» обычно означает одно из трёх, и делается каждое по-своему.</p>
+<table>
+<thead>
+<tr>
+<th>Что видишь</th>
+<th>Что это на самом деле</th>
+<th>Чем решается</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>файлы «нечитаемые», ресурсы в бинарном виде</td>
+<td>ничего не зашифровано: это ZIP + бинарные форматы (AXML, dex)</td>
+<td><code>apktool d</code>, <code>jadx</code></td>
+</tr>
+<tr>
+<td>код в виде <code>a.b.c()</code></td>
+<td>обфускация (переименование), а не шифрование</td>
+<td><code>jadx</code> + чтение по смыслу; если есть <code>mapping.txt</code> от своей сборки — деобфускация им</td>
+</tr>
+<tr>
+<td><code>global-metadata.dat</code> без магии <code>0xfab11baf</code>, ассеты с энтропией 7.9+</td>
+<td>реальная защита (протектор или свой шифр)</td>
+<td>статически — никак без ключа: ключ живёт в нативном коде и применяется в памяти процесса</td>
+</tr>
+</tbody>
+</table>
+<p>Команды для Windows (после установщика <code>install-re-tools.bat</code>):</p>
+<pre><code class="language-bat">apk-triage.bat app.apk            :: скажет, зашифровано ли что-то вообще
+tar -xf app.apk -C out            :: просто распаковать
+apktool d app.apk -o out-smali    :: манифест, ресурсы, smali
+jadx -d out-java app.apk          :: dex → Java, читаемый код
+</code></pre>
+<p>Честные границы:</p>
+<ul>
+<li><strong>своё приложение</strong> — расшифровывать обычно нечего: есть исходники. Нужно проверить
+  сборку — бери <code>debug</code>-вариант, там нет ни обфускации, ни протектора;</li>
+<li><strong>чужое приложение</strong> — если данные зашифрованы, ключ достаётся только из памяти
+  запущенного процесса, а это уже обход защиты. С этим не помогаю: ни с Gilla, ни с другими;</li>
+<li>из зашифрованного APK <strong>без ключа</strong> не вытащить ни метаданные, ни ассеты — это
+  математика, а не «неправильные инструменты».</li>
+</ul>
+<p>Если <code>apk-triage.bat</code> пишет «metadata ЗАШИФРОВАНЫ» — дальше осмысленно только
+динамическое исследование (Шаг 10) на своей сборке или стенде.</p>
 <h2 id="3">Шаг 3. Манифест и компоненты</h2>
 <pre><code class="language-bash"># человекочитаемый дамп
 aapt2 dump badging &quot;$APK&quot;
